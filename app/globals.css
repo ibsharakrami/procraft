@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/* Procraft Color Palette */
 :root {
+  /* Primary Brand Colors */
+  --primary-blue: #10367D;      /* Dark Blue - Primary */
+  --secondary-blue: #74B4D9;    /* Light Blue - Secondary */
+  --light-gray: #EBEBEB;        /* Light Gray - Background/Neutral */
+
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-black: #000000;
+
+  /* Contextual Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {

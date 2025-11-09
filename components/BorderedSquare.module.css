@@ -1,0 +1,65 @@
+.borderedSquare {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.borderedSquare::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 49.5%, rgba(255, 255, 255, 0.1) 49.5%, rgba(255, 255, 255, 0.1) 50.5%, transparent 50.5%);
+  background-size: 10px 10px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.borderTop,
+.borderRight,
+.borderBottom,
+.borderLeft {
+  position: absolute;
+  background: #fff;
+  z-index: 1;
+}
+
+.borderTop,
+.borderBottom {
+  height: 2px;
+  left: 0;
+  right: 0;
+}
+
+.borderLeft,
+.borderRight {
+  width: 2px;
+  top: 0;
+  bottom: 0;
+}
+
+.borderTop {
+  top: 0;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+.borderRight {
+  right: 0;
+  background: linear-gradient(180deg, transparent, #fff, transparent);
+}
+
+.borderBottom {
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+.borderLeft {
+  left: 0;
+  background: linear-gradient(0deg, transparent, #fff, transparent);
+}
