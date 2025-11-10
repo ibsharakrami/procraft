@@ -1,0 +1,36 @@
+{
+	"projects": [
+		{
+			"id": 1,
+			"title": "E-Commerce Solutions",
+			"image": "/images/ecommerce-bg.jpg",
+			"services": ["Website Development", "Digital Marketing"],
+			"caseStudyUrl": "/work/ecommerce-solutions",
+			"category": "ecommerce"
+		},
+		{
+			"id": 2,
+			"title": "Social Media Marketing",
+			"image": "/images/social-media-marketing.jpg",
+			"services": ["Social Media", "Content Creation"],
+			"caseStudyUrl": "/work/social-media-marketing",
+			"category": "marketing"
+		},
+		{
+			"id": 3,
+			"title": "Website Design & Development",
+			"image": "/images/website-design-bg.jpg",
+			"services": ["Branding", "Website Development"],
+			"caseStudyUrl": "/work/website-design",
+			"category": "web-design"
+		},
+		{
+			"id": 4,
+			"title": "Business Consulting",
+			"image": "/images/business-consulting-bg.jpg",
+			"services": ["Strategy", "Consulting"],
+			"caseStudyUrl": "/work/business-consulting",
+			"category": "consulting"
+		}
+	]
+}
