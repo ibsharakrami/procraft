@@ -1,11 +1,9 @@
 'use client';
 
 import ServicesSection from "@/components/Services/ServiceSection";
-import PortfolioGrid from '@/components/Portfolio/PortfolioGrid';
-import PortfolioIntro from '@/components/Portfolio/PortfolioIntro';
+import Portfolio from '@/components/Portfolio/Portfolio';
 import Container from '@/components/ui/Container';
 import { motion } from 'framer-motion';
-import portfolioData from '@/data/portfolioData.json';
 
 export default function Home() {
   return (
@@ -106,21 +104,7 @@ export default function Home() {
       <ServicesSection />
 
       {/* Portfolio Section */}
-      <section className='relative py-16 md:py-24 lg:py-32 bg-white'>
-        <Container size='wide'>
-          <div className='grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16'>
-            {/* Left Column - Intro Text (2 cols on desktop = 40%) */}
-            <div className='lg:col-span-2'>
-              <PortfolioIntro />
-            </div>
-
-            {/* Right Column - Portfolio Cards (3 cols on desktop = 60%) */}
-            <div className='lg:col-span-3'>
-              <PortfolioGrid projects={portfolioData.projects} />
-            </div>
-          </div>
-        </Container>
-      </section>
+      <Portfolio />
 
       {/* Call to Action Section */}
       <section className='relative py-16 md:py-24 bg-gradient-to-b from-black to-[#10367D]'>
