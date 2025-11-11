@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import portfolioData from '@/data/portfolioData.json';
+import { caseStudies } from '@/data/caseStudies';
 
 // Motion variants
 const container = {
@@ -69,39 +69,42 @@ function TiltWrapper({ children, href }) {
 function ProjectCard({ project, className }) {
 	return (
 		<motion.article variants={cardVariants} className={classNames('relative', className)}>
-			<TiltWrapper href={project.caseStudyUrl}>
+			<TiltWrapper href={`/work/${project.slug}`}>
 				<div className='group transition-all duration-300'>
-					{/* Image - No background, no border */}
+					{/* Image Container - Clean, no overlay */}
 					<div className='relative overflow-hidden mb-8'>
 						<img
-							src={project.image}
+							src={project.thumbnailImage}
 							alt={project.title}
-							className='w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105'
+							className='w-full h-auto object-cover'
 							loading='lazy'
 						/>
-						{/* Subtle overlay on hover */}
-						<div className='absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-500' />
 					</div>
 
-					{/* Title and Info - Clean layout */}
-					<div className='space-y-3'>
+					{/* Title - Always visible below image */}
+					<div>
 						<h3 className='text-2xl md:text-3xl font-bold text-black group-hover:text-[#10367D] transition-colors duration-300'>
 							{project.title}
 						</h3>
-						
-						{project.services?.length ? (
-							<p className='text-xs uppercase tracking-[0.2em] text-gray-500 font-light'>
-								{project.services.join(' & ')}
-							</p>
-						) : null}
+					</div>
 
-						{project.caseStudyUrl ? (
-							<div className='pt-1'>
-								<span className='inline-flex items-center gap-2 text-sm text-gray-600 group-hover:text-[#10367D] transition-colors duration-300'>
+					{/* Fixed-height Hover Content Area - No expansion, just opacity fade */}
+					<div className='h-20 md:h-24 relative mt-3'>
+						<div className='opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out'>
+							{/* Row 1: View case study link (right aligned) */}
+							<div className='flex justify-end mb-2'>
+								<span className='inline-flex items-center gap-2 text-[#10367D] text-xs md:text-sm font-medium hover:text-[#74B4D9] transition-colors duration-300 whitespace-nowrap'>
 									View case study <span className='text-xs'>››</span>
 								</span>
 							</div>
-						) : null}
+
+							{/* Row 2: Service Tags */}
+							{project.services?.length ? (
+								<p className='text-gray-600 text-xs md:text-sm uppercase tracking-[0.15em] font-light'>
+									{project.services.join(', ')}
+								</p>
+							) : null}
+						</div>
 					</div>
 				</div>
 			</TiltWrapper>
@@ -110,7 +113,8 @@ function ProjectCard({ project, className }) {
 }
 
 export default function Portfolio() {
-	const projects = portfolioData.projects;
+	// Filter and display only featured projects (Sharma Space & The Virtual Greens)
+	const projects = caseStudies.filter(study => study.featured).slice(0, 4);
 
 	return (
 		<section className='relative bg-white py-16 md:py-24 lg:py-32'>

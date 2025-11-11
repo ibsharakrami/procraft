@@ -24,7 +24,7 @@ export default function PortfolioIntro() {
 			<p className='text-gray-600 text-base md:text-lg leading-relaxed mb-8 font-light'>
 				Whether we&apos;re building a new website, creating new branding, composing
 				compelling copy or increasing a business&apos; social media presence; you can
-				always count on edirect. Our skilled and dedicated team are meticulous
+				always count on ProCraft. Our skilled and dedicated team are meticulous
 				in the implementation of various marketing strategies. Together, we are
 				forever working hard towards achieving our clients&apos; vision.
 			</p>

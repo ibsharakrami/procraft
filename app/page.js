@@ -2,6 +2,7 @@
 
 import ServicesSection from "@/components/Services/ServiceSection";
 import Portfolio from '@/components/Portfolio/Portfolio';
+import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import Container from '@/components/ui/Container';
 import { motion } from 'framer-motion';
 
@@ -105,6 +106,9 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <Portfolio />
+
+      {/* Client Logos Section */}
+      <ClientLogos />
 
       {/* Call to Action Section */}
       <section className='relative py-16 md:py-24 bg-gradient-to-b from-black to-[#10367D]'>

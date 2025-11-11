@@ -11,10 +11,10 @@ export const caseStudies = [
     tagline: "Premium Interior Design Studio Website",
 
     // Hero section
-    heroImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80",
+    heroImage: "/images/portfolio/sharmaspace2.png",
 
     // Card thumbnail
-    thumbnailImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
+    thumbnailImage: "/images/portfolio/sharmaspace2.png",
 
     // Overview
     description: "A sophisticated Next.js website for Bangalore's premier interior design studio, featuring consultation booking, multi-language support, and seamless service presentation.",
@@ -83,9 +83,9 @@ export const caseStudies = [
 
     tagline: "Indoor Golf Simulator Entertainment Venue",
 
-    heroImage: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1920&q=80",
+    heroImage: "/images/portfolio/thevirtualgreens3.png",
 
-    thumbnailImage: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80",
+    thumbnailImage: "/images/portfolio/thevirtualgreens3.png",
 
     description: "A modern website for Riyadh's premier indoor golf simulator lounge, combining entertainment booking with venue information and social engagement.",
 
@@ -129,6 +129,67 @@ export const caseStudies = [
     themeColor: "#10367D",
 
     // Grid size variant for layout
+    size: "large"
+  },
+
+  {
+    id: "carpenters-co",
+    slug: "carpenters-co",
+    title: "Carpenters & Co.",
+    client: "Carpenters & Co.",
+    category: ["Web Design", "E-commerce"],
+    year: "2024",
+
+    tagline: "Premium Handcrafted Furniture & Woodworking E-commerce",
+
+    heroImage: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1920&q=80",
+
+    thumbnailImage: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1200&q=80",
+
+    description: "A sophisticated e-commerce platform for a premium furniture manufacturing brand specializing in handcrafted woodwork and bespoke design solutions.",
+
+    challenge: "Create a digital presence that conveys luxury craftsmanship while enabling seamless product browsing and custom order management for a discerning clientele.",
+
+    solution: [
+      "E-commerce platform with custom product filtering and search",
+      "Portfolio gallery showcasing handcrafted pieces and design process",
+      "Custom order management system for bespoke furniture requests",
+      "High-resolution image optimization for product showcase",
+      "Integration with inventory management system",
+      "Mobile-responsive design emphasizing quality craftsmanship"
+    ],
+
+    services: [
+      "Website Design",
+      "E-commerce Development",
+      "Product Photography",
+      "Inventory Integration",
+      "Order Management",
+      "Brand Strategy"
+    ],
+
+    results: {
+      products: "500+ Items",
+      customOrders: "Bespoke System",
+      reach: "International",
+      avgOrderValue: "Premium Tier"
+    },
+
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "E-commerce API",
+      "Image Optimization",
+      "CMS Integration"
+    ],
+
+    liveUrl: "https://carpentersco.com",
+
+    featured: true,
+
+    themeColor: "#8B4513",
+
     size: "large"
   }
 ];
