@@ -1,10 +1,9 @@
 import AboutHero from '@/components/About/AboutHero';
 import WhoWeAre from '@/components/About/WhoWeAre';
-import MissionVision from '@/components/About/MissionVision';
+import OurPhilosophy from '@/components/About/OurPhilosophy';
 import ValuesGrid from '@/components/About/ValuesGrid';
 import StatsSection from '@/components/About/StatsSection';
 import TeamGrid from '@/components/About/TeamGrid';
-import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import CTASection from '@/components/About/CTASection';
 
 export const metadata = {
@@ -24,8 +23,8 @@ export default function AboutPage() {
 			{/* Who We Are - 2 column layout */}
 			<WhoWeAre />
 
-			{/* Mission & Vision - Centered statements */}
-			<MissionVision />
+			{/* Our Philosophy - 5 Chapter Story Timeline */}
+			<OurPhilosophy />
 
 			{/* Core Values - 2x2 Grid */}
 			<ValuesGrid />
@@ -35,19 +34,6 @@ export default function AboutPage() {
 
 			{/* Team Grid - 4 members */}
 			<TeamGrid />
-
-			{/* Client Logos Marquee - Reusing existing component */}
-			<section className='bg-[#EBEBEB] py-16 md:py-24 lg:py-32'>
-				<div className='text-center mb-12 md:mb-16'>
-					<span className='text-xs md:text-sm uppercase tracking-wider text-gray-400 font-light mb-4 block'>
-						Our Clients
-					</span>
-					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black font-blatant px-6'>
-						Trusted by Leading Brands
-					</h2>
-				</div>
-				<ClientLogos />
-			</section>
 
 			{/* CTA Section - Gradient background */}
 			<CTASection />

@@ -67,7 +67,7 @@ export default function WhoWeAre() {
 					>
 						<div className='grid grid-cols-2 gap-4'>
 							{/* Large Image */}
-							<div className='col-span-2 relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl'>
+							<div className='col-span-2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-sm'>
 								<Image
 									src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80'
 									alt='Team collaboration at ProCraft'
@@ -78,7 +78,7 @@ export default function WhoWeAre() {
 							</div>
 
 							{/* Two Smaller Images */}
-							<div className='relative aspect-square rounded-xl overflow-hidden shadow-xl'>
+							<div className='relative aspect-square rounded-sm overflow-hidden shadow-sm'>
 								<Image
 									src='https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80'
 									alt='Strategy meeting'
@@ -87,7 +87,7 @@ export default function WhoWeAre() {
 									sizes='(max-width: 768px) 50vw, 25vw'
 								/>
 							</div>
-							<div className='relative aspect-square rounded-xl overflow-hidden shadow-xl'>
+							<div className='relative aspect-square rounded-sm overflow-hidden shadow-sm'>
 								<Image
 									src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80'
 									alt='Modern office workspace'
@@ -97,10 +97,6 @@ export default function WhoWeAre() {
 								/>
 							</div>
 						</div>
-
-						{/* Decorative Element */}
-						<div className='absolute -top-4 -right-4 w-24 h-24 bg-[#74B4D9]/20 rounded-full blur-3xl -z-10'></div>
-						<div className='absolute -bottom-6 -left-6 w-32 h-32 bg-[#10367D]/10 rounded-full blur-3xl -z-10'></div>
 					</motion.div>
 				</div>
 			</Container>

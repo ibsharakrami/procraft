@@ -69,10 +69,9 @@ export default function ValuesGrid() {
 								variants={cardVariants}
 								whileHover={{
 									scale: 1.02,
-									borderColor: '#10367D',
 								}}
 								transition={{ duration: 0.3 }}
-								className='group relative bg-white border border-gray-200 rounded-2xl p-8 md:p-10 hover:shadow-2xl transition-all duration-300'
+								className='group relative bg-white rounded-sm p-8 md:p-10 hover:shadow-xl transition-all duration-300'
 							>
 								{/* Icon */}
 								<motion.div
@@ -96,9 +95,6 @@ export default function ValuesGrid() {
 								<p className='text-base md:text-lg text-gray-600 leading-relaxed'>
 									{value.description}
 								</p>
-
-								{/* Hover Accent Line */}
-								<div className='absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10367D] to-[#74B4D9] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl'></div>
 							</motion.div>
 						);
 					})}

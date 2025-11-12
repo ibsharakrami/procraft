@@ -105,3 +105,61 @@ export const teamMembers = [
 		linkedin: '#',
 	},
 ];
+
+export const philosophyChapters = [
+	{
+		id: 1,
+		year: '2020',
+		chapter: 'Chapter 1',
+		title: 'The Problem We Saw',
+		story:
+			'Too many businesses were investing in beautiful websites that looked amazing but failed to drive growth. We witnessed talented teams creating stunning designs that never translated into revenue. There had to be a better way—one where creativity and strategy work hand-in-hand to deliver real business impact.',
+		image:
+			'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
+		color: '#10367D',
+	},
+	{
+		id: 2,
+		year: '2021',
+		chapter: 'Chapter 2',
+		title: 'Our First Lesson',
+		story:
+			'Our first client taught us something invaluable: understanding their customers was more powerful than following any design trend. By diving deep into user behavior and pain points, we created solutions that resonated authentically. This insight became the foundation of everything we do—start with people, not pixels.',
+		image:
+			'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80',
+		color: '#74B4D9',
+	},
+	{
+		id: 3,
+		year: '2022',
+		chapter: 'Chapter 3',
+		title: 'What We Learned',
+		story:
+			'Growth doesn\'t come from a single service—it emerges from the right combination of strategy, design, and technology at the right time. We evolved from being a "web design agency" into a true growth partner. Every project became an opportunity to blend consulting, creativity, and technical excellence to solve real business challenges.',
+		image:
+			'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=1200&q=80',
+		color: '#0a2550',
+	},
+	{
+		id: 4,
+		year: '2024',
+		chapter: 'Chapter 4',
+		title: 'Where We Are Now',
+		story:
+			'Today, we measure our success by the growth we create for our clients. Every strategy we develop, every design we craft, and every line of code we write is tied to tangible business outcomes. We\'ve built a team of strategists, designers, and developers who share one common goal: your success.',
+		image:
+			'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
+		color: '#10367D',
+	},
+	{
+		id: 5,
+		year: '2025+',
+		chapter: 'Chapter 5',
+		title: 'Where We\'re Going',
+		story:
+			'The future belongs to businesses that embrace digital transformation with authenticity and purpose. We\'re committed to being the trusted partner that helps companies across the Middle East and beyond achieve sustainable growth. Our journey is just beginning, and we\'re excited to write the next chapters together with our clients.',
+		image:
+			'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
+		color: '#74B4D9',
+	},
+];

@@ -6,7 +6,7 @@ import { companyInfo } from '@/data/aboutData';
 
 export default function MissionVision() {
 	return (
-		<section className='bg-[#EBEBEB] py-24 md:py-32 lg:py-40'>
+		<section className='bg-white py-16 md:py-24 lg:py-32'>
 			<Container size='narrow'>
 				{/* Mission */}
 				<motion.div
@@ -17,7 +17,7 @@ export default function MissionVision() {
 					className='text-center mb-16 md:mb-20'
 				>
 					<div className='mb-4'>
-						<span className='text-sm uppercase tracking-[0.2em] text-[#10367D] font-medium'>
+						<span className='text-xs md:text-sm uppercase tracking-[0.2em] text-gray-400 font-light'>
 							Our Mission
 						</span>
 					</div>
@@ -35,7 +35,7 @@ export default function MissionVision() {
 					className='text-center'
 				>
 					<div className='mb-4'>
-						<span className='text-sm uppercase tracking-[0.2em] text-[#10367D] font-medium'>
+						<span className='text-xs md:text-sm uppercase tracking-[0.2em] text-gray-400 font-light'>
 							Our Vision
 						</span>
 					</div>
@@ -43,15 +43,6 @@ export default function MissionVision() {
 						{companyInfo.vision}
 					</p>
 				</motion.div>
-
-				{/* Decorative Divider */}
-				<motion.div
-					initial={{ scaleX: 0 }}
-					whileInView={{ scaleX: 1 }}
-					transition={{ duration: 0.8, delay: 0.4 }}
-					viewport={{ once: true }}
-					className='mt-16 md:mt-20 h-[1px] bg-gradient-to-r from-transparent via-[#10367D]/30 to-transparent'
-				></motion.div>
 			</Container>
 		</section>
 	);

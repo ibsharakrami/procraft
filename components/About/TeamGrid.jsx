@@ -57,7 +57,7 @@ export default function TeamGrid() {
 					{teamMembers.map((member) => (
 						<motion.div key={member.id} variants={cardVariants} className='group'>
 							{/* Image */}
-							<div className='relative aspect-square mb-6 overflow-hidden rounded-xl shadow-lg'>
+							<div className='relative aspect-square mb-6 overflow-hidden rounded-sm shadow-sm'>
 								<Image
 									src={member.image}
 									alt={member.name}
@@ -66,7 +66,7 @@ export default function TeamGrid() {
 									sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
 								/>
 								{/* Overlay on hover */}
-								<div className='absolute inset-0 bg-gradient-to-t from-[#10367D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+								<div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
 							</div>
 
 							{/* Info */}
