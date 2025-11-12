@@ -7,9 +7,21 @@ import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import Container from '@/components/ui/Container';
 import { motion } from 'framer-motion';
 import { useNavigationTheme } from '@/hooks/useNavigationTheme';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const { topTheme } = useNavigationTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll detection to hide fixed phone number when navbar is visible
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -36,8 +48,8 @@ export default function Home() {
         {/* Video Overlay - Primary Blue with opacity */}
         <div className="absolute inset-0 bg-[#10367D]/70" />
 
-        {/* Contact Info - Top Right - Fixed Position */}
-        <div className="fixed top-8 md:top-10 right-8 md:right-16 z-60">
+        {/* Contact Info - Top Right - Fixed Position - Hidden on mobile (below 768px) and when scrolled on desktop */}
+        <div className={`hidden md:fixed top-8 md:top-10 right-8 md:right-16 z-60 transition-opacity duration-300 ${isScrolled ? 'md:opacity-0 md:pointer-events-none' : 'md:opacity-100'}`}>
           <a
             href="tel:+971545866866"
             className={`text-[11px] md:text-xs hover:text-white transition-colors duration-300 font-light tracking-wider ${topTheme === 'dark' ? 'text-white/80' : 'text-[#10367D]/80'}`}
