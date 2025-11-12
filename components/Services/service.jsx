@@ -51,61 +51,82 @@ const ServicesSection = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Header Section */}
-      <div className="relative bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 md:mb-0">
-              How can we <span className="font-bold text-emerald-400">Help?</span>
-            </h1>
-            <div className="border-2 border-emerald-400 px-6 py-3 rounded text-emerald-400 text-lg font-light whitespace-nowrap transition-all duration-300 hover:bg-emerald-400 hover:text-black cursor-pointer">
-              +971 545 866 866
+    <section className="relative overflow-hidden">
+      {/* Green background section */}
+      <div className="relative bg-emerald-500">
+        {/* Background image with gradient overlay */}
+        <div
+          className="absolute inset-0 bg-[url('/images/london-architecture.jpg')] bg-cover bg-center opacity-20"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" />
+
+        {/* Top content - "How can we Help?" */}
+        <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                How can we <span className="text-white">Help?</span>
+              </h2>
+            </div>
+            <div>
+              <a
+                href="tel:+971545866866"
+                className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-emerald-600 transition-all duration-300"
+              >
+                +971 545 866 866
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Services Grid Section */}
-      <div className="relative py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-12 tracking-wider">EXPERTISE</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div 
-                key={service.id}
-                className="relative bg-gray-800 rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-400/20"
-                onMouseEnter={() => setHoveredCard(service.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                {/* Background Image Overlay */}
+      {/* Green diagonal section that wraps behind black */}
+      <div className="relative -mt-1">
+        <div 
+          className="absolute inset-0 bg-emerald-500 h-[450px] md:h-[550px] -z-10"
+          style={{
+            clipPath: 'polygon(0 0, 100% 0, 100% 65%, 88% 100%, 0 100%)'
+          }}
+        />
+
+        {/* Black expertise container */}
+        <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 px-8 md:px-12 lg:px-16">
+            {/* EXPERTISE heading */}
+            <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 mb-12">
+              EXPERTISE
+            </h3>
+            
+            {/* Services grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+              {services.map((service) => (
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  style={{ backgroundImage: `url(${service.bgImage})` }}
-                />
-                
-                {/* Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                  <div className="w-1 h-10 bg-emerald-400 mb-6"></div>
-                  <h3 className="text-xl font-light text-white mb-4 tracking-wider">{service.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6 flex-grow">{service.description}</p>
+                  key={service.id}
+                  className="space-y-4"
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className="w-1 h-12 bg-emerald-500" />
+                  <h4 className="text-lg md:text-xl font-bold text-white uppercase tracking-wide">
+                    {service.title}
+                  </h4>
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    {service.description}
+                  </p>
                   <a 
                     href="#" 
-                    className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium group-hover:translate-x-1 transform transition-transform duration-300"
+                    className="inline-flex items-center text-sm text-emerald-500 hover:text-emerald-400 transition-colors"
                   >
-                    {service.link} <span className="ml-2">→</span>
+                    {service.link} &gt;&gt;
                   </a>
                 </div>
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

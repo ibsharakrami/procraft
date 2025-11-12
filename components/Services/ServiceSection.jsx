@@ -1,4 +1,3 @@
-// src/components/ServicesSection.js
 "use client"
 
 import { useState } from "react"
@@ -52,87 +51,110 @@ const ServicesSection = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-blue-400">
-      {/* Black and Green Header Section */}
-      <div className="relative bg-black overflow-hidden ">
-        {/* Top right cut */}
+    <section className="relative overflow-hidden">
+      {/* Green background section */}
+      <div className="relative bg-emerald-500">
+        {/* Background image with gradient overlay */}
+        <div
+          className="absolute inset-0 bg-[url('/images/london-architecture.jpg')] bg-cover bg-center opacity-20"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" />
 
-        
-        <div className="relative max-w-7xl  mx-auto px-8 py-10 ">
-          <div className="relative z-20 flex flex-col md:flex-row justify-between items-start md:items-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-white mb-6 md:mb-0">
-              How can we <span className="font-bold text-emerald-400">Help?</span>
-            </h1>
-            <div className="border-2 border-emerald-400 px-6 py-3 rounded text-emerald-400 text-lg font-light whitespace-nowrap transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:scale-105 cursor-pointer">
-              +971 545 866 866
+        {/* Top content - "How can we Help?" */}
+        <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                How can we <span className="text-white">Help?</span>
+              </h2>
+            </div>
+            <div>
+              <a
+                href="tel:+971545866866"
+                className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-emerald-600 transition-all duration-300"
+              >
+                +971 545 866 866
+              </a>
             </div>
           </div>
-          
-      
-        </div>
-        
-        {/* Background elements */}
-        <div className="absolute inset-0">
-
-          <div className="absolute inset-0 bg-[url('/images/london-architecture.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
         </div>
       </div>
 
-      {/* Main Content Section */}
-      <div className="relative pt-0 pb-0 overflow-hidden  bg-red-300">
-        <div className="absolute inset-0 bg-black transition-all duration-500">
-          {services.map((service) => (
-            hoveredCard === service.id && (
-              <div
-                key={service.id}
-                className="absolute inset-0 bg-cover bg-center opacity-40"
-                   style={{
-                  backgroundImage: `url(${service.bgImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              />
-            )
-          ))}
-        </div>
+      {/* Green diagonal section that wraps behind black with top-right cut */}
+      <div className="relative -mt-1">
+        <div 
+          className="absolute inset-0 bg-emerald-500 h-[450px] md:h-[550px] -z-10"
+          style={{
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+          }}
+        />
 
-   
+        {/* Black expertise container - flush left, 75% width */}
+        <div className="relative w-full md:w-3/4">
+          <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 pl-6 pr-8 md:pl-8 md:pr-12 lg:pl-12 lg:pr-16 overflow-hidden" style={{
+            clipPath: 'polygon(0 0, 95% 0, 100% 8%, 100% 100%, 0 100%)'
+          }}>
+            
+            {/* Background image container - shows hovered card's image */}
+            <div className="absolute inset-0 transition-all duration-500">
+              {services.map((service) => (
+                hoveredCard === service.id && (
+                  <div
+                    key={service.id}
+                    className="absolute inset-0 bg-cover bg-center opacity-40"
+                    style={{
+                      backgroundImage: `url(${service.bgImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                )
+              ))}
+            </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-12 pt-16 pb-24">
-          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-white mb-12 md:ml-4">EXPERTISE</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 md:ml-4">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="relative group h-full"
-                onMouseEnter={() => setHoveredCard(service.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="relative h-full flex flex-col bg-black text-white p-8 md:p-10 rounded-sm shadow-2xl overflow-hidden transition-colors duration-300 group-hover:text-slate-900">
-                  <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="w-1 h-10 bg-emerald-500 flex-shrink-0 mb-4 group-hover:bg-emerald-600" />
-                    <h3 className="text-lg md:text-xl font-light tracking-widest mb-4 leading-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm md:text-base mb-8 leading-relaxed font-light group-hover:text-slate-700 flex-grow">
-                      {service.description}
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block text-emerald-500 text-sm font-medium hover:text-emerald-600 transition-colors group-hover:text-emerald-600 mt-auto"
-                    >
-                      {service.link} <span className="ml-2">{">"}</span>
-                    </a>
+            {/* EXPERTISE heading */}
+            <h3 className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 mb-12 ml-[25%]">
+              EXPERTISE
+            </h3>
+            
+            {/* Services grid with animations - starts at 25% */}
+            <div className="relative z-10 ml-[25%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="relative group h-full"
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className="relative h-full flex flex-col bg-black text-white p-8 md:p-10 rounded-sm shadow-2xl overflow-hidden transition-all duration-300 group-hover:bg-white group-hover:text-slate-900 group-hover:shadow-emerald-500/20 group-hover:shadow-2xl">
+                    {/* Animated white overlay that slides up on hover */}
+                    <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                    
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="w-1 h-10 bg-emerald-500 shrink-0 mb-6 group-hover:bg-emerald-600 transition-colors duration-300" />
+                      <h3 className="text-lg md:text-xl font-bold tracking-wide mb-4 leading-tight uppercase">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm md:text-base mb-8 leading-relaxed font-light group-hover:text-slate-700 grow transition-colors duration-300">
+                        {service.description}
+                      </p>
+                      <a
+                        href="#"
+                        className="inline-flex items-center text-emerald-500 text-sm font-semibold hover:text-emerald-600 transition-all duration-300 group-hover:text-emerald-600 group-hover:translate-x-1 mt-auto"
+                      >
+                        {service.link} <span className="ml-2">&gt;&gt;</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

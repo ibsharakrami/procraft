@@ -102,42 +102,14 @@ export default function Home() {
         </div>
       </section>
 
-      <ServicesSection />
-
       {/* Portfolio Section */}
       <Portfolio />
 
       {/* Client Logos Section */}
       <ClientLogos />
 
-      {/* Call to Action Section */}
-      <section className='relative py-16 md:py-24 bg-gradient-to-b from-black to-[#10367D]'>
-        <Container size='narrow'>
-          <motion.div
-            className='text-center'
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className='text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight'>
-              Ready to Start Your Project?
-            </h2>
-            <p className='text-white/80 text-lg md:text-xl mb-8 font-light leading-relaxed'>
-              Let's create something powerful together. Get in touch to discuss
-              how we can help transform your business.
-            </p>
-            <motion.a
-              href='tel:+971545866866'
-              className='inline-block px-8 py-4 bg-[#74B4D9] text-white text-base md:text-lg font-medium rounded-full hover:bg-white hover:text-[#10367D] transition-all duration-300 shadow-lg hover:shadow-2xl'
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Book a Free Consultation
-            </motion.a>
-          </motion.div>
-        </Container>
-      </section>
+      {/* Services / How Can We Help Section */}
+      <ServicesSection />
 
     </>
 
