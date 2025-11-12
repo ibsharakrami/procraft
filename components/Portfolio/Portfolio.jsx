@@ -113,27 +113,27 @@ function ProjectCard({ project, className }) {
 }
 
 export default function Portfolio() {
-	// Filter and display only featured projects (Sharma Space & The Virtual Greens)
-	const projects = caseStudies.filter(study => study.featured).slice(0, 4);
+	// Display only 3 featured projects
+	const projects = caseStudies.filter(study => study.featured).slice(0, 3);
 
 	return (
-		<section className='relative bg-white py-16 md:py-24 lg:py-32'>
-			<div className='mx-auto max-w-7xl px-6 md:px-8 lg:px-12'>
+		<section data-theme="light" className='relative bg-white py-16 md:py-20 lg:py-24'>
+			<div className='mx-auto max-w-7xl px-[83px] md:px-[100px] lg:px-[110px]'>
 				{/* Background accents */}
 				<div className='pointer-events-none absolute inset-0 -z-10'>
 					<div className='absolute left-0 top-0 h-80 w-2/3 bg-gradient-to-b from-transparent to-gray-50/50' />
 					<div className='absolute right-0 top-1/3 h-96 w-1/2 bg-gray-50/50' />
 				</div>
 
-			{/* Grid: exactly two columns on lg+ */}
+			{/* Grid: two columns from md (764px) and above */}
 			<motion.div
 				initial='hidden'
 				whileInView='show'
 				viewport={{ once: true, amount: 0.2 }}
 				variants={stagger}
-				className='grid grid-cols-1 gap-8 lg:grid-cols-2'
+				className='grid grid-cols-1 gap-8 md:grid-cols-2'
 			>
-				{/* Column 1 */}
+				{/* Column 1: Intro text + 1 project */}
 				<div className='flex flex-col gap-8'>
 					{/* Copy block (Row 1) */}
 					<motion.div variants={container}>
@@ -162,16 +162,14 @@ export default function Portfolio() {
 						</a>
 					</motion.div>
 
-					{/* Row 2 & 3 of Column 1 */}
+					{/* First project card */}
 					{projects[0] && <ProjectCard project={projects[0]} />}
-					{projects[1] && <ProjectCard project={projects[1]} />}
 				</div>
 
-				{/* Column 2 */}
-				<div className='flex flex-col gap-8 lg:mt-28'>
-					{/* Row 1 & 2 of Column 2 */}
+				{/* Column 2: 2 project cards stacked */}
+				<div className='flex flex-col gap-8'>
+					{projects[1] && <ProjectCard project={projects[1]} />}
 					{projects[2] && <ProjectCard project={projects[2]} />}
-					{projects[3] && <ProjectCard project={projects[3]} />}
 				</div>
 			</motion.div>
 			</div>

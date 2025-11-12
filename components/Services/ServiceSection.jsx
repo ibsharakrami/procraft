@@ -51,7 +51,7 @@ const ServicesSection = () => {
   ]
 
   return (
-    <section className="relative overflow-hidden">
+    <section data-theme="dark" className="relative overflow-hidden">
       {/* Green background section */}
       <div className="relative bg-emerald-500">
         {/* Background image with gradient overlay */}
@@ -61,8 +61,8 @@ const ServicesSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" />
 
-        {/* Top content - "How can we Help?" */}
-        <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+        {/* Top content - "How can we Help?" - respects grid lines */}
+        <div className="relative mx-auto max-w-7xl px-[100px] md:px-[110px] py-16 md:py-20 lg:py-24">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
@@ -90,11 +90,9 @@ const ServicesSection = () => {
           }}
         />
 
-        {/* Black expertise container - flush left, 75% width */}
-        <div className="relative w-full md:w-3/4">
-          <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 pl-6 pr-8 md:pl-8 md:pr-12 lg:pl-12 lg:pr-16 overflow-hidden" style={{
-            clipPath: 'polygon(0 0, 95% 0, 100% 8%, 100% 100%, 0 100%)'
-          }}>
+        {/* Black expertise container - respects grid lines at 83px from edges */}
+        <div className="relative w-full lg:ml-[83px] lg:w-[calc(75%-83px)]">
+          <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 px-[83px] md:px-[100px] lg:px-[83px] lg:pr-[83px] overflow-hidden lg:[clip-path:polygon(0_0,95%_0,100%_8%,100%_100%,0_100%)]">
             
             {/* Background image container - shows hovered card's image */}
             <div className="absolute inset-0 transition-all duration-500">
@@ -114,12 +112,12 @@ const ServicesSection = () => {
             </div>
 
             {/* EXPERTISE heading */}
-            <h3 className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 mb-12 ml-[25%]">
+            <h3 className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 mb-12">
               EXPERTISE
             </h3>
             
-            {/* Services grid with animations - starts at 25% */}
-            <div className="relative z-10 ml-[25%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {/* Services grid with animations */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {services.map((service) => (
                 <div
                   key={service.id}

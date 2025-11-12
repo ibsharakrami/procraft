@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useNavigationTheme } from '@/hooks/useNavigationTheme';
 
 export default function Navigation() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
 	const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
+	const { topTheme, middleTheme, bottomTheme } = useNavigationTheme();
 
 	const menuLinks = [
 		{ href: '/about', label: 'About' },
@@ -48,21 +49,6 @@ export default function Navigation() {
 		};
 	}, [isMenuOpen]);
 
-	// Detect scroll position to change navbar color
-	useEffect(() => {
-		const handleScroll = () => {
-			// Change color after scrolling past hero section (roughly viewport height)
-			if (window.scrollY > window.innerHeight * 0.8) {
-				setIsScrolled(true);
-			} else {
-				setIsScrolled(false);
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
 	return (
 		<>
 			{/* Mobile Top Navigation Bar - Only visible on mobile (<768px) */}
@@ -70,7 +56,7 @@ export default function Navigation() {
 				{/* Hamburger Menu Button */}
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
-					className='flex flex-col gap-[5px] p-1 hover:opacity-70 transition-opacity'
+					className='flex flex-col gap-[5px] p-1 hover:opacity-70 transition-opacity cursor-pointer'
 					aria-label='Toggle menu'
 				>
 					<span className='block h-[1px] w-[30px] bg-white/80'></span>
@@ -105,9 +91,7 @@ export default function Navigation() {
 			>
 				<Link
 					href='/'
-					className={`${
-						isScrolled ? 'text-[#10367D]' : 'text-white'
-					} text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto hover:text-[#74B4D9] transition-all duration-300 font-light`}
+					className={`text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto hover:text-[#74B4D9] transition-all duration-300 font-light ${topTheme === 'dark' ? 'text-white' : 'text-[#10367D]'}`}
 					onClick={() => setIsMenuOpen(false)}
 				>
 					procraft
@@ -122,21 +106,15 @@ export default function Navigation() {
 			>
 				<div className='flex flex-col items-center gap-2'>
 					<span
-						className={`${
-							isScrolled ? 'text-[#10367D]/35' : 'text-white/35'
-						} text-[17px] md:text-[18px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300`}
+						className={`text-[17px] md:text-[18px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300 ${bottomTheme === 'dark' ? 'text-white/90' : 'text-[#10367D]/90'}`}
 					>
 						scroll
 					</span>
 					<div
-						className={`w-[2px] h-20 md:h-24 ${
-							isScrolled ? 'bg-[#10367D]/10' : 'bg-white/10'
-						} relative mt-2 transition-colors duration-300`}
+						className={`w-[2px] h-20 md:h-24 relative mt-2 transition-colors duration-300 ${bottomTheme === 'dark' ? 'bg-white/20' : 'bg-[#10367D]/20'}`}
 					>
 						<div
-							className={`w-[6px] h-[6px] rounded-full ${
-								isScrolled ? 'bg-[#10367D]/40' : 'bg-white/40'
-							} absolute -left-[2px] top-0 animate-scroll-dot transition-colors duration-300`}
+							className={`w-[6px] h-[6px] rounded-full absolute -left-[2px] top-0 animate-scroll-dot transition-colors duration-300 ${bottomTheme === 'dark' ? 'bg-white/60' : 'bg-[#10367D]/60'}`}
 						></div>
 					</div>
 				</div>
@@ -150,23 +128,17 @@ export default function Navigation() {
 			>
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
-					className='flex flex-col gap-[8px] p-1 hover:opacity-70 transition-opacity'
+					className='flex flex-col gap-[8px] p-1 hover:opacity-70 transition-opacity cursor-pointer'
 					aria-label='Toggle menu'
 				>
 					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] ${
-							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
-						} transition-colors duration-300`}
+						className={`block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
 					></span>
 					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] -ml-[5px] ${
-							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
-						} transition-colors duration-300`}
+						className={`block h-[1px] w-[30px] md:w-[30px] -ml-[5px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
 					></span>
 					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] ${
-							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
-						} transition-colors duration-300`}
+						className={`block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
 					></span>
 				</button>
 			</div>
