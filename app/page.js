@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import ServicesSection from "@/components/Services/ServiceSection";
 import Portfolio from '@/components/Portfolio/Portfolio';
 import ClientLogos from '@/components/ClientLogos/ClientLogos';
@@ -7,28 +8,51 @@ import Container from '@/components/ui/Container';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = window.innerHeight * 0.8; // 80vh
+      setIsScrolled(window.scrollY > scrollThreshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-          <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-blue">
+          <section
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-blue"
+            aria-label="Hero section"
+          >
         {/* Background Video */}
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/images/hero-video-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
+          aria-label="ProCraft creative digital agency showreel"
         >
           <source src="/bg-video-herosection-homepage.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
 
         {/* Video Overlay - Primary Blue with opacity */}
         <div className="absolute inset-0 bg-[#10367D]/70" />
 
-        {/* Contact Info - Top Right */}
-        <div className="absolute top-8 md:top-10 right-8 md:right-16 z-20">
+        {/* Contact Info - Top Right - Fixed Position */}
+        <div className="fixed top-8 md:top-10 right-8 md:right-16 z-60">
           <a
             href="tel:+971545866866"
-            className="text-white/70 hover:text-white text-[11px] md:text-xs transition-colors font-light tracking-wider"
+            className={`text-[11px] md:text-xs transition-colors duration-300 font-light tracking-wider ${
+              isScrolled
+                ? 'text-gray-900/70 hover:text-gray-900'
+                : 'text-white/70 hover:text-white'
+            }`}
           >
             +971 545 866 866
           </a>

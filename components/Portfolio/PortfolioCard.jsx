@@ -13,7 +13,12 @@ export default function PortfolioCard({ project, index, size = 'medium' }) {
 	};
 
 	return (
-		<Link href={project.liveUrl} target='_blank' rel='noopener noreferrer'>
+		<Link
+			href={project.liveUrl}
+			target='_blank'
+			rel='noopener noreferrer'
+			aria-label={`View ${project.title} case study - ${project.services?.join(', ')}`}
+		>
 			<motion.div
 				className={`group relative h-full overflow-hidden cursor-pointer ${sizeClasses[size]}`}
 				initial={{ opacity: 0, y: 50 }}

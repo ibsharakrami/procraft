@@ -7,11 +7,27 @@ import TeamGrid from '@/components/About/TeamGrid';
 import CTASection from '@/components/About/CTASection';
 
 export const metadata = {
-	title: 'About ProCraft | Creative Digital Growth Agency in Dubai',
-	description:
-		"Learn about ProCraft, Dubai's premier creative digital agency. We empower businesses with strategic consulting, web design, and digital marketing solutions that drive real impact.",
-	keywords:
-		'digital agency Dubai, creative agency UAE, web design Dubai, ProCraft team, about ProCraft',
+	title: 'About ProCraft - Who We Are',
+	description: "Discover ProCraft's story. Dubai-based creative digital agency empowering businesses with strategic consulting, innovative web design, and results-driven digital marketing since 2020.",
+	keywords: [
+		'digital agency Dubai',
+		'creative agency UAE',
+		'web design Dubai',
+		'ProCraft team',
+		'about ProCraft',
+		'Dubai agency team',
+		'Business Bay creative agency',
+		'digital marketing team Dubai'
+	],
+	openGraph: {
+		title: 'About ProCraft - Dubai Creative Digital Agency',
+		description: "Meet the team behind Dubai's leading digital growth agency. We combine strategy, creativity, and technology to drive real business impact.",
+		url: 'https://procraft.ae/about',
+		type: 'website',
+	},
+	alternates: {
+		canonical: 'https://procraft.ae/about',
+	},
 };
 
 export default function AboutPage() {

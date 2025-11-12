@@ -1,6 +1,30 @@
-"use client";
 import React from "react";
 import { Code, Layout, Palette, Smartphone, Server, Database, Cpu } from "lucide-react";
+
+export const metadata = {
+  title: 'Our Services - Digital Solutions',
+  description: 'Comprehensive digital services in Dubai: Business Consulting, Web Design & Development, E-Commerce, Digital Marketing, SEO, Social Media Marketing, Branding, and Mobile App Development. Empowering businesses across UAE.',
+  keywords: [
+    'web design Dubai',
+    'digital marketing UAE',
+    'SEO services Dubai',
+    'e-commerce development Dubai',
+    'mobile app development Dubai',
+    'branding agency UAE',
+    'social media marketing Dubai',
+    'business consulting Dubai',
+    'graphic design Dubai'
+  ],
+  openGraph: {
+    title: 'ProCraft Services - Full-Service Digital Agency Dubai',
+    description: 'From strategy to execution: Business consulting, web development, digital marketing, and branding services for businesses in Dubai and UAE.',
+    url: 'https://procraft.ae/services',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://procraft.ae/services',
+  },
+};
 
 const services = [
   {
