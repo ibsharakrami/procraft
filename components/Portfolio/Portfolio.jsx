@@ -75,7 +75,7 @@ function ProjectCard({ project, className }) {
 					<div className='relative overflow-hidden mb-8'>
 						<img
 							src={project.thumbnailImage}
-							alt={project.title}
+							alt={`${project.title} - ${project.tagline} | ${project.category.join(', ')} project by ProCraft Dubai`}
 							className='w-full h-auto object-cover'
 							loading='lazy'
 						/>

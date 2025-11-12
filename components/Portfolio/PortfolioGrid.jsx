@@ -53,7 +53,7 @@ function PortfolioCard({ project, index }) {
 					<div className='relative w-full aspect-[4/3]'>
 						<img
 							src={project.image}
-							alt={project.title}
+							alt={`${project.title} - ${project.services?.join(', ')} project by ProCraft | Dubai digital agency portfolio`}
 							className='w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-90'
 						/>
 						

@@ -85,7 +85,7 @@ export default function ClientLogos() {
                         <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                           <Image
                             src={logo.logo}
-                            alt={logo.name}
+                            alt={`${logo.name} - ProCraft client logo | Digital agency Dubai`}
                             fill
                             className="object-contain"
                             sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
@@ -126,7 +126,7 @@ export default function ClientLogos() {
                         <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                           <Image
                             src={logo.logo}
-                            alt={logo.name}
+                            alt={`${logo.name} - ProCraft client logo | Digital agency Dubai`}
                             fill
                             className="object-contain"
                             sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"

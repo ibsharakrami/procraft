@@ -76,7 +76,7 @@ export default function OurPhilosophy() {
 										<div className='relative aspect-[4/3] rounded-sm overflow-hidden shadow-sm group'>
 											<Image
 												src={chapter.image}
-												alt={chapter.title}
+												alt={`${chapter.title} - ${chapter.chapter} of ProCraft's journey | Dubai digital agency story`}
 												fill
 												className='object-cover group-hover:scale-105 transition-transform duration-700'
 												sizes='(max-width: 1024px) 100vw, 50vw'

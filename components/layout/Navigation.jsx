@@ -74,7 +74,7 @@ export default function Navigation() {
 					aria-label='Toggle menu'
 				>
 					<span className='block h-[1px] w-[30px] bg-white/80'></span>
-					<span className='block h-[1px] w-[30px] bg-white/80'></span>
+					<span className='block h-[1px] w-[30px] -ml-[8px] bg-white/80'></span>
 					<span className='block h-[1px] w-[30px] bg-white/80'></span>
 				</button>
 
@@ -99,7 +99,7 @@ export default function Navigation() {
 
 			{/* Vertical Text - Left Side - Desktop Only */}
 			<div
-				className={`hidden md:block fixed md:left-[56px] top-[60px] z-50 pointer-events-none transition-opacity duration-500 ${
+				className={`hidden md:block fixed left-[25px] md:left-[28px] top-[60px] z-50 pointer-events-none transition-opacity duration-500 ${
 					isMenuOpen ? 'opacity-0' : 'opacity-100'
 				}`}
 			>
@@ -107,7 +107,7 @@ export default function Navigation() {
 					href='/'
 					className={`${
 						isScrolled ? 'text-[#10367D]' : 'text-white'
-					} text-[20px] md:text-[21px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto hover:text-[#74B4D9] transition-all duration-300 font-light`}
+					} text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto hover:text-[#74B4D9] transition-all duration-300 font-light`}
 					onClick={() => setIsMenuOpen(false)}
 				>
 					procraft
@@ -116,7 +116,7 @@ export default function Navigation() {
 
 			{/* Scroll Indicator - Bottom Left - Desktop Only */}
 			<div
-				className={`hidden md:block fixed md:left-[56px] bottom-[50px] z-50 pointer-events-none transition-opacity duration-500 ${
+				className={`hidden md:block fixed left-[25px] md:left-[28px] bottom-[50px] z-50 pointer-events-none transition-opacity duration-500 ${
 					isMenuOpen ? 'opacity-0' : 'opacity-100'
 				}`}
 			>
@@ -124,7 +124,7 @@ export default function Navigation() {
 					<span
 						className={`${
 							isScrolled ? 'text-[#10367D]/35' : 'text-white/35'
-						} text-[19px] md:text-[20px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300`}
+						} text-[17px] md:text-[18px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300`}
 					>
 						scroll
 					</span>
@@ -144,27 +144,27 @@ export default function Navigation() {
 
 			{/* Hamburger Menu Button - Left Side - Desktop Only */}
 			<div
-				className={`hidden md:block fixed md:left-[44px] top-[50%] -translate-y-1/2 z-50 transition-opacity duration-500 ${
+				className={`hidden md:block fixed left-[20px] md:left-[24px] top-[50%] -translate-y-1/2 z-50 transition-opacity duration-500 ${
 					isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
 				}`}
 			>
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
-					className='flex flex-col gap-[5px] p-1 hover:opacity-70 transition-opacity'
+					className='flex flex-col gap-[8px] p-1 hover:opacity-70 transition-opacity'
 					aria-label='Toggle menu'
 				>
 					<span
-						className={`block h-[1px] w-[38px] md:w-[42px] ${
+						className={`block h-[1px] w-[30px] md:w-[30px] ${
 							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
 						} transition-colors duration-300`}
 					></span>
 					<span
-						className={`block h-[1px] w-[38px] md:w-[42px] ${
+						className={`block h-[1px] w-[30px] md:w-[30px] -ml-[5px] ${
 							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
 						} transition-colors duration-300`}
 					></span>
 					<span
-						className={`block h-[1px] w-[38px] md:w-[42px] ${
+						className={`block h-[1px] w-[30px] md:w-[30px] ${
 							isScrolled ? 'bg-[#10367D]/80' : 'bg-white/80'
 						} transition-colors duration-300`}
 					></span>

@@ -24,7 +24,7 @@ export default function GridLines() {
 		<>
 			{/* Left Vertical Gridline */}
 			<div
-				className='hidden md:block fixed left-[100px] md:left-[110px] top-0 bottom-0 w-[1px] z-40 pointer-events-none transition-all duration-300'
+				className='hidden md:block fixed left-[75px] md:left-[83px] top-0 bottom-0 w-[1px] z-40 pointer-events-none transition-all duration-300'
 				style={{
 					borderLeft: isScrolled
 						? '1px dashed rgba(16, 54, 125, 0.3)'
@@ -35,7 +35,7 @@ export default function GridLines() {
 
 			{/* Right Vertical Gridline */}
 			<div
-				className='hidden md:block fixed right-[100px] md:right-[110px] top-0 bottom-0 w-[1px] z-40 pointer-events-none transition-all duration-300'
+				className='hidden md:block fixed right-[75px] md:right-[83px] top-0 bottom-0 w-[1px] z-40 pointer-events-none transition-all duration-300'
 				style={{
 					borderLeft: isScrolled
 						? '1px dashed rgba(16, 54, 125, 0.3)'

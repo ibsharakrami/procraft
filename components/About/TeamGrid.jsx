@@ -60,7 +60,7 @@ export default function TeamGrid() {
 							<div className='relative aspect-square mb-6 overflow-hidden rounded-sm shadow-sm'>
 								<Image
 									src={member.image}
-									alt={member.name}
+									alt={`${member.name} - ${member.role} at ProCraft Digital Agency Dubai`}
 									fill
 									className='object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500'
 									sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'

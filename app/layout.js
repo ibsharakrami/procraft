@@ -26,24 +26,9 @@ const blatant = localFont({
 const urbanist = localFont({
   src: [
     {
-      path: "../public/Font/Urbanist-Thin.ttf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-ThinItalic.ttf",
-      weight: "100",
-      style: "italic",
-    },
-    {
       path: "../public/Font/Urbanist-ExtraLight.ttf",
       weight: "200",
       style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-ExtraLightItalic.ttf",
-      weight: "200",
-      style: "italic",
     },
     {
       path: "../public/Font/Urbanist-Light.ttf",
@@ -51,19 +36,9 @@ const urbanist = localFont({
       style: "normal",
     },
     {
-      path: "../public/Font/Urbanist-LightItalic.ttf",
-      weight: "300",
-      style: "italic",
-    },
-    {
       path: "../public/Font/Urbanist-Regular.ttf",
       weight: "400",
       style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-Italic.ttf",
-      weight: "400",
-      style: "italic",
     },
     {
       path: "../public/Font/Urbanist-Medium.ttf",
@@ -71,52 +46,19 @@ const urbanist = localFont({
       style: "normal",
     },
     {
-      path: "../public/Font/Urbanist-MediumItalic.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    {
       path: "../public/Font/Urbanist-SemiBold.ttf",
       weight: "600",
       style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-SemiBoldItalic.ttf",
-      weight: "600",
-      style: "italic",
     },
     {
       path: "../public/Font/Urbanist-Bold.ttf",
       weight: "700",
       style: "normal",
     },
-    {
-      path: "../public/Font/Urbanist-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../public/Font/Urbanist-ExtraBold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-ExtraBoldItalic.ttf",
-      weight: "800",
-      style: "italic",
-    },
-    {
-      path: "../public/Font/Urbanist-Black.ttf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../public/Font/Urbanist-BlackItalic.ttf",
-      weight: "900",
-      style: "italic",
-    },
   ],
   variable: "--font-urbanist",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata = {
@@ -202,15 +144,21 @@ export const metadata = {
     ],
   },
   manifest: '/manifest.webmanifest',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#10367D' },
-    { media: '(prefers-color-scheme: dark)', color: '#10367D' },
-  ],
   appleWebApp: {
     capable: true,
     title: 'ProCraft',
     statusBarStyle: 'black-translucent',
   },
+};
+
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#10367D' },
+    { media: '(prefers-color-scheme: dark)', color: '#10367D' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }) {

@@ -70,8 +70,9 @@ export default function WhoWeAre() {
 							<div className='col-span-2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-sm'>
 								<Image
 									src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80'
-									alt='Team collaboration at ProCraft'
+									alt='Team collaboration at ProCraft Digital Agency Dubai - Creative workspace'
 									fill
+									priority
 									className='object-cover hover:scale-105 transition-transform duration-700'
 									sizes='(max-width: 768px) 100vw, 50vw'
 								/>
