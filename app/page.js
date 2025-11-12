@@ -4,6 +4,8 @@ import Script from 'next/script';
 import ServicesSection from "@/components/Services/ServiceSection";
 import Portfolio from '@/components/Portfolio/Portfolio';
 import ClientLogos from '@/components/ClientLogos/ClientLogos';
+import PricingSection from '@/components/Pricing/PricingSection';
+import TestimonialsSection from '@/components/Testimonials/TestimonialsSection';
 import Container from '@/components/ui/Container';
 import { motion } from 'framer-motion';
 import { useNavigationTheme } from '@/hooks/useNavigationTheme';
@@ -134,6 +136,12 @@ export default function Home() {
 
       {/* Services / How Can We Help Section */}
       <ServicesSection />
+
+      {/* Pricing Section */}
+      <PricingSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* WebPage Schema Markup */}
       <Script
