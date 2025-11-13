@@ -29,7 +29,7 @@ export default function OurPhilosophy() {
 	};
 
 	return (
-		<section className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme="light" className='bg-white py-16 md:py-24 lg:py-32'>
 			<Container>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

@@ -57,7 +57,7 @@ export default function StatsSection() {
 	};
 
 	return (
-		<section className='bg-[#10367D] py-16 md:py-24 lg:py-32'>
+		<section data-theme="dark" className='bg-[#10367D] py-16 md:py-24 lg:py-32'>
 			<Container>
 				<motion.div
 					variants={containerVariants}

@@ -14,7 +14,7 @@ export default function CaseStudyResults({ project }) {
   }));
 
   return (
-    <section className="bg-gradient-to-b from-[#10367D] to-black py-16 md:py-24">
+    <section data-theme="dark" className="bg-gradient-to-b from-[#10367D] to-black py-16 md:py-24">
       <Container size="wide">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

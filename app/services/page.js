@@ -82,7 +82,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-black ">
       <div className="">
-           <div className=" bg-white mx-auto px-8 md:px-12 pb-2 text-center">
+           <section data-theme="light" className=" bg-white mx-auto px-8 md:px-12 pb-2 text-center">
           {/* Header */}
           <h2 className="text-4xl md:text-5xl font-semibold text-black py-12 ">Our Expertise</h2>
 
@@ -101,9 +101,9 @@ const Services = () => {
 
           {/* Phone Number */}
           <div className="absolute top-8 right-8 text-black font-light text-sm">+971 545 866 866</div>
-        </div>
+        </section>
 
-        <div className="space-y-4 max-w-7xl mx-auto  w-full">
+        <section data-theme="dark" className="space-y-4 max-w-7xl mx-auto  w-full">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -155,7 +155,7 @@ const Services = () => {
               </div>
             </div>
           ))}
-        </div>
+        </section>
       </div>
     </div>
   );

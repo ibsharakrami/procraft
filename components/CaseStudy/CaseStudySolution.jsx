@@ -6,7 +6,7 @@ import { Check } from 'lucide-react';
 
 export default function CaseStudySolution({ project }) {
   return (
-    <section className="bg-[#EBEBEB] py-16 md:py-24">
+    <section data-theme="light" className="bg-[#EBEBEB] py-16 md:py-24">
       <Container size="wide">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,9 +26,9 @@ export default function CaseStudySolution({ project }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex gap-4 items-start bg-white p-6 rounded-lg"
+                className="flex gap-4 items-start bg-white p-6"
               >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#10367D] flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 bg-[#10367D] flex items-center justify-center">
                   <Check className="text-white" size={16} />
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">

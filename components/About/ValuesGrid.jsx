@@ -36,7 +36,7 @@ export default function ValuesGrid() {
 	};
 
 	return (
-		<section className='bg-gray-50 py-16 md:py-24 lg:py-32'>
+		<section data-theme="light" className='bg-gray-50 py-16 md:py-24 lg:py-32'>
 			<Container>
 				{/* Section Header */}
 				<motion.div

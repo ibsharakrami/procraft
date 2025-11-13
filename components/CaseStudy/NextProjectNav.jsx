@@ -14,7 +14,7 @@ export default function NextProjectNav({ currentSlug }) {
   const nextProject = caseStudies[nextIndex];
 
   return (
-    <section className="relative overflow-hidden">
+    <section data-theme="dark" className="relative overflow-hidden">
       <Link href={`/work/${nextProject.slug}`}>
         <motion.div
           className="relative min-h-[60vh] flex items-center justify-center cursor-pointer group"

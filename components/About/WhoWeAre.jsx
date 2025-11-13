@@ -7,7 +7,7 @@ import { companyInfo } from '@/data/aboutData';
 
 export default function WhoWeAre() {
 	return (
-		<section className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme="light" className='bg-white py-16 md:py-24 lg:py-32'>
 			<Container>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
 					{/* Text Column */}

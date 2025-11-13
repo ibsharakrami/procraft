@@ -28,7 +28,7 @@ export default function CTASection() {
 	};
 
 	return (
-		<section className='relative py-24 md:py-32 bg-gradient-to-br from-[#10367D] via-[#0d2d5e] to-[#0a2550] overflow-hidden'>
+		<section data-theme="dark" className='relative py-24 md:py-32 bg-gradient-to-br from-[#10367D] via-[#0d2d5e] to-[#0a2550] overflow-hidden'>
 			{/* Background Pattern */}
 			<div className='absolute inset-0 opacity-10'>
 				<div className='absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]'></div>

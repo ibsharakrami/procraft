@@ -5,7 +5,7 @@ import Container from '@/components/ui/Container';
 
 export default function CaseStudyTechnologies({ project }) {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section data-theme="light" className="bg-white py-16 md:py-24">
       <Container size="wide">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,7 +26,7 @@ export default function CaseStudyTechnologies({ project }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-[#10367D] hover:text-white transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-gray-100 text-gray-700 font-medium hover:bg-[#10367D] hover:text-white transition-all duration-300 cursor-default"
               >
                 {tech}
               </motion.div>

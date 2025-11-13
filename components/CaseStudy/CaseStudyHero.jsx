@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function CaseStudyHero({ project }) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section data-theme="dark" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -16,7 +16,7 @@ export default function CaseStudyHero({ project }) {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Breadcrumb */}
-      <div className="absolute top-8 left-8 md:left-16 z-10">
+      <div className="absolute top-8 left-[83px] md:left-[100px] lg:left-[110px] z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

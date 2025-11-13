@@ -13,6 +13,18 @@ export const companyInfo = {
 	location: 'Business Bay, Dubai, UAE',
 };
 
+export const aboutHeroContent = {
+	label: 'About ProCraft',
+	heading: 'Where Strategy Meets Creativity',
+	subheading: 'Your Partner in Digital Transformation',
+	description:
+		'Based in Dubai\'s Business Bay, we empower businesses across the Middle East with strategic consulting, innovative design, and technology that drives measurable impact.',
+	contextual: {
+		type: 'stat',
+		value: 'Since 2020',
+	},
+};
+
 export const coreValues = [
 	{
 		id: 1,

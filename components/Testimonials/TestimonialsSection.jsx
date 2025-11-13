@@ -22,7 +22,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
-        </div>
+        </div>                                                                                                                                                                                              
       </div>
     </section>
   );

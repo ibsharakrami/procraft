@@ -6,7 +6,7 @@ import { ExternalLink } from 'lucide-react';
 
 export default function CaseStudyOverview({ project }) {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section data-theme="light" className="bg-white py-16 md:py-24">
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16">
           {/* Main Content */}
@@ -39,7 +39,7 @@ export default function CaseStudyOverview({ project }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:sticky lg:top-32 h-fit"
           >
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-gray-50 p-8">
               <div className="space-y-6">
                 {/* Client */}
                 <div>

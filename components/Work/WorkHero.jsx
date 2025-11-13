@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { aboutHeroContent } from '@/data/aboutData';
+import { workHeroContent } from '@/data/workData';
 
-export default function AboutHero() {
+export default function WorkHero() {
 	return (
 		<section
 			className='relative min-h-[40vh] md:min-h-[45vh] lg:min-h-[50vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden'
@@ -14,7 +14,7 @@ export default function AboutHero() {
 				<svg className='w-full h-full' xmlns='http://www.w3.org/2000/svg'>
 					<defs>
 						<pattern
-							id='dot-pattern-about'
+							id='dot-pattern-work'
 							x='0'
 							y='0'
 							width='40'
@@ -29,13 +29,13 @@ export default function AboutHero() {
 						y='0'
 						width='100%'
 						height='100%'
-						fill='url(#dot-pattern-about)'
+						fill='url(#dot-pattern-work)'
 					/>
 				</svg>
 			</div>
 
 			{/* Contextual Element - Top Right */}
-			{aboutHeroContent.contextual && (
+			{workHeroContent.contextual && (
 				<motion.div
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export default function AboutHero() {
 					className='absolute top-8 md:top-10 lg:top-12 right-8 md:right-12 lg:right-16'
 				>
 					<span className='text-sm md:text-base text-gray-700 hover:text-[#10367D] transition-colors font-semibold tracking-wide font-urbanist'>
-						{aboutHeroContent.contextual.value}
+						{workHeroContent.contextual.value}
 					</span>
 				</motion.div>
 			)}
@@ -57,22 +57,22 @@ export default function AboutHero() {
 				>
 					{/* TIER 1 - Label */}
 					<p className='text-gray-400 uppercase tracking-[0.4em] text-xs md:text-sm font-light mb-4 md:mb-6 font-urbanist'>
-						{aboutHeroContent.label}
+						{workHeroContent.label}
 					</p>
 
 					{/* TIER 2 - Main Heading */}
 					<h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-4 md:mb-6 leading-tight font-blatant'>
-						{aboutHeroContent.heading}
+						{workHeroContent.heading}
 					</h1>
 
 					{/* TIER 3 - Subheading */}
 					<h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8 leading-snug font-blatant'>
-						{aboutHeroContent.subheading}
+						{workHeroContent.subheading}
 					</h2>
 
 					{/* TIER 4 - Description */}
 					<p className='text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-urbanist leading-relaxed'>
-						{aboutHeroContent.description}
+						{workHeroContent.description}
 					</p>
 				</motion.div>
 			</div>

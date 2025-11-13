@@ -6,7 +6,7 @@ import { companyInfo } from '@/data/aboutData';
 
 export default function MissionVision() {
 	return (
-		<section className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme="light" className='bg-white py-16 md:py-24 lg:py-32'>
 			<Container size='narrow'>
 				{/* Mission */}
 				<motion.div
