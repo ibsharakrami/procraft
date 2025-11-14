@@ -51,22 +51,22 @@ const ServicesSection = () => {
   ]
 
   return (
-    <section data-theme="dark" className="relative overflow-hidden">
+    <section data-theme="dark" className="relative overflow-hidden bg-[#10367D]/70">
       {/* Green background section */}
-      <div className="relative bg-emerald-500">
+      <div className="relative ">
         {/* Background image with gradient overlay */}
         <div
           className="absolute inset-0 bg-[url('/images/london-architecture.jpg')] bg-cover bg-center opacity-20"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" />
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" /> */}
 
         {/* Top content - "How can we Help?" - respects grid lines */}
-        <div className="relative mx-auto max-w-7xl px-[100px] md:px-[110px] py-16 md:py-20 lg:py-24">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto py-16  ">
+          <div className="flex flex-col md:flex-row  md:items-center items-center justify-between gap-8">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                How can we <span className="text-white">Help?</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white">
+                How can we <span className="text-white font-bold">Help?</span>
               </h2>
             </div>
             <div>
@@ -84,15 +84,15 @@ const ServicesSection = () => {
       {/* Green diagonal section that wraps behind black with top-right cut */}
       <div className="relative -mt-1">
         <div 
-          className="absolute inset-0 bg-emerald-500 h-[450px] md:h-[550px] -z-10"
+          className="absolute inset-0  h-[450px] md:h-[550px] -z-10"
           style={{
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
           }}
         />
 
         {/* Black expertise container - respects grid lines at 83px from edges */}
-        <div className="relative w-full lg:ml-[83px] lg:w-[calc(75%-83px)]">
-          <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 px-[83px] md:px-[100px] lg:px-[83px] lg:pr-[83px] overflow-hidden lg:[clip-path:polygon(0_0,95%_0,100%_8%,100%_100%,0_100%)]">
+        <div className="relative w-full lg:ml-[83px] lg:w-[calc(90%-50px)]">
+          <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 px-4 md:px-[100px] lg:px-[83px] lg:pr-[83px] overflow-hidden lg:[clip-path:polygon(0_0,95%_0,100%_8%,100%_100%,0_100%)]">
             
             {/* Background image container - shows hovered card's image */}
             <div className="absolute inset-0 transition-all duration-500">
@@ -112,12 +112,12 @@ const ServicesSection = () => {
             </div>
 
             {/* EXPERTISE heading */}
-            <h3 className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-gray-400 mb-12">
+            <h3 className="relative z-10 text-2xl font-semibold uppercase tracking-[0.3em] text-gray-400 mb-4 px-8">
               EXPERTISE
             </h3>
             
             {/* Services grid with animations */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-10">
               {services.map((service) => (
                 <div
                   key={service.id}

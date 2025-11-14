@@ -10,6 +10,7 @@ export default function Navigation() {
 	const { topTheme, middleTheme, bottomTheme } = useNavigationTheme();
 
 	const menuLinks = [
+		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
 		{ href: '/work', label: 'Work' },
 		{ href: '/services', label: 'Expertise' },
