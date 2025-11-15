@@ -53,7 +53,7 @@ export default function Navigation() {
 	return (
 		<>
 			{/* Mobile Top Navigation Bar - Only visible on mobile (<768px) */}
-			<div className='md:hidden fixed top-0 left-0 right-0 bg-black z-50 h-16 px-5 flex items-center justify-between'>
+			<div className='md:hidden fixed top-0 left-0 right-0 bg-[#10367D] z-50 h-16 px-5 flex items-center justify-between'>
 				{/* Hamburger Menu Button */}
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -189,13 +189,13 @@ export default function Navigation() {
 						<div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
 							{/* Left Side - Menu Links */}
 							<div className='flex flex-col justify-center'>
-								<nav className='space-y-6 pl-6 md:pl-20 lg:pl-56'>
+								<nav className='space-y-6  md:pl-20 lg:pl-56'>
 									{menuLinks.map((link, index) => (
 										<Link
 											key={link.href}
 											href={link.href}
 											onClick={() => setIsMenuOpen(false)}
-											className='block text-white text-5xl md:text-6xl lg:text-7xl font-bold hover:text-[#74B4D9] transition-colors leading-tight'
+											className='block text-white text-3xl md:text-4xl lg:text-5xl font-bold hover:text-[#74B4D9] transition-colors leading-tight'
 											style={{
 												animationDelay: `${index * 0.1}s`,
 												animation: isMenuOpen
