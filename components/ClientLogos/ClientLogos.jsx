@@ -56,8 +56,8 @@ export default function ClientLogos() {
         }
       `}</style>
 
-      <section data-theme="light" className="bg-white py-12 md:py-16 lg:py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-[83px] md:px-[100px] lg:px-[110px]">
+      <section data-theme="light" className="bg-white py-4  overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
           {/* Section Heading */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-xs md:text-sm text-gray-400 uppercase tracking-[0.3em] font-urbanist">

@@ -117,8 +117,8 @@ export default function Portfolio() {
 	const projects = caseStudies.filter(study => study.featured).slice(0, 3);
 
 	return (
-		<section data-theme="light" className='relative bg-white py-16 md:py-20 lg:py-24'>
-			<div className='mx-auto max-w-7xl px-[83px] md:px-[100px] lg:px-[110px]'>
+		<section data-theme="light" className='relative bg-white py-16 md:py-20 '>
+			<div className='mx-auto max-w-7xl px-6 md:px-8 lg:px-12'>
 				{/* Background accents */}
 				<div className='pointer-events-none absolute inset-0 -z-10'>
 					<div className='absolute left-0 top-0 h-80 w-2/3 bg-gradient-to-b from-transparent to-gray-50/50' />
@@ -137,28 +137,28 @@ export default function Portfolio() {
 				<div className='flex flex-col gap-8'>
 					{/* Copy block (Row 1) */}
 					<motion.div variants={container}>
-						<p className='text-sm font-semibold uppercase tracking-[0.2em] text-gray-500'>
+						<p className='text-lg md:text-2xl font-semibold uppercase tracking-[0.2em] text-gray-400'>
 							Working together
 						</p>
-						<h2 className='mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-gray-500'>
+						<h2 className=' text-lg md:text-2xl font-semibold uppercase tracking-[0.2em] text-gray-400'>
 							with our clients
 						</h2>
-						<h3 className='mt-6 text-3xl font-black tracking-tight text-gray-900 sm:text-4xl'>
+						<h3 className='mt-7 text-2xl  font-medium tracking-tight text-gray-900 sm:text-4xl'>
 							To Achieve Their Business&apos; Vision
 						</h3>
-						<p className='mt-5 max-w-md text-base leading-7 text-gray-600'>
+						<p className='mt-5 max-w-md text-base leading-6 text-gray-400'>
 							Whether we&apos;re building a new website, creating new branding, composing
 							compelling copy or increasing a business&apos; social media presence; you can
-							always count on <span className='font-semibold'>edirect</span>. Our skilled and
+							always count on <span className='font-semibold'>procraft</span>. Our skilled and
 							dedicated team are meticulous in the implementation of various marketing
 							strategies. Together, we are forever working hard towards achieving our
 							clients&apos; vision.
 						</p>
 						<a
 							href='/work'
-							className='mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700'
+							className='mt-6 inline-flex items-center justify-end gap-2 text-sm font-semibold  text-black'
 						>
-							view more <span className='text-lg'>››</span>
+							view more <span className='text-lg text-blue-700'>››</span>
 						</a>
 					</motion.div>
 

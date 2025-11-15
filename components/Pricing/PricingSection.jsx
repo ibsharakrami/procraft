@@ -5,7 +5,7 @@ import { pricingPackages } from '@/data/pricingData';
 export default function PricingSection() {
   return (
     <section data-theme="light" className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-[83px] md:px-[100px] lg:px-[110px]">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
