@@ -138,12 +138,14 @@ const ServicesSection = () => {
                       <p className="text-sm md:text-base mb-8 leading-relaxed font-light group-hover:text-slate-700 grow transition-colors duration-300">
                         {service.description}
                       </p>
-                      <a
-                        href="#"
-                        className="inline-flex items-center text-[#74B4D9] text-sm font-semibold hover:text-[#10367D] transition-all duration-300 group-hover:text-[#10367D] group-hover:translate-x-1 mt-auto"
-                      >
-                        {service.link} <span className="ml-2">&gt;&gt;</span>
-                      </a>
+                      <div className="mt-auto">
+                        <a
+                          href="#"
+                          className="inline text-[#74B4D9] text-sm font-semibold hover:text-[#10367D] transition-all duration-300 group-hover:text-[#10367D] whitespace-nowrap"
+                        >
+                          {service.link} <span className="ml-1">&gt;&gt;</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

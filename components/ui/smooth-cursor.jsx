@@ -40,16 +40,15 @@ export function SmoothCursor() {
       }
       last.current = { x: cx, y: cy };
 
-      // detect interactive targets (exclude only images, not cards)
+      // detect interactive targets
       const t = e.target;
       const interactive = 
         t.closest("a") || 
         t.closest("button") || 
         t.closest("[role=button]") ||
-        (t.classList.contains("cursor-pointer") ? t : null) ||
         (t.dataset.cursor === "hover" ? t : null);
       
-      // Exclude only images and elements containing images (not portfolio cards)
+      // Exclude images
       const isExcluded = interactive && (
         interactive.querySelector("img") ||
         interactive.tagName === "IMG"
