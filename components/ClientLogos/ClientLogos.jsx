@@ -2,62 +2,15 @@
 
 import { clientLogos } from '@/data/clientLogos';
 import Image from 'next/image';
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from '@/registry/magicui/scroll-based-velocity';
 
 export default function ClientLogos() {
-  // Duplicate logos for seamless infinite loop
-  const duplicatedLogos = [...clientLogos, ...clientLogos];
-
   return (
-    <>
-      <style jsx>{`
-        @keyframes scrollLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scrollRight {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .marquee-left {
-          animation: scrollLeft 40s linear infinite;
-        }
-
-        .marquee-right {
-          animation: scrollRight 40s linear infinite;
-        }
-
-        .marquee-container:hover .marquee-left,
-        .marquee-container:hover .marquee-right {
-          animation-play-state: paused;
-        }
-
-        @media (max-width: 768px) {
-          .marquee-left,
-          .marquee-right {
-            animation-duration: 50s;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .marquee-left,
-          .marquee-right {
-            animation-duration: 30s;
-          }
-        }
-      `}</style>
-
-      <section data-theme="light" className="bg-white py-4  overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+    <section data-theme="light" className="bg-white py-16 md:py-20 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
           {/* Section Heading */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <h2 className="text-xs md:text-sm text-gray-400 uppercase tracking-[0.3em] font-urbanist">
@@ -65,56 +18,54 @@ export default function ClientLogos() {
             </h2>
           </div>
 
-          {/* Marquee Rows Container */}
-          <div className="space-y-8 md:space-y-12 lg:space-y-16">
-            {/* First Row - Scrolling Left */}
-            <div className="marquee-container overflow-hidden">
-              <div className="marquee-left flex items-center">
-                {duplicatedLogos.map((logo, index) => (
-                  <div
-                    key={`left-${logo.id}-${index}`}
-                    className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12 transition-all duration-300"
-                  >
-                    {logo.website ? (
-                      <a
-                        href={logo.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block group"
-                      >
-                        <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                          <Image
-                            src={logo.logo}
-                            alt={`${logo.name} - ProCraft client logo | Digital agency Dubai`}
-                            fill
-                            className="object-contain"
-                            sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
-                          />
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+          {/* Scroll-Velocity Logo Rows */}
+          <ScrollVelocityContainer className="w-full">
+            {/* First Row - Scroll down=right, up=left */}
+            <ScrollVelocityRow baseVelocity={0.7} direction={1} className="py-4 md:py-6">
+              {clientLogos.map((logo) => (
+                <div
+                  key={logo.id}
+                  className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
+                >
+                  {logo.website ? (
+                    <a
+                      href={logo.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                         <Image
                           src={logo.logo}
-                          alt={logo.name}
+                          alt={`${logo.name} - ProCraft client logo | Digital agency Dubai`}
                           fill
                           className="object-contain"
                           sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
                         />
                       </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+                    </a>
+                  ) : (
+                    <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                      <Image
+                        src={logo.logo}
+                        alt={logo.name}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </ScrollVelocityRow>
 
-            {/* Second Row - Scrolling Right (Hidden on Mobile) */}
-            <div className="marquee-container overflow-hidden hidden md:block">
-              <div className="marquee-right flex items-center">
-                {duplicatedLogos.map((logo, index) => (
+            {/* Second Row - Scroll down=left, up=right (OPPOSITE) (Hidden on Mobile) */}
+            <div className="hidden md:block">
+              <ScrollVelocityRow baseVelocity={0.7} direction={-1} className="py-4 md:py-6">
+                {clientLogos.map((logo) => (
                   <div
-                    key={`right-${logo.id}-${index}`}
-                    className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12 transition-all duration-300"
+                    key={logo.id}
+                    className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
                   >
                     {logo.website ? (
                       <a
@@ -146,11 +97,14 @@ export default function ClientLogos() {
                     )}
                   </div>
                 ))}
-              </div>
+              </ScrollVelocityRow>
             </div>
-          </div>
+          </ScrollVelocityContainer>
         </div>
+
+        {/* Edge Fade Gradients */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 md:w-1/6 bg-gradient-to-r from-white to-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 md:w-1/6 bg-gradient-to-l from-white to-transparent"></div>
       </section>
-    </>
   );
 }

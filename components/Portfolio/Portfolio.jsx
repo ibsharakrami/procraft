@@ -118,7 +118,7 @@ export default function Portfolio() {
 
 	return (
 		<section data-theme="light" className='relative bg-white py-16 md:py-20 '>
-			<div className='mx-auto max-w-7xl px-6 md:px-8 lg:px-12'>
+			<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
 				{/* Background accents */}
 				<div className='pointer-events-none absolute inset-0 -z-10'>
 					<div className='absolute left-0 top-0 h-80 w-2/3 bg-gradient-to-b from-transparent to-gray-50/50' />

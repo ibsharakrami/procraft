@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(taskkill:*)",
+      "Bash(npm run dev:*)",
+      "WebSearch",
+      "WebFetch(domain:motion.dev)",
+      "WebFetch(domain:magicui.design)",
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

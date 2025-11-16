@@ -62,8 +62,8 @@ const ServicesSection = () => {
         {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-500 opacity-90" /> */}
 
         {/* Top content - "How can we Help?" - respects grid lines */}
-        <div className="max-w-7xl mx-auto py-16  ">
-          <div className="flex flex-col md:flex-row  md:items-center items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto py-16 px-6 md:px-[96px]">
+          <div className="flex flex-col md:flex-row md:items-center items-center justify-between gap-8">
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white">
                 How can we <span className="text-white font-bold">Help?</span>
