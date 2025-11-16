@@ -188,20 +188,21 @@ export default function Navigation() {
 							<div className='flex flex-col justify-center'>
 								<nav className='space-y-6  md:pl-20 lg:pl-56'>
 									{menuLinks.map((link, index) => (
-										<Link
-											key={link.href}
-											href={link.href}
-											onClick={() => setIsMenuOpen(false)}
-											className='block text-white text-3xl md:text-4xl lg:text-5xl font-bold hover:text-[#74B4D9] transition-colors leading-tight'
-											style={{
-												animationDelay: `${index * 0.1}s`,
-												animation: isMenuOpen
-													? 'slideIn 0.5s ease-out forwards'
-													: 'none',
+										<div key={link.href} className='block'>
+											<Link
+												href={link.href}
+												onClick={() => setIsMenuOpen(false)}
+												className='inline-block text-white text-3xl md:text-4xl lg:text-5xl font-bold hover:text-[#74B4D9] transition-colors leading-tight'
+												style={{
+													animationDelay: `${index * 0.1}s`,
+													animation: isMenuOpen
+														? 'slideIn 0.5s ease-out forwards'
+														: 'none',
 											}}
 										>
 											{link.label}
 										</Link>
+										</div>
 									))}
 								</nav>
 							</div>
@@ -215,18 +216,22 @@ export default function Navigation() {
 									<p className='text-white/80 text-sm leading-relaxed'>
 										{contactInfo.address}
 									</p>
-									<a
-										href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-										className='text-white/80 hover:text-[#74B4D9] transition-colors text-sm block mt-2'
-									>
-										{contactInfo.phone}
-									</a>
-									<a
-										href={`mailto:${contactInfo.email}`}
-										className='text-white/80 hover:text-[#74B4D9] transition-colors text-sm block mt-1'
-									>
-										{contactInfo.email}
-									</a>
+									<div className='mt-2'>
+										<a
+											href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+											className='text-white/80 hover:text-[#74B4D9] transition-colors text-sm inline-block'
+										>
+											{contactInfo.phone}
+										</a>
+									</div>
+									<div className='mt-1'>
+										<a
+											href={`mailto:${contactInfo.email}`}
+											className='text-white/80 hover:text-[#74B4D9] transition-colors text-sm inline-block'
+										>
+											{contactInfo.email}
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
