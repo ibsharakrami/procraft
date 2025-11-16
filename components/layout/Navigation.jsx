@@ -84,67 +84,64 @@ export default function Navigation() {
 				</button>
 			</div>
 
-			{/* Vertical Text - Left Side - Desktop Only */}
-			<div
-				className={`hidden md:block fixed left-[25px] md:left-[28px] top-[60px] z-50 pointer-events-none transition-opacity duration-500 ${
-					isMenuOpen ? 'opacity-0' : 'opacity-100'
-				}`}
+		{/* Vertical Text - Left Side - Desktop Only */}
+		<div
+			className={`hidden md:block fixed left-[25px] md:left-[28px] top-[60px] z-50 pointer-events-none transition-opacity duration-500 ${
+				isMenuOpen ? 'opacity-0' : 'opacity-100'
+			}`}
+			style={{ mixBlendMode: 'difference' }}
+		>
+			<Link
+				href='/'
+				className='text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto text-white hover:opacity-70 transition-all duration-300 font-light'
+				onClick={() => setIsMenuOpen(false)}
 			>
-				<Link
-					href='/'
-					className={`text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto hover:text-[#74B4D9] transition-all duration-300 font-light ${topTheme === 'dark' ? 'text-white' : 'text-[#10367D]'}`}
-					onClick={() => setIsMenuOpen(false)}
+				procraft
+			</Link>
+		</div>			{/* Scroll Indicator - Bottom Left - Desktop Only */}
+		<div
+			className={`hidden md:block fixed left-[25px] md:left-[28px] bottom-[50px] z-50 pointer-events-none transition-opacity duration-500 ${
+				isMenuOpen ? 'opacity-0' : 'opacity-100'
+			}`}
+			style={{ mixBlendMode: 'difference' }}
+		>
+			<div className='flex flex-col items-center gap-2'>
+				<span
+					className='text-[17px] md:text-[18px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300 text-white/90'
 				>
-					procraft
-				</Link>
-			</div>
-
-			{/* Scroll Indicator - Bottom Left - Desktop Only */}
-			<div
-				className={`hidden md:block fixed left-[25px] md:left-[28px] bottom-[50px] z-50 pointer-events-none transition-opacity duration-500 ${
-					isMenuOpen ? 'opacity-0' : 'opacity-100'
-				}`}
-			>
-				<div className='flex flex-col items-center gap-2'>
-					<span
-						className={`text-[17px] md:text-[18px] tracking-[0.3em] [writing-mode:vertical-rl] rotate-180 font-extralight transition-colors duration-300 ${bottomTheme === 'dark' ? 'text-white/90' : 'text-[#10367D]/90'}`}
-					>
-						scroll
-					</span>
+					scroll
+				</span>
+				<div
+					className='w-[2px] h-20 md:h-24 relative mt-2 transition-colors duration-300 bg-white/20'
+				>
 					<div
-						className={`w-[2px] h-20 md:h-24 relative mt-2 transition-colors duration-300 ${bottomTheme === 'dark' ? 'bg-white/20' : 'bg-[#10367D]/20'}`}
-					>
-						<div
-							className={`w-[6px] h-[6px] rounded-full absolute -left-[2px] top-0 animate-scroll-dot transition-colors duration-300 ${bottomTheme === 'dark' ? 'bg-white/60' : 'bg-[#10367D]/60'}`}
-						></div>
-					</div>
+						className='w-[6px] h-[6px] rounded-full absolute -left-[2px] top-0 animate-scroll-dot transition-colors duration-300 bg-white/60'
+					></div>
 				</div>
 			</div>
-
-			{/* Hamburger Menu Button - Left Side - Desktop Only */}
-			<div
-				className={`hidden md:block fixed left-[20px] md:left-[24px] top-[50%] -translate-y-1/2 z-50 transition-opacity duration-500 ${
-					isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
-				}`}
+	</div>			{/* Hamburger Menu Button - Left Side - Desktop Only */}
+		<div
+			className={`hidden md:block fixed left-[20px] md:left-[24px] top-[50%] -translate-y-1/2 z-50 transition-opacity duration-500 ${
+				isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+			}`}
+			style={{ mixBlendMode: 'difference' }}
+		>
+			<button
+				onClick={() => setIsMenuOpen(!isMenuOpen)}
+				className='flex flex-col gap-[8px] p-1 hover:opacity-70 transition-opacity cursor-pointer'
+				aria-label='Toggle menu'
 			>
-				<button
-					onClick={() => setIsMenuOpen(!isMenuOpen)}
-					className='flex flex-col gap-[8px] p-1 hover:opacity-70 transition-opacity cursor-pointer'
-					aria-label='Toggle menu'
-				>
-					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
-					></span>
-					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] -ml-[5px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
-					></span>
-					<span
-						className={`block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 ${middleTheme === 'dark' ? 'bg-white/90' : 'bg-[#10367D]/90'}`}
-					></span>
-				</button>
-			</div>
-
-			{/* Full-Screen Menu Overlay */}
+				<span
+					className='block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 bg-white/90'
+				></span>
+				<span
+					className='block h-[1px] w-[30px] md:w-[30px] -ml-[5px] transition-colors duration-300 bg-white/90'
+				></span>
+				<span
+					className='block h-[1px] w-[30px] md:w-[30px] transition-colors duration-300 bg-white/90'
+				></span>
+			</button>
+		</div>			{/* Full-Screen Menu Overlay */}
 			<div
 				className={`fixed inset-0 bg-[#10367D] z-40 transition-all duration-500 ${
 					isMenuOpen

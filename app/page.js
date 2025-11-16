@@ -140,33 +140,34 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Services Text - Positioned at bottom */}
-        <div className="absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full">
-          <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
-            <div className="flex flex-col gap-2">
-              <HyperText
-                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-                duration={600}
-              >
-                STRATEGIC CONSULTING
-              </HyperText>
-              <HyperText
-                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-                duration={600}
-              >
-                CREATIVE DESIGN
-              </HyperText>
-              <HyperText
-                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-                duration={600}
-              >
-                TECHNICAL EXCELLENCE
-              </HyperText>
-            </div>
+      {/* Services Text - Positioned at bottom */}
+      <div className="absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
+          <div className="flex flex-col gap-2">
+            <HyperText
+              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+              style={{ wordSpacing: '0.3em' }}
+              duration={600}
+            >
+              STRATEGIC&nbsp;CONSULTING
+            </HyperText>
+            <HyperText
+              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+              style={{ wordSpacing: '0.3em' }}
+              duration={600}
+            >
+              CREATIVE&nbsp;DESIGN
+            </HyperText>
+            <HyperText
+              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+              style={{ wordSpacing: '0.3em' }}
+              duration={600}
+            >
+              TECHNICAL&nbsp;EXCELLENCE
+            </HyperText>
           </div>
         </div>
-
-        {/* Scroll Indicator - Bottom Center (Mobile) */}
+      </div>        {/* Scroll Indicator - Bottom Center (Mobile) */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce md:hidden">
           <svg
             className="w-6 h-6 text-white/70"
