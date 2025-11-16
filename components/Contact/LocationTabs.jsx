@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function LocationTabs() {
   return (
     <section data-theme="light" className="bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-[83px] md:px-[100px] lg:px-[110px]">
+      <div className="max-w-7xl mx-auto px-6 md:px-[100px] lg:px-[110px]">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

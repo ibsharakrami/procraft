@@ -39,10 +39,10 @@ export default function OfficeInfo() {
   return (
     <div className="relative h-full bg-white">
       {/* Blue Accent Line */}
-      <div className="absolute left-[83px] top-0 bottom-0 w-1 bg-[#10367D]"></div>
+      <div className="absolute left-[83px] top-0 bottom-0 w-1 bg-[#10367D] hidden md:block"></div>
 
       {/* Content */}
-      <div className="p-8 md:p-12 lg:p-16 pl-[100px] md:pl-[116px] lg:pl-[130px]">
+      <div className="p-8 md:p-12 lg:p-16 pl-6 md:pl-[116px] lg:pl-[130px]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

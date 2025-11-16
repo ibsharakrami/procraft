@@ -37,7 +37,7 @@ export default function ContactHeroEdirect() {
       </motion.div>
 
       {/* Center Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-[83px] md:px-[100px] lg:px-[110px] text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-[100px] lg:px-[110px] text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

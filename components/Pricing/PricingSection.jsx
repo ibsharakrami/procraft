@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { pricingPackages } from '@/data/pricingData';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function PricingSection() {
 	const [activeIndex, setActiveIndex] = useState(1); // Start with middle card (Enterprise)
@@ -331,9 +332,8 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					{/* Price */}
 					<div className='mb-2 md:mb-2'>
 						<span className='text-4xl md:text-5xl font-bold text-gray-900'>
-							${pkg.price}
+							AED {pkg.price}
 						</span>
-						<span className='text-base md:text-lg text-gray-600'>{pkg.priceLabel}</span>
 					</div>
 
 					{/* Period */}
@@ -345,6 +345,20 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					<p className='text-sm md:text-sm text-gray-600 leading-relaxed'>
 						{pkg.description}
 					</p>
+				</div>
+
+				{/* Key Features List */}
+				<div className='p-6 md:p-8 pb-4 md:pb-6 border-b border-gray-100'>
+					<ul className='space-y-3'>
+						{pkg.keyFeatures.map((feature, idx) => (
+							<li key={idx} className='flex items-start gap-3'>
+								<svg className='w-5 h-5 text-[#74B4D9] flex-shrink-0 mt-0.5' fill='currentColor' viewBox='0 0 20 20'>
+									<path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
+								</svg>
+								<span className='text-sm text-gray-700 leading-relaxed'>{feature}</span>
+							</li>
+						))}
+					</ul>
 				</div>
 
 				{/* Specs Grid */}
@@ -376,7 +390,7 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					</button>
 
 					{/* View Pricing Link */}
-					<button className='w-full text-sm md:text-sm text-gray-600 hover:text-[#10367D] transition-colors duration-200 flex items-center justify-center gap-2 md:gap-2 group'>
+					<Link href='/pricing' className='w-full text-sm md:text-sm text-gray-600 hover:text-[#10367D] transition-colors duration-200 flex items-center justify-center gap-2 md:gap-2 group'>
 						<span>{pkg.linkText}</span>
 						<svg
 							className='w-4 h-4 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200'
@@ -391,7 +405,7 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 								d='M9 5l7 7-7 7'
 							/>
 						</svg>
-					</button>
+					</Link>
 				</div>
 			</div>
 		);
@@ -424,9 +438,8 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					{/* Price */}
 					<div className='mb-1 md:mb-2'>
 						<span className='text-2xl md:text-5xl font-bold text-gray-900'>
-							${pkg.price}
+							AED {pkg.price}
 						</span>
-						<span className='text-xs md:text-lg text-gray-600'>{pkg.priceLabel}</span>
 					</div>
 
 					{/* Period */}
@@ -435,20 +448,34 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					</p>
 
 					{/* Description */}
-					<p className='text-[10px] md:text-sm text-gray-600 leading-relaxed hidden md:block'>
+					<p className='text-[10px] md:text-sm text-gray-600 leading-relaxed'>
 						{pkg.description}
 					</p>
 				</div>
 
-				{/* Specs Grid */}
-				<div className='p-4 md:p-8 pb-3 md:pb-6'>
-					<div className='flex justify-around gap-2 md:gap-6'>
+				{/* Key Features List */}
+				<div className='p-4 md:p-8 pb-3 md:pb-6 border-b border-gray-100'>
+					<ul className='space-y-2 md:space-y-3'>
+						{pkg.keyFeatures.map((feature, idx) => (
+							<li key={idx} className='flex items-start gap-2 md:gap-3'>
+								<svg className='w-4 h-4 md:w-5 md:h-5 text-[#74B4D9] flex-shrink-0 mt-0.5' fill='currentColor' viewBox='0 0 20 20'>
+									<path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
+								</svg>
+								<span className='text-[10px] md:text-sm text-gray-700 leading-relaxed'>{feature}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				{/* Specs Grid - Hidden on mobile in desktop view */}
+				<div className='hidden md:block p-4 md:p-8 pb-3 md:pb-6'>
+					<div className='flex justify-around gap-2 md:gap-4'>
 						{pkg.specs.map((spec, idx) => (
 							<div key={idx} className='flex flex-col items-center'>
-								<div className='text-[7px] md:text-[9px] font-semibold text-gray-400 uppercase tracking-wide mb-1 md:mb-1.5 whitespace-nowrap'>
+								<div className='text-[8px] md:text-[9px] font-semibold text-gray-400 uppercase tracking-wide mb-1 md:mb-1.5 whitespace-nowrap'>
 									{spec.label}
 								</div>
-								<div className='text-[10px] md:text-sm font-bold text-gray-900 leading-tight text-center'>
+								<div className='text-xs md:text-sm font-bold text-gray-900 leading-tight text-center'>
 									{spec.value}
 								</div>
 							</div>
@@ -469,7 +496,7 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 					</button>
 
 					{/* View Pricing Link */}
-					<button className='w-full text-[9px] md:text-sm text-gray-600 hover:text-[#10367D] transition-colors duration-200 flex items-center justify-center gap-1 md:gap-2 group'>
+					<Link href='/pricing' className='w-full text-[9px] md:text-sm text-gray-600 hover:text-[#10367D] transition-colors duration-200 flex items-center justify-center gap-1 md:gap-2 group'>
 						<span className='hidden md:inline'>{pkg.linkText}</span>
 						<span className='md:hidden'>View pricing</span>
 						<svg
@@ -485,7 +512,7 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 								d='M9 5l7 7-7 7'
 							/>
 						</svg>
-					</button>
+					</Link>
 				</div>
 			</div>
 		</motion.div>
