@@ -113,18 +113,12 @@ export default function TestimonialsCarousel() {
 
 					{/* Right Column - Carousel */}
 					<div 
-						className='relative w-full cursor-grab active:cursor-grabbing select-none'
+						className='relative w-full'
 						onMouseEnter={() => setIsPaused(true)}
 						onMouseLeave={(e) => {
 							setIsPaused(false);
 							handleDragEnd(e);
 						}}
-						onMouseDown={handleDragStart}
-						onMouseMove={handleDragMove}
-						onMouseUp={handleDragEnd}
-						onTouchStart={handleDragStart}
-						onTouchMove={handleDragMove}
-						onTouchEnd={handleDragEnd}
 					>
 						{/* Carousel Wrapper */}
 						<div className='overflow-hidden w-full'>
@@ -142,43 +136,49 @@ export default function TestimonialsCarousel() {
 										className='w-full flex-shrink-0 px-1'
 									>
 										{/* Card */}
-										<div className='border border-gray-800 rounded-3xl p-8 md:p-10 bg-transparent w-full hover:border-[#74B4D9] transition-colors pointer-events-none'>
+										<div 
+											className='border border-gray-800 rounded-3xl p-8 md:p-10 bg-transparent w-full cursor-grab active:cursor-grabbing select-none'
+											onMouseDown={handleDragStart}
+											onMouseMove={handleDragMove}
+											onMouseUp={handleDragEnd}
+											onTouchStart={handleDragStart}
+											onTouchMove={handleDragMove}
+											onTouchEnd={handleDragEnd}
+										>
 											{/* Avatar + Name/Position */}
 											<div className='flex items-center gap-4 mb-6 w-full'>
 												{/* Avatar with Timer Ring */}
-												<div className='relative flex-shrink-0'>
+												<div className='relative flex-shrink-0 w-14 h-14 md:w-16 md:h-16'>
 													{/* SVG Timer Ring */}
-													<svg className='w-14 h-14 md:w-16 md:h-16 -rotate-90 absolute inset-0'>
+													<svg className='absolute inset-0 w-full h-full -rotate-90' viewBox='0 0 64 64'>
 														{/* Background circle */}
 														<circle
-															cx='50%'
-															cy='50%'
-															r='47%'
+															cx='32'
+															cy='32'
+															r='30'
 															fill='none'
-															stroke='#1f1f1f'
+															stroke='#2a2a2a'
 															strokeWidth='2'
 														/>
 														{/* Progress circle */}
 														<circle
-															cx='50%'
-															cy='50%'
-															r='47%'
+															cx='32'
+															cy='32'
+															r='30'
 															fill='none'
 															stroke='#10367D'
 															strokeWidth='2'
-															strokeDasharray={`${2 * Math.PI * 0.47 * 32} ${2 * Math.PI * 0.47 * 32}`}
-															strokeDashoffset={`${2 * Math.PI * 0.47 * 32 * (1 - progress / 100)}`}
+															strokeDasharray={`${2 * Math.PI * 30}`}
+															strokeDashoffset={`${2 * Math.PI * 30 * (1 - progress / 100)}`}
 															strokeLinecap='round'
-															className='transition-all duration-100 ease-linear'
 															style={{
-																strokeDasharray: `${2 * Math.PI * (testimonial ? 38 : 30)}`,
-																strokeDashoffset: `${2 * Math.PI * (testimonial ? 38 : 30) * (1 - progress / 100)}`
+																transition: 'stroke-dashoffset 0.1s linear'
 															}}
 														/>
 													</svg>
 													
 													{/* Avatar Image */}
-													<div className='w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-gray-700'>
+													<div className='absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full overflow-hidden'>
 														<Image
 															src={testimonial.avatar}
 															alt={testimonial.name}
