@@ -1,5 +1,6 @@
 import React from "react";
 import { Code, Layout, Palette, Smartphone, Server, Database, Cpu } from "lucide-react";
+import ServicesHero from "@/components/Services/ServicesHero";
 
 export const metadata = {
   title: 'Our Services - Digital Solutions',
@@ -80,30 +81,13 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-black ">
-      <div className="">
-           <section data-theme="light" className=" bg-white mx-auto px-8 md:px-12 pb-2 text-center">
-          {/* Header */}
-          <h2 className="text-4xl md:text-5xl font-semibold text-black py-12 ">Our Expertise</h2>
+    <>
+      {/* Hero Section */}
+      <ServicesHero />
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl font-medium tracking-wider text-black mb-8 uppercase">
-            Working side by side with all our UAE clients <br />
-            ensures complete satisfaction
-          </p>
-
-          {/* Description */}
-          <p className="text-base md:text-lg text-black leading-relaxed  max-w-7xl mx-auto mb-16">
-            Being a Dubai based digital media agency we have helped companies throughout the United Arab Emirates
-            realise their potential, in all aspects of digital marketing. We give our clients all the tools to thrive
-            online, helping their business grow whilst increasing their revenues.
-          </p>
-
-          {/* Phone Number */}
-          <div className="absolute top-8 right-8 text-black font-light text-sm">+971 545 866 866</div>
-        </section>
-
-        <section data-theme="dark" className="space-y-4 max-w-7xl mx-auto  w-full">
+      {/* Services Section */}
+      <div className="min-h-screen bg-black">
+        <section data-theme="dark" className="space-y-4 max-w-7xl mx-auto w-full py-12 md:py-16 lg:py-20 px-6 md:px-8">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -157,7 +141,7 @@ const Services = () => {
           ))}
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -15,7 +15,8 @@ export const companyInfo = {
 
 export const aboutHeroContent = {
 	label: 'About ProCraft',
-	heading: 'Where Strategy Meets Creativity',
+	heading: 'Where Strategy Meets',
+	headingHighlight: 'Creativity',
 	subheading: 'Your Partner in Digital Transformation',
 	description:
 		'Based in Dubai\'s Business Bay, we empower businesses across the Middle East with strategic consulting, innovative design, and technology that drives measurable impact.',

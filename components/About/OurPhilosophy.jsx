@@ -38,11 +38,11 @@ export default function OurPhilosophy() {
 					viewport={{ once: true, margin: '-100px' }}
 					className='text-center mb-16 md:mb-20'
 				>
-					<span className='text-xs md:text-sm uppercase tracking-[0.2em] text-gray-400 font-light mb-4 block'>
+					<span className='inline-block text-xs md:text-sm uppercase tracking-[0.2em] text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
 						Our Journey
 					</span>
 					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black font-blatant'>
-						Our Story in 5 Chapters
+						Our Story in <span className='text-[#10367D]'>5 Chapters</span>
 					</h2>
 				</motion.div>
 

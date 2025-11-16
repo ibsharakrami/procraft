@@ -39,11 +39,11 @@ export default function TeamGrid() {
 					viewport={{ once: true, margin: '-100px' }}
 					className='text-center mb-12 md:mb-16'
 				>
-					<span className='text-xs md:text-sm uppercase tracking-wider text-gray-400 font-light mb-4 block'>
+					<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
 						Our Team
 					</span>
 					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black font-blatant'>
-						Meet The Experts
+						Meet The <span className='text-[#10367D]'>Experts</span>
 					</h2>
 				</motion.div>
 

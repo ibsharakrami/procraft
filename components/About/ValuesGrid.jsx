@@ -46,11 +46,11 @@ export default function ValuesGrid() {
 					viewport={{ once: true, margin: '-100px' }}
 					className='text-center mb-16 md:mb-20 lg:mb-24'
 				>
-					<span className='text-xs md:text-sm uppercase tracking-wider text-gray-400 font-light mb-4 block'>
+					<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
 						Core Values
 					</span>
 					<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black font-blatant'>
-						What Drives Us
+						What <span className='text-[#10367D]'>Drives</span> Us
 					</h2>
 				</motion.div>
 
@@ -69,7 +69,7 @@ export default function ValuesGrid() {
 					<div className='lg:hidden absolute left-[30px] md:left-[40px] top-0 bottom-0 w-[2px] bg-[#10367D]/30' />
 
 					{/* Values Timeline Items */}
-					<div className='space-y-16 md:space-y-20 lg:space-y-24'>
+					<div className='space-y-4 md:space-y-6 lg:space-y-0'>
 						{coreValues.map((value, index) => {
 							const IconComponent = iconMap[value.icon];
 							const isEven = index % 2 === 1;

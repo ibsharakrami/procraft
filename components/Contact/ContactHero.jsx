@@ -14,7 +14,7 @@ export default function ContactHero() {
 
   return (
     <section
-      className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#10367D] to-[#0a2454]"
+      className="relative min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#10367D] to-[#0a2454] py-20 md:py-24 lg:py-28"
       data-theme="dark"
     >
       {/* Animated Background Pattern */}
@@ -29,24 +29,24 @@ export default function ContactHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 lg:px-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Label */}
-          <p className="text-[#74B4D9] uppercase tracking-[0.3em] text-xs md:text-sm font-semibold mb-6 font-urbanist">
+          <p className="text-[#74B4D9] uppercase tracking-[0.4em] text-xs md:text-sm font-semibold mb-6 md:mb-8 font-urbanist">
             {heroContent.label}
           </p>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-blatant">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight font-blatant">
             {heroContent.headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-3xl mx-auto mb-10 font-light font-urbanist leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-3xl mx-auto mb-10 md:mb-12 font-light font-urbanist leading-relaxed">
             {heroContent.subheadline}
           </p>
 

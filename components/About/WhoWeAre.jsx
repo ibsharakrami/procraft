@@ -7,7 +7,7 @@ import { companyInfo } from '@/data/aboutData';
 
 export default function WhoWeAre() {
 	return (
-		<section data-theme="light" className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme="dark" className='bg-black py-16 md:py-24 lg:py-32'>
 			<Container>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
 					{/* Text Column */}
@@ -18,17 +18,17 @@ export default function WhoWeAre() {
 						viewport={{ once: true, margin: '-100px' }}
 					>
 						<div className='mb-4'>
-							<span className='text-xs md:text-sm uppercase tracking-wider text-gray-400 font-light'>
+							<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light border-l-4 border-[#74B4D9] pl-4'>
 								Who We Are
 							</span>
 						</div>
-						<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 font-blatant'>
-							Your Strategic Growth Partner
+						<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-blatant'>
+							Your Strategic <span className='text-[#74B4D9]'>Growth</span> Partner
 						</h2>
-						<p className='text-lg md:text-xl text-gray-600 leading-relaxed mb-6'>
+						<p className='text-lg md:text-xl text-gray-300 leading-relaxed mb-6'>
 							{companyInfo.whoWeAre}
 						</p>
-						<p className='text-base md:text-lg text-gray-500 leading-relaxed mb-8'>
+						<p className='text-base md:text-lg text-gray-400 leading-relaxed mb-8'>
 							Since {companyInfo.established}, we've helped businesses of all
 							sizes achieve their digital ambitions through strategic
 							consulting, world-class design, and innovative technology
@@ -36,7 +36,7 @@ export default function WhoWeAre() {
 						</p>
 						<motion.a
 							href='/services'
-							className='inline-flex items-center gap-2 text-[#10367D] hover:text-[#74B4D9] transition-colors font-medium'
+							className='inline-flex items-center gap-2 text-[#74B4D9] hover:text-white transition-colors font-medium'
 							whileHover={{ x: 5 }}
 							transition={{ duration: 0.2 }}
 						>
@@ -55,9 +55,7 @@ export default function WhoWeAre() {
 								/>
 							</svg>
 						</motion.a>
-					</motion.div>
-
-					{/* Image Column */}
+					</motion.div>					{/* Image Column */}
 					<motion.div
 						initial={{ opacity: 0, x: 50 }}
 						whileInView={{ opacity: 1, x: 0 }}
