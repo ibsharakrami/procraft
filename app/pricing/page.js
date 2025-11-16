@@ -2,6 +2,7 @@ import { pricingPackages } from '@/data/pricingData';
 import Link from 'next/link';
 import PricingComparisonTable from '@/components/Pricing/PricingComparisonTable';
 import PricingFAQ from '@/components/Pricing/PricingFAQ';
+import PricingHero from '@/components/Pricing/PricingHero';
 
 export const metadata = {
 	title: 'Pricing Plans | ProCraft Digital Marketing Packages',
@@ -12,31 +13,21 @@ export default function PricingPage() {
 	return (
 		<main className='min-h-screen bg-white'>
 			{/* Hero Section */}
-			<section className='relative bg-gradient-to-br from-[#10367D] to-[#074291] py-20 md:py-28'>
-				<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
-					<div className='text-center'>
-						<h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6'>
-							Choose Your Perfect Plan
-						</h1>
-						<p className='text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed'>
-							Transparent pricing for world-class digital marketing services. All packages include high-quality content, dedicated account management, and proven strategies to grow your business.
-						</p>
-					</div>
-				</div>
-			</section>
+			<PricingHero />
 
 			{/* Pricing Cards Overview */}
-			<section className='relative bg-gray-50 py-16 md:py-24'>
+			<section className='relative bg-[#0A1628] py-20 md:py-28 overflow-visible'>
 				<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+					<div className='flex flex-col md:flex-row justify-between gap-8 items-stretch'>
 						{pricingPackages.map((pkg, index) => (
 							<div
 								key={pkg.id}
-								className={`relative bg-white rounded-2xl border-2 p-8 ${
+								className={`relative bg-white rounded-2xl border-2 p-8 pb-8 flex-1 flex flex-col ${
 									pkg.featured 
-										? 'border-[#10367D] shadow-2xl scale-105' 
-										: 'border-gray-200 shadow-lg'
+										? 'border-[#10367D] shadow-2xl md:scale-105 z-10' 
+										: 'border-gray-200 shadow-lg z-0'
 								}`}
+								style={{ minHeight: 'fit-content' }}
 							>
 								{/* Badge */}
 								{pkg.badge && (
@@ -47,51 +38,80 @@ export default function PricingPage() {
 									</div>
 								)}
 
-								{/* Package Header */}
-								<div className='text-center mb-8'>
-									<h2 className='text-2xl font-bold text-gray-900 mb-4'>
-										{pkg.name}
-									</h2>
-									<div className='mb-4'>
-										<span className='text-5xl font-bold text-gray-900'>
-											AED {pkg.price}
-										</span>
+								{/* Top Content */}
+								<div className='flex-grow'>
+									{/* Package Header */}
+									<div className='text-center mb-6'>
+										<h2 className='text-2xl font-bold text-gray-900 mb-3'>
+											{pkg.name}
+										</h2>
+										<div className='mb-2'>
+											<span className='text-5xl font-bold text-gray-900'>
+												AED {pkg.price}
+											</span>
+										</div>
+										<p className='text-sm text-[#10367D] font-medium mb-3'>
+											{pkg.period}
+										</p>
+										<p className='text-sm text-gray-600 leading-relaxed px-2'>
+											{pkg.description}
+										</p>
 									</div>
-									<p className='text-sm text-[#10367D] font-medium mb-4'>
-										{pkg.period}
-									</p>
-									<p className='text-sm text-gray-600 leading-relaxed'>
-										{pkg.description}
-									</p>
-								</div>
 
-								{/* Key Features */}
-								<div className='mb-8'>
-									<h3 className='text-sm font-bold text-gray-900 uppercase tracking-wide mb-4'>
-										Key Features
-									</h3>
-									<ul className='space-y-3'>
-										{pkg.keyFeatures.map((feature, idx) => (
-											<li key={idx} className='flex items-start gap-3'>
-												<svg className='w-5 h-5 text-[#74B4D9] flex-shrink-0 mt-0.5' fill='currentColor' viewBox='0 0 20 20'>
-													<path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
-												</svg>
-												<span className='text-sm text-gray-700'>{feature}</span>
-											</li>
-										))}
-									</ul>
+									{/* Key Features */}
+									<div className='mb-6'>
+										<ul className='space-y-2.5'>
+											{pkg.keyFeatures.map((feature, idx) => (
+												<li key={idx} className='flex items-start gap-2.5 text-sm text-gray-700'>
+													<svg className='w-5 h-5 text-[#74B4D9] flex-shrink-0 mt-0.5' fill='currentColor' viewBox='0 0 20 20'>
+														<path fillRule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clipRule='evenodd' />
+													</svg>
+													<span>{feature}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+
+									{/* Specs */}
+									<div className='grid grid-cols-3 gap-3 py-4 border-t border-b border-gray-200'>
+										<div className='text-center'>
+											<p className='text-xs text-gray-500 uppercase tracking-wide mb-1'>{pkg.specs[0].label}</p>
+											<p className='text-base font-bold text-gray-900'>{pkg.specs[0].value.split(' ')[0]}</p>
+											<p className='text-xs text-gray-600'>{pkg.specs[0].value.split(' ').slice(1).join(' ')}</p>
+										</div>
+										<div className='text-center'>
+											<p className='text-xs text-gray-500 uppercase tracking-wide mb-1'>{pkg.specs[1].label}</p>
+											<p className='text-base font-bold text-gray-900'>{pkg.specs[1].value.split(' ')[0]}</p>
+											<p className='text-xs text-gray-600'>{pkg.specs[1].value.split(' ').slice(1).join(' ')}</p>
+										</div>
+										<div className='text-center'>
+											<p className='text-xs text-gray-500 uppercase tracking-wide mb-1'>{pkg.specs[2].label}</p>
+											<p className='text-base font-bold text-gray-900'>{pkg.specs[2].value}</p>
+										</div>
+									</div>
 								</div>
 
 								{/* CTA Button */}
-								<button
-									className={`w-full py-3.5 px-6 rounded-lg font-semibold transition-all duration-300 ${
-										pkg.featured
-											? 'bg-[#10367D] text-white hover:bg-[#0a2454] shadow-lg'
-											: 'bg-gray-900 text-white hover:bg-gray-800'
-									}`}
-								>
-									{pkg.buttonText}
-								</button>
+								<div className='mt-6 pt-2 flex-shrink-0'>
+									<button
+										className={`w-full py-3.5 px-6 rounded-lg font-semibold transition-all duration-300 mb-3 ${
+											pkg.featured
+												? 'bg-[#10367D] text-white hover:bg-[#0a2454] shadow-lg'
+												: 'bg-gray-900 text-white hover:bg-gray-800'
+										}`}
+									>
+										{pkg.buttonText}
+									</button>
+									<Link 
+										href='#comparison-table'
+										className='flex items-center justify-center gap-1 text-sm text-gray-600 hover:text-[#10367D] transition-colors'
+									>
+										View full package details
+										<svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+											<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
+										</svg>
+									</Link>
+								</div>
 							</div>
 						))}
 					</div>

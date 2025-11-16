@@ -52,29 +52,32 @@ export default function PricingFAQ() {
 							key={index}
 							className='bg-white rounded-xl border-2 border-gray-200 overflow-hidden transition-all hover:border-[#10367D]'
 						>
-							<button
-								onClick={() => toggleFAQ(index)}
-								className='w-full px-6 py-5 flex items-center justify-between text-left transition-all'
-							>
-								<span className='text-lg font-semibold text-gray-900 pr-8'>
+							<div className='px-6 py-5 flex items-center justify-between'>
+								<h3 className='text-lg font-semibold text-gray-900 pr-8 flex-1'>
 									{faq.question}
-								</span>
-								<svg
-									className={`w-6 h-6 text-[#10367D] flex-shrink-0 transition-transform duration-300 ${
-										openIndex === index ? 'rotate-180' : ''
-									}`}
-									fill='none'
-									stroke='currentColor'
-									viewBox='0 0 24 24'
+								</h3>
+								<button
+									onClick={() => toggleFAQ(index)}
+									className='flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all'
+									aria-label='Toggle answer'
 								>
-									<path
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth={2}
-										d='M19 9l-7 7-7-7'
-									/>
-								</svg>
-							</button>
+									<svg
+										className={`w-6 h-6 text-[#10367D] transition-transform duration-300 ${
+											openIndex === index ? 'rotate-180' : ''
+										}`}
+										fill='none'
+										stroke='currentColor'
+										viewBox='0 0 24 24'
+									>
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth={2}
+											d='M19 9l-7 7-7-7'
+										/>
+									</svg>
+								</button>
+							</div>
 							<div
 								className={`overflow-hidden transition-all duration-300 ease-in-out ${
 									openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'

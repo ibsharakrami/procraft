@@ -218,8 +218,8 @@ export default function PricingSection() {
 						</div>
 
 						{/* Mobile/Tablet: Carousel with stacking */}
-						<div 
-							className='xl:hidden relative h-[520px] overflow-hidden select-none'
+						<div
+							className='xl:hidden relative h-[700px] overflow-hidden select-none pb-2'
 							style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
 							onMouseEnter={() => setIsAutoPlaying(false)}
 							onMouseLeave={() => {
@@ -280,7 +280,7 @@ export default function PricingSection() {
 							</div>
 
 							{/* Carousel Indicators */}
-							<div className='absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2'>
+							<div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-[10]'>
 								{pricingPackages.map((_, index) => (
 									<button
 										key={index}

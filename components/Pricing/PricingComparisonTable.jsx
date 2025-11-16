@@ -232,14 +232,14 @@ export default function PricingComparisonTable() {
 	};
 
 	return (
-		<section className='relative bg-white py-16 md:py-24'>
+		<section id='comparison-table' className='relative bg-white py-16 md:py-24'>
 			<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
 				{/* Section Header */}
-				<div className='text-center mb-12'>
-					<h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+				<div className='text-center mb-16'>
+					<h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
 						Complete Feature Comparison
 					</h2>
-					<p className='text-lg text-gray-600 max-w-3xl mx-auto'>
+					<p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
 						Compare all features across our packages to find the perfect fit for your business needs.
 					</p>
 				</div>
