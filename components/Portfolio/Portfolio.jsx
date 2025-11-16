@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 import { caseStudies } from '@/data/caseStudies';
 
 // Motion variants
@@ -69,45 +70,44 @@ function TiltWrapper({ children, href }) {
 function ProjectCard({ project, className }) {
 	return (
 		<motion.article variants={cardVariants} className={classNames('relative', className)}>
-			<TiltWrapper href={`/work/${project.slug}`}>
-				<div className='group transition-all duration-300'>
-					{/* Image Container - Clean, no overlay */}
-					<div className='relative overflow-hidden mb-8'>
-						<img
-							src={project.thumbnailImage}
-							alt={`${project.title} - ${project.tagline} | ${project.category.join(', ')} project by ProCraft Dubai`}
-							className='w-full h-auto object-cover'
-							loading='lazy'
-						/>
-					</div>
+			<div className='transition-all duration-300'>
+				{/* Image Container - Reduced size */}
+				<div className='relative overflow-hidden mb-6'>
+					<img
+						src={project.thumbnailImage}
+						alt={`${project.title} - ${project.tagline} | ${project.category.join(', ')} project by ProCraft Dubai`}
+						className='w-full h-[300px] md:h-[400px] object-cover'
+						loading='lazy'
+					/>
+				</div>
 
-					{/* Title - Always visible below image */}
-					<div>
-						<h3 className='text-2xl md:text-3xl font-bold text-black group-hover:text-[#10367D] transition-colors duration-300'>
-							{project.title}
-						</h3>
-					</div>
+				{/* Title - Always visible below image */}
+				<div className='mb-4'>
+					<h3 className='text-2xl md:text-3xl font-bold text-black'>
+						{project.title}
+					</h3>
+				</div>
 
-					{/* Fixed-height Hover Content Area - No expansion, just opacity fade */}
-					<div className='h-20 md:h-24 relative mt-3'>
-						<div className='opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out'>
-							{/* Row 1: View case study link (right aligned) */}
-							<div className='flex justify-end mb-2'>
-								<span className='inline-flex items-center gap-2 text-[#10367D] text-xs md:text-sm font-medium hover:text-[#74B4D9] transition-colors duration-300 whitespace-nowrap'>
-									View case study <span className='text-xs'>››</span>
-								</span>
-							</div>
-
-							{/* Row 2: Service Tags */}
-							{project.services?.length ? (
-								<p className='text-gray-600 text-xs md:text-sm uppercase tracking-[0.15em] font-light'>
-									{project.services.join(', ')}
-								</p>
-							) : null}
-						</div>
+				{/* Always visible content - No hover needed */}
+				<div className='space-y-3'>
+					{/* Service Tags - Always visible */}
+					{project.services?.length ? (
+						<p className='text-gray-600 text-xs md:text-sm uppercase tracking-[0.15em] font-light'>
+							{project.services.join(', ')}
+						</p>
+					) : null}
+					
+					{/* View case study button - Only clickable element */}
+					<div className='flex justify-start'>
+						<Link 
+							href={`/work/${project.slug}`}
+							className='inline-flex items-center gap-2 text-[#10367D] text-sm md:text-base font-medium hover:text-[#74B4D9] transition-colors duration-300 whitespace-nowrap'
+						>
+							View case study <span className='text-sm'>››</span>
+						</Link>
 					</div>
 				</div>
-			</TiltWrapper>
+			</div>
 		</motion.article>
 	);
 }
