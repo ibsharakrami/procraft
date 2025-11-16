@@ -157,7 +157,7 @@ export default function TestimonialsCarousel() {
 															cy='32'
 															r='30'
 															fill='none'
-															stroke='#2a2a2a'
+															stroke='#3a3a3a'
 															strokeWidth='2'
 														/>
 														{/* Progress circle */}
@@ -166,7 +166,7 @@ export default function TestimonialsCarousel() {
 															cy='32'
 															r='30'
 															fill='none'
-															stroke='#10367D'
+															stroke='#74B4D9'
 															strokeWidth='2'
 															strokeDasharray={`${2 * Math.PI * 30}`}
 															strokeDashoffset={`${2 * Math.PI * 30 * (1 - progress / 100)}`}
@@ -178,7 +178,7 @@ export default function TestimonialsCarousel() {
 													</svg>
 													
 													{/* Avatar Image */}
-													<div className='absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full overflow-hidden'>
+													<div className='absolute inset-[4px] w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full overflow-hidden'>
 														<Image
 															src={testimonial.avatar}
 															alt={testimonial.name}
