@@ -80,33 +80,96 @@ export default function PricingSection() {
 	const getCardTransform = (cardIndex) => {
 		const diff = (cardIndex - activeIndex + pricingPackages.length) % pricingPackages.length;
 		
+		// Calculate drag progress (0 to 1) based on threshold
+		const dragProgress = Math.min(Math.abs(dragOffset) / 100, 1); // 100px for full transition preview
+		const dragDirection = dragOffset > 0 ? 1 : -1; // 1 for right, -1 for left
+		
+		// Base positions for center, right, and left
+		const centerPos = { x: 0, scale: 1, opacity: 1, blur: 0, zIndex: 3 };
+		const rightPos = { x: 150, scale: 0.9, opacity: 0.6, blur: 2, zIndex: 2 };
+		const leftPos = { x: -150, scale: 0.9, opacity: 0.6, blur: 2, zIndex: 1 };
+		
+		// Interpolate between positions based on drag
+		const lerp = (start, end, progress) => start + (end - start) * progress;
+		
 		if (diff === 0) {
-			// Center (Active) Card
+			// Center (Active) Card - moves towards left/right based on drag
+			if (!isDragging || dragOffset === 0) return centerPos;
+			
+			const targetPos = dragDirection > 0 ? rightPos : leftPos;
 			return {
-				x: 0,
-				scale: 1,
-				opacity: 1,
-				blur: 0,
+				x: lerp(centerPos.x, targetPos.x, dragProgress),
+				scale: lerp(centerPos.scale, targetPos.scale, dragProgress),
+				opacity: lerp(centerPos.opacity, targetPos.opacity, dragProgress),
+				blur: lerp(centerPos.blur, targetPos.blur, dragProgress),
 				zIndex: 3
 			};
 		} else if (diff === 1) {
-			// Right Card
-			return {
-				x: 150,
-				scale: 0.9,
-				opacity: 0.6,
-				blur: 2, // Reduced from 4px to 2px
-				zIndex: 2
-			};
+			// Right Card - moves to center when dragging left
+			if (!isDragging || dragOffset === 0) return rightPos;
+			
+			if (dragDirection < 0) {
+				// Dragging left, this card moves to center
+				return {
+					x: lerp(rightPos.x, centerPos.x, dragProgress),
+					scale: lerp(rightPos.scale, centerPos.scale, dragProgress),
+					opacity: lerp(rightPos.opacity, centerPos.opacity, dragProgress),
+					blur: lerp(rightPos.blur, centerPos.blur, dragProgress),
+					zIndex: dragProgress > 0.5 ? 3 : 2
+				};
+			} else {
+				// Dragging right, this card goes further right (exits to make room)
+				return {
+					x: lerp(rightPos.x, 300, dragProgress),
+					scale: lerp(rightPos.scale, 0.8, dragProgress),
+					opacity: lerp(rightPos.opacity, 0, dragProgress),
+					blur: lerp(rightPos.blur, 4, dragProgress),
+					zIndex: 1
+				};
+			}
+		} else if (diff === pricingPackages.length - 1) {
+			// Left Card (the card before the active one, wrapping around)
+			if (!isDragging || dragOffset === 0) return leftPos;
+			
+			if (dragDirection > 0) {
+				// Dragging right, this card moves to center
+				return {
+					x: lerp(leftPos.x, centerPos.x, dragProgress),
+					scale: lerp(leftPos.scale, centerPos.scale, dragProgress),
+					opacity: lerp(leftPos.opacity, centerPos.opacity, dragProgress),
+					blur: lerp(leftPos.blur, centerPos.blur, dragProgress),
+					zIndex: dragProgress > 0.5 ? 3 : 1
+				};
+			} else {
+				// Dragging left, this card goes further left (exits to make room)
+				return {
+					x: lerp(leftPos.x, -300, dragProgress),
+					scale: lerp(leftPos.scale, 0.8, dragProgress),
+					opacity: lerp(leftPos.opacity, 0, dragProgress),
+					blur: lerp(leftPos.blur, 4, dragProgress),
+					zIndex: 1
+				};
+			}
 		} else {
-			// Left Card
-			return {
-				x: -150,
-				scale: 0.9,
-				opacity: 0.6,
-				blur: 2, // Reduced from 4px to 2px
-				zIndex: 1
-			};
+			// Hidden cards - position them off screen based on drag direction
+			if (!isDragging || dragOffset === 0) {
+				// Hide by default
+				return { x: 300, scale: 0.8, opacity: 0, blur: 4, zIndex: 0 };
+			}
+			
+			// Only show if they're about to come into view
+			if (diff === 2 && dragDirection < 0) {
+				// Coming from the right when dragging left
+				return {
+					x: lerp(300, rightPos.x, dragProgress),
+					scale: lerp(0.8, rightPos.scale, dragProgress),
+					opacity: lerp(0, rightPos.opacity, dragProgress),
+					blur: lerp(4, rightPos.blur, dragProgress),
+					zIndex: 1
+				};
+			}
+			
+			return { x: 300, scale: 0.8, opacity: 0, blur: 4, zIndex: 0 };
 		}
 	};
 
@@ -193,7 +256,7 @@ export default function PricingSection() {
 											key={pkg.id}
 											className='absolute top-0 left-1/2 w-[80%]'
 											animate={{
-												x: transform.x + dragOffset,
+												x: transform.x,
 												translateX: '-50%',
 												scale: transform.scale,
 												opacity: transform.opacity,
