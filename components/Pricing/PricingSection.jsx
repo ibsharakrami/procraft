@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react';
 export default function PricingSection() {
 	const [activeIndex, setActiveIndex] = useState(1); // Start with middle card (Enterprise)
 	const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-	const [touchStart, setTouchStart] = useState(0);
-	const [touchEnd, setTouchEnd] = useState(0);
 	const [isMobile, setIsMobile] = useState(false);
 	const [isDragging, setIsDragging] = useState(false);
+	const [startX, setStartX] = useState(0);
+	const [dragOffset, setDragOffset] = useState(0);
 
 	// Detect if mobile/tablet on mount
 	useEffect(() => {
@@ -30,77 +30,50 @@ export default function PricingSection() {
 		
 		const interval = setInterval(() => {
 			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
-		}, 5000); // Slowed down from 3000ms to 5000ms (5 seconds)
+		}, 7000); // Increased from 5000ms to 7000ms (7 seconds)
 		
 		return () => clearInterval(interval);
 	}, [isAutoPlaying, isMobile]);
 
-	// Touch/Mouse handlers for swipe and drag
-	const handleTouchStart = (e) => {
-		setIsAutoPlaying(false);
+	// Navigation functions
+	const nextSlide = () => {
+		setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
+	};
+
+	const prevSlide = () => {
+		setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
+	};
+
+	// Drag handlers
+	const handleDragStart = (e) => {
 		setIsDragging(true);
-		setTouchStart(e.targetTouches[0].clientX);
-	};
-
-	const handleTouchMove = (e) => {
-		setTouchEnd(e.targetTouches[0].clientX);
-	};
-
-	const handleTouchEnd = () => {
-		setIsDragging(false);
-		if (!touchStart || !touchEnd) return;
-		
-		const distance = touchStart - touchEnd;
-		const isLeftSwipe = distance > 50;
-		const isRightSwipe = distance < -50;
-		
-		if (isLeftSwipe) {
-			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
-		}
-		if (isRightSwipe) {
-			setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
-		}
-		
-		// Reset and resume auto-play after 5 seconds
-		setTimeout(() => setIsAutoPlaying(true), 5000);
-	};
-
-	// Mouse handlers for desktop drag
-	const handleMouseDown = (e) => {
 		setIsAutoPlaying(false);
-		setIsDragging(true);
-		setTouchStart(e.clientX);
+		setStartX(e.type.includes('mouse') ? e.pageX : e.touches[0].clientX);
+		setDragOffset(0);
 	};
 
-	const handleMouseMove = (e) => {
+	const handleDragMove = (e) => {
 		if (!isDragging) return;
-		setTouchEnd(e.clientX);
+		const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+		setDragOffset(currentPosition - startX);
 	};
 
-	const handleMouseUp = () => {
+	const handleDragEnd = () => {
 		if (!isDragging) return;
+		
+		const threshold = 50;
+		
+		// If moved more than threshold, change slide
+		if (dragOffset < -threshold) {
+			nextSlide();
+		} else if (dragOffset > threshold) {
+			prevSlide();
+		}
+		
+		// Reset
 		setIsDragging(false);
-		if (!touchStart || !touchEnd) return;
-		
-		const distance = touchStart - touchEnd;
-		const isLeftSwipe = distance > 50;
-		const isRightSwipe = distance < -50;
-		
-		if (isLeftSwipe) {
-			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
-		}
-		if (isRightSwipe) {
-			setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
-		}
-		
-		// Reset and resume auto-play after 5 seconds
-		setTimeout(() => setIsAutoPlaying(true), 5000);
-	};
-
-	const handleMouseLeave = () => {
-		if (isDragging) {
-			setIsDragging(false);
-		}
+		setDragOffset(0);
+		setIsAutoPlaying(true);
 	};
 
 	// Calculate card transform based on position relative to active card
@@ -184,13 +157,17 @@ export default function PricingSection() {
 						<div 
 							className='xl:hidden relative h-[520px] overflow-hidden select-none'
 							style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-							onTouchStart={handleTouchStart}
-							onTouchMove={handleTouchMove}
-							onTouchEnd={handleTouchEnd}
-							onMouseDown={handleMouseDown}
-							onMouseMove={handleMouseMove}
-							onMouseUp={handleMouseUp}
-							onMouseLeave={handleMouseLeave}
+							onMouseEnter={() => setIsAutoPlaying(false)}
+							onMouseLeave={() => {
+								setIsAutoPlaying(true);
+								handleDragEnd();
+							}}
+							onMouseDown={handleDragStart}
+							onMouseMove={handleDragMove}
+							onMouseUp={handleDragEnd}
+							onTouchStart={handleDragStart}
+							onTouchMove={handleDragMove}
+							onTouchEnd={handleDragEnd}
 						>
 							{/* Recommended Badge for Active Card */}
 							{pricingPackages[activeIndex].badge && (
@@ -216,7 +193,7 @@ export default function PricingSection() {
 											key={pkg.id}
 											className='absolute top-0 left-1/2 w-[80%]'
 											animate={{
-												x: transform.x,
+												x: transform.x + dragOffset,
 												translateX: '-50%',
 												scale: transform.scale,
 												opacity: transform.opacity,
@@ -226,7 +203,7 @@ export default function PricingSection() {
 												zIndex: transform.zIndex
 											}}
 											transition={{
-												duration: 0.5,
+												duration: isDragging ? 0 : 0.5,
 												ease: [0.4, 0, 0.2, 1]
 											}}
 										>
