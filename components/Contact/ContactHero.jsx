@@ -14,7 +14,7 @@ export default function ContactHero() {
 
   return (
     <section
-      className="relative min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#10367D] to-[#0a2454] py-20 md:py-24 lg:py-28"
+      className="relative min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#10367D] to-[#0a2454] pt-16 md:pt-0 py-20 md:py-24 lg:py-28"
       data-theme="dark"
     >
       {/* Animated Background Pattern */}
