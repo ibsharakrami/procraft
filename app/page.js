@@ -61,51 +61,52 @@ export default function Home() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 flex items-center min-h-screen">
-          <div className="w-full  ">
+        <div className="relative z-10 flex items-center justify-center min-h-screen w-full">
+          <div className="w-full max-w-7xl mx-auto px-6 md:px-[96px]">
             {/* Small intro text */}
             <div className="">
-              <p className="text-white text-xl px-4 tracking-wide font-normal mb-6">
+              <p className="text-white text-2xl md:text-xl tracking-wide font-normal mb-6">
                 we are procraft
               </p>
             </div>
 
             {/* Main Heading Line 1 */}
             <div>
-              <h1 className="text-white text-3xl px-4  md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
+              <h1 className="text-white text-[42px] sm:text-[50px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
                 A CREATIVE DIGITAL
               </h1>
             </div>
 
             {/* Main Heading Line 2 */}
             <div className="mb-4">
-              <h1 className="text-white text-3xl px-4 sm:text-[50px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
+              <h1 className="text-white text-[42px] sm:text-[50px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
                 GROWTH AGENCY
               </h1>
             </div>
 
             {/* Subheading */}
             <div className="">
-              <p className="text-white px-4 text-sm md:text-base lg:text-lg font-semibold tracking-wide ">
+              <p className="text-white text-base md:text-base lg:text-lg font-semibold tracking-wide ">
                 transforming ideas into digital success stories
               </p>
             </div>
+          </div>
+        </div>
 
-            {/* Services Text - Positioned at bottom */}
-            <div className="absolute bottom-8 px-4  w-auto">
-              <div className="flex flex-col gap-2">
-                <p className="text-white md:text-md text-sm  tracking-[0.15em] leading-relaxed font-semibold uppercase">
-                  STRATEGIC CONSULTING
-                </p>
-                <p className="text-white md:text-md text-sm  tracking-[0.15em] leading-relaxed font-semibold uppercase">
-                  CREATIVE DESIGN
-                </p>
-                <p className="text-white md:text-md text-sm tracking-[0.15em] leading-relaxed font-semibold uppercase">
-                  TECHNICAL EXCELLENCE
-                </p>
-              </div>
+        {/* Services Text - Positioned at bottom */}
+        <div className="absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
+            <div className="flex flex-col gap-2">
+              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+                STRATEGIC CONSULTING
+              </p>
+              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+                CREATIVE DESIGN
+              </p>
+              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+                TECHNICAL EXCELLENCE
+              </p>
             </div>
-
           </div>
         </div>
 
