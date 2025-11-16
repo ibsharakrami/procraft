@@ -7,6 +7,7 @@ import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import PricingSection from '@/components/Pricing/PricingSection';
 import TestimonialsCarousel from '@/components/Testimonials/TestimonialsCarousel';
 import Container from '@/components/ui/Container';
+import { HyperText } from '@/components/ui/hyper-text';
 import { motion } from 'framer-motion';
 import { useNavigationTheme } from '@/hooks/useNavigationTheme';
 import { useState, useEffect } from 'react';
@@ -14,6 +15,8 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const { topTheme } = useNavigationTheme();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'procraft';
 
   // Scroll detection to hide fixed phone number when navbar is visible
   useEffect(() => {
@@ -24,6 +27,47 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Typing effect for "procraft" - continuous loop
+  useEffect(() => {
+    let currentIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+    
+    const typingInterval = setInterval(() => {
+      if (isPaused) return;
+      
+      if (!isDeleting) {
+        // Typing forward
+        if (currentIndex < fullText.length) {
+          currentIndex++;
+          setTypedText(fullText.slice(0, currentIndex));
+        } else {
+          // Pause at the end before deleting
+          isPaused = true;
+          setTimeout(() => {
+            isPaused = false;
+            isDeleting = true;
+          }, 2000);
+        }
+      } else {
+        // Backspacing
+        if (currentIndex > 0) {
+          currentIndex--;
+          setTypedText(fullText.slice(0, currentIndex));
+        } else {
+          // Pause before typing again
+          isPaused = true;
+          setTimeout(() => {
+            isPaused = false;
+            isDeleting = false;
+          }, 500);
+        }
+      }
+    }, isDeleting ? 100 : 150); // Faster when deleting
+
+    return () => clearInterval(typingInterval);
+  }, [fullText]);
 
   return (
     <>
@@ -66,20 +110,23 @@ export default function Home() {
             {/* Small intro text */}
             <div className="">
               <p className="text-white text-3xl md:text-4xl tracking-wide font-normal mb-6">
-                we are <span className="text-white text-4xl md:text-5xl font-bold italic">procraft</span>
+                we are <span className="text-[#74B4D9] text-4xl md:text-5xl font-extrabold italic">
+                  {typedText}
+                  <span className="animate-pulse text-[#74B4D9]">|</span>
+                </span>
               </p>
             </div>
 
             {/* Main Heading Line 1 */}
             <div>
-              <h1 className="text-white text-[42px] sm:text-[50px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
+              <h1 className="text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase">
                 A CREATIVE DIGITAL
               </h1>
             </div>
 
             {/* Main Heading Line 2 */}
             <div className="mb-4">
-              <h1 className="text-white text-[42px] sm:text-[50px] md:text-[68px] lg:text-[80px] xl:text-[92px] font-bold leading-none tracking-wide uppercase">
+              <h1 className="text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase">
                 GROWTH AGENCY
               </h1>
             </div>
@@ -97,15 +144,24 @@ export default function Home() {
         <div className="absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full">
           <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
             <div className="flex flex-col gap-2">
-              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+              <HyperText
+                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+                duration={600}
+              >
                 STRATEGIC CONSULTING
-              </p>
-              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+              </HyperText>
+              <HyperText
+                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+                duration={600}
+              >
                 CREATIVE DESIGN
-              </p>
-              <p className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase">
+              </HyperText>
+              <HyperText
+                className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
+                duration={600}
+              >
                 TECHNICAL EXCELLENCE
-              </p>
+              </HyperText>
             </div>
           </div>
         </div>
