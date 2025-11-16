@@ -65,8 +65,8 @@ export default function Home() {
           <div className="w-full max-w-7xl mx-auto px-6 md:px-[96px]">
             {/* Small intro text */}
             <div className="">
-              <p className="text-white text-2xl md:text-xl tracking-wide font-normal mb-6">
-                we are procraft
+              <p className="text-white text-3xl md:text-4xl tracking-wide font-normal mb-6">
+                we are <span className="text-white text-4xl md:text-5xl font-bold italic">procraft</span>
               </p>
             </div>
 

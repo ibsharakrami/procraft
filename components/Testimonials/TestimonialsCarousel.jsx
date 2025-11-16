@@ -84,7 +84,7 @@ export default function TestimonialsCarousel() {
 	return (
 		<section 
 			data-theme='dark' 
-			className='relative bg-black py-20 md:py-28 overflow-hidden'
+			className='relative bg-black py-20 md:py-28 md:pb-20 overflow-hidden'
 		>
 			<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
 				<div className='grid grid-cols-1 lg:grid-cols-[30%_70%] gap-12 lg:gap-24 lg:items-start'>
@@ -212,8 +212,8 @@ export default function TestimonialsCarousel() {
 
 						{/* Navigation Controls - Below Card */}
 						<div className='flex items-center justify-between mt-6'>
-							{/* LinkedIn Link */}
-							<a
+							{/* LinkedIn Link - Commented out temporarily */}
+							{/* <a
 								href={testimonials[currentIndex].linkedinUrl}
 								target='_blank'
 								rel='noopener noreferrer'
@@ -221,7 +221,10 @@ export default function TestimonialsCarousel() {
 							>
 								<span className='text-xs md:text-sm'>Check it out on Linkedin</span>
 								<ExternalLink className='w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
-							</a>
+							</a> */}
+							
+							{/* White space placeholder */}
+							<div></div>
 
 							{/* Arrows + Counter */}
 							<div className='flex items-center gap-4'>
