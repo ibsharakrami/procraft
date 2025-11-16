@@ -27,6 +27,21 @@ html {
   scroll-padding-top: 80px; /* Account for fixed navigation */
 }
 
+/* Custom Cursor - Hide default cursor on desktop */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  
+  /* Keep text cursor for inputs */
+  input,
+  textarea,
+  select,
+  [contenteditable] {
+    cursor: text !important;
+  }
+}
+
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import GridLines from "@/components/ui/GridLines";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import Script from "next/script";
 
 const blatant = localFont({
@@ -284,6 +285,7 @@ export default function RootLayout({ children }) {
        className={`${blatant.variable} ${urbanist.variable} antialiased`}
       >
         <SmoothScrollProvider>
+          <SmoothCursor />
           <GridLines />
           <Navigation />
           <main className="">{children}</main>

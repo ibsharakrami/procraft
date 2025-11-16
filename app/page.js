@@ -73,7 +73,7 @@ export default function Home() {
     <>
           <section
             data-theme="dark"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden "
+            className="relative min-h-screen pt-16 md:pt-0 flex items-center justify-center overflow-hidden "
             aria-label="Hero section"
           >
         {/* Background Video */}
@@ -105,7 +105,7 @@ export default function Home() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 flex items-center justify-center min-h-screen w-full">
+        <div className="relative z-10 flex items-center justify-center w-full">
           <div className="w-full max-w-7xl mx-auto px-6 md:px-[96px]">
             {/* Small intro text */}
             <div className="">
