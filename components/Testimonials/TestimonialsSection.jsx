@@ -4,7 +4,7 @@ import { testimonials } from '@/data/testimonialsData';
 
 export default function TestimonialsSection() {
   return (
-    <section data-theme="light" className="relative bg-gray-50 py-16 md:py-20 lg:py-24 overflow-hidden">
+    <section data-theme="light" className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-[96px]">
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className={`relative ${testimonial.cardBg} rounded-[28px] p-10 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col`}>
+    <div className={`relative ${testimonial.cardBg} rounded-[28px] border border-gray-200 p-10 md:p-12 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col`}>
       {/* Quote Icon and Star Rating - Top Row */}
       <div className="flex items-center justify-between mb-8">
         {/* Quote Icon */}

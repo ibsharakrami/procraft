@@ -1,9 +1,142 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { pricingPackages } from '@/data/pricingData';
+import { useState, useEffect } from 'react';
 
 export default function PricingSection() {
+	const [activeIndex, setActiveIndex] = useState(1); // Start with middle card (Enterprise)
+	const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+	const [touchStart, setTouchStart] = useState(0);
+	const [touchEnd, setTouchEnd] = useState(0);
+	const [isMobile, setIsMobile] = useState(false);
+	const [isDragging, setIsDragging] = useState(false);
+
+	// Detect if mobile/tablet on mount
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth < 1280); // Changed from 768 to 1280
+		};
+		
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
+
+	// Auto-play carousel on mobile
+	useEffect(() => {
+		if (!isAutoPlaying || !isMobile) return;
+		
+		const interval = setInterval(() => {
+			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
+		}, 5000); // Slowed down from 3000ms to 5000ms (5 seconds)
+		
+		return () => clearInterval(interval);
+	}, [isAutoPlaying, isMobile]);
+
+	// Touch/Mouse handlers for swipe and drag
+	const handleTouchStart = (e) => {
+		setIsAutoPlaying(false);
+		setIsDragging(true);
+		setTouchStart(e.targetTouches[0].clientX);
+	};
+
+	const handleTouchMove = (e) => {
+		setTouchEnd(e.targetTouches[0].clientX);
+	};
+
+	const handleTouchEnd = () => {
+		setIsDragging(false);
+		if (!touchStart || !touchEnd) return;
+		
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > 50;
+		const isRightSwipe = distance < -50;
+		
+		if (isLeftSwipe) {
+			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
+		}
+		if (isRightSwipe) {
+			setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
+		}
+		
+		// Reset and resume auto-play after 5 seconds
+		setTimeout(() => setIsAutoPlaying(true), 5000);
+	};
+
+	// Mouse handlers for desktop drag
+	const handleMouseDown = (e) => {
+		setIsAutoPlaying(false);
+		setIsDragging(true);
+		setTouchStart(e.clientX);
+	};
+
+	const handleMouseMove = (e) => {
+		if (!isDragging) return;
+		setTouchEnd(e.clientX);
+	};
+
+	const handleMouseUp = () => {
+		if (!isDragging) return;
+		setIsDragging(false);
+		if (!touchStart || !touchEnd) return;
+		
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > 50;
+		const isRightSwipe = distance < -50;
+		
+		if (isLeftSwipe) {
+			setActiveIndex((prev) => (prev + 1) % pricingPackages.length);
+		}
+		if (isRightSwipe) {
+			setActiveIndex((prev) => (prev - 1 + pricingPackages.length) % pricingPackages.length);
+		}
+		
+		// Reset and resume auto-play after 5 seconds
+		setTimeout(() => setIsAutoPlaying(true), 5000);
+	};
+
+	const handleMouseLeave = () => {
+		if (isDragging) {
+			setIsDragging(false);
+		}
+	};
+
+	// Calculate card transform based on position relative to active card
+	const getCardTransform = (cardIndex) => {
+		const diff = (cardIndex - activeIndex + pricingPackages.length) % pricingPackages.length;
+		
+		if (diff === 0) {
+			// Center (Active) Card
+			return {
+				x: 0,
+				scale: 1,
+				opacity: 1,
+				blur: 0,
+				zIndex: 3
+			};
+		} else if (diff === 1) {
+			// Right Card
+			return {
+				x: 150,
+				scale: 0.9,
+				opacity: 0.6,
+				blur: 2, // Reduced from 4px to 2px
+				zIndex: 2
+			};
+		} else {
+			// Left Card
+			return {
+				x: -150,
+				scale: 0.9,
+				opacity: 0.6,
+				blur: 2, // Reduced from 4px to 2px
+				zIndex: 1
+			};
+		}
+	};
+
 	return (
 		<section
 			data-theme='light'
@@ -28,13 +161,13 @@ export default function PricingSection() {
 
 					{/* Right Side - Pricing Cards */}
 					<div className='flex-1'>
-						{/* Recommended Badge - Positioned Above Cards */}
-						<div className='relative h-12 mb-0'>
+						{/* Desktop: Recommended Badge */}
+						<div className='hidden xl:block relative h-12 mb-0'>
 							{pricingPackages.map((pkg, index) => (
 								pkg.badge && (
 									<div
 										key={pkg.id}
-										className='absolute left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0'
+										className='absolute left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0'
 										style={{
 											left: `calc(${index * (100 / pricingPackages.length)}% + ${100 / (pricingPackages.length * 2)}% - 75px)`
 										}}
@@ -47,10 +180,89 @@ export default function PricingSection() {
 							))}
 						</div>
 
-						{/* Pricing Cards Grid */}
-						<div className='grid grid-cols-3 gap-0'>
+						{/* Mobile/Tablet: Carousel with stacking */}
+						<div 
+							className='xl:hidden relative h-[520px] overflow-visible select-none'
+							style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+							onTouchStart={handleTouchStart}
+							onTouchMove={handleTouchMove}
+							onTouchEnd={handleTouchEnd}
+							onMouseDown={handleMouseDown}
+							onMouseMove={handleMouseMove}
+							onMouseUp={handleMouseUp}
+							onMouseLeave={handleMouseLeave}
+						>
+							{/* Recommended Badge for Active Card */}
+							{pricingPackages[activeIndex].badge && (
+								<motion.div
+									key={`badge-${activeIndex}`}
+									initial={{ opacity: 0, y: -10 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0 }}
+									className='absolute top-0 left-1/2 -translate-x-1/2 z-10'
+								>
+									<div className='bg-[#74B4D9] text-white text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-wide'>
+										{pricingPackages[activeIndex].badge}
+									</div>
+								</motion.div>
+							)}
+
+							{/* Carousel Cards */}
+							<div className='relative w-full h-full pt-12'>
+								{pricingPackages.map((pkg, index) => {
+									const transform = getCardTransform(index);
+									return (
+										<motion.div
+											key={pkg.id}
+											className='absolute top-0 left-1/2 w-[80%]'
+											animate={{
+												x: transform.x,
+												translateX: '-50%',
+												scale: transform.scale,
+												opacity: transform.opacity,
+												filter: `blur(${transform.blur}px)`
+											}}
+											style={{
+												zIndex: transform.zIndex
+											}}
+											transition={{
+												duration: 0.5,
+												ease: [0.4, 0, 0.2, 1]
+											}}
+										>
+											<div className='bg-white rounded-2xl shadow-xl border border-[#ddd] overflow-hidden' style={{ pointerEvents: index === activeIndex ? 'auto' : 'none' }}>
+												<PricingCard package={pkg} index={index} totalCards={pricingPackages.length} isMobileCarousel={true} />
+											</div>
+										</motion.div>
+									);
+								})}
+							</div>
+
+							{/* Carousel Indicators */}
+							<div className='absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2'>
+								{pricingPackages.map((_, index) => (
+									<button
+										key={index}
+										onClick={() => {
+											setActiveIndex(index);
+											setIsAutoPlaying(false);
+											setTimeout(() => setIsAutoPlaying(true), 5000);
+										}}
+										className={`w-2 h-2 rounded-full transition-all duration-300 ${
+											index === activeIndex 
+												? 'bg-[#10367D] w-6' 
+												: 'bg-gray-300'
+										}`}
+										aria-label={`Go to pricing card ${index + 1}`}
+									/>
+								))}
+							</div>
+						</div>
+
+						{/* Desktop: Grid Layout */}
+						<div className='hidden xl:flex justify-between gap-6'>
 							{pricingPackages.map((pkg, index) => (
-								<PricingCard key={pkg.id} package={pkg} index={index} totalCards={pricingPackages.length} />
+								<PricingCard key={pkg.id} package={pkg} index={index} totalCards={pricingPackages.length} isMobileCarousel={false} />
 							))}
 						</div>
 					</div>
@@ -60,11 +272,92 @@ export default function PricingSection() {
 	);
 }
 
-function PricingCard({ package: pkg, index, totalCards }) {
+function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 	const isFeatured = pkg.featured;
 	const isFirst = index === 0;
 	const isLast = index === totalCards - 1;
 
+	// Mobile carousel: no motion wrapper, no rounded corners from grid
+	if (isMobileCarousel) {
+		return (
+			<div className={`h-full ${isFeatured ? 'bg-gray-50' : 'bg-white'}`}>
+				{/* Header */}
+				<div className='p-6 md:p-8 pb-4 md:pb-6 border-b border-gray-100'>
+					{/* Plan Name */}
+					<h3 className='text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4'>
+						{pkg.name}
+					</h3>
+
+					{/* Price */}
+					<div className='mb-2 md:mb-2'>
+						<span className='text-4xl md:text-5xl font-bold text-gray-900'>
+							${pkg.price}
+						</span>
+						<span className='text-base md:text-lg text-gray-600'>{pkg.priceLabel}</span>
+					</div>
+
+					{/* Period */}
+					<p className='text-sm md:text-sm text-[#10367D] font-medium mb-3 md:mb-4'>
+						{pkg.period}
+					</p>
+
+					{/* Description */}
+					<p className='text-sm md:text-sm text-gray-600 leading-relaxed'>
+						{pkg.description}
+					</p>
+				</div>
+
+				{/* Specs Grid */}
+				<div className='p-6 md:p-8 pb-4 md:pb-6'>
+					<div className='flex justify-around gap-4 md:gap-6'>
+						{pkg.specs.map((spec, idx) => (
+							<div key={idx} className='flex flex-col items-center'>
+								<div className='text-[9px] md:text-[9px] font-semibold text-gray-400 uppercase tracking-wide mb-1.5 md:mb-1.5 whitespace-nowrap'>
+									{spec.label}
+								</div>
+								<div className='text-sm md:text-sm font-bold text-gray-900 leading-tight text-center'>
+									{spec.value}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{/* CTA Section */}
+				<div className='p-6 md:p-8 pt-0'>
+					<button
+						className={`w-full py-3 md:py-3.5 px-4 md:px-6 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 mb-3 md:mb-4 ${
+							isFeatured
+								? 'bg-[#10367D] text-white hover:bg-[#0a2454]'
+								: 'bg-gray-900 text-white hover:bg-gray-800'
+						}`}
+					>
+						{pkg.buttonText}
+					</button>
+
+					{/* View Pricing Link */}
+					<button className='w-full text-sm md:text-sm text-gray-600 hover:text-[#10367D] transition-colors duration-200 flex items-center justify-center gap-2 md:gap-2 group'>
+						<span>{pkg.linkText}</span>
+						<svg
+							className='w-4 h-4 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200'
+							fill='none'
+							stroke='currentColor'
+							viewBox='0 0 24 24'
+						>
+							<path
+								strokeLinecap='round'
+								strokeLinejoin='round'
+								strokeWidth={2}
+								d='M9 5l7 7-7 7'
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		);
+	}
+
+	// Desktop grid: original design with motion wrapper
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
@@ -75,14 +368,10 @@ function PricingCard({ package: pkg, index, totalCards }) {
 		>
 			{/* Card */}
 			<div
-				className={`h-full ${
+				className={`h-full border border-[#ddd] rounded-2xl ${
 					isFeatured 
 						? 'bg-gray-50' 
 						: 'bg-white'
-				} ${
-					isFirst ? 'rounded-l-2xl' : ''
-				} ${
-					isLast ? 'rounded-r-2xl' : ''
 				}`}
 			>
 				{/* Header */}
