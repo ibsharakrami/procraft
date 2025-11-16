@@ -1,193 +1,126 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, useSpring } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function SmoothCursor() {
-  const cursorRef = useRef(null);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isClicking, setIsClicking] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const x = useMotionValue(-100);
+  const y = useMotionValue(-100);
+  
+  // Faster spring response with increased stiffness
+  const sx = useSpring(x, { damping: 25, stiffness: 300, mass: 0.4 });
+  const sy = useSpring(y, { damping: 25, stiffness: 300, mass: 0.4 });
 
-  // Smooth cursor position with spring physics
-  const cursorX = useSpring(0, { damping: 45, stiffness: 400, mass: 1 });
-  const cursorY = useSpring(0, { damping: 45, stiffness: 400, mass: 1 });
-
-  // Rotation based on movement
-  const [rotation, setRotation] = useState(0);
-  const lastPosition = useRef({ x: 0, y: 0 });
+  const last = useRef({ x: 0, y: 0 });
+  const [angle, setAngle] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [hovering, setHovering] = useState(false);
+  const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
-    // Check if device has fine pointer (mouse)
-    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-    if (!hasFinePointer) {
-      setIsVisible(false);
+    // disable on touch devices
+    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) {
       return;
     }
 
-    // Mouse move handler
-    const handleMouseMove = (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
+    function onMove(e) {
+      const cx = e.clientX;
+      const cy = e.clientY;
+      x.set(cx);
+      y.set(cy);
 
-      // Update cursor position
-      cursorX.set(x);
-      cursorY.set(y);
-
-      // Calculate rotation based on movement direction
-      const deltaX = x - lastPosition.current.x;
-      const deltaY = y - lastPosition.current.y;
-      const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-      
-      if (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1) {
-        setRotation(angle);
+      const dx = cx - last.current.x;
+      const dy = cy - last.current.y;
+      // Only update angle if there's significant movement
+      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
+        const a = Math.atan2(dy, dx) * (180 / Math.PI);
+        setAngle(a + 90);
       }
+      last.current = { x: cx, y: cy };
 
-      lastPosition.current = { x, y };
+      // detect interactive targets
+      const t = e.target;
+      const interactive =
+        t.closest && (t.closest("a") || t.closest("button") || t.closest("[role=button]") || t.classList.contains("cursor-pointer") || t.dataset.cursor === "hover");
+      setHovering(!!interactive);
+    }
 
-      // Check if hovering over interactive element
-      const target = e.target;
-      const isInteractive = 
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'A' ||
-        target.closest('button') ||
-        target.closest('a') ||
-        target.classList.contains('cursor-pointer') ||
-        target.dataset.cursor === 'hover' ||
-        target.closest('[data-cursor="hover"]');
+    function onDown() {
+      setPressed(true);
+    }
+    function onUp() {
+      setPressed(false);
+    }
+    function onLeave() {
+      setVisible(false);
+    }
+    function onEnter() {
+      setVisible(true);
+    }
 
-      setIsHovering(!!isInteractive);
-
-      // Check if hovering over drag element
-      const isDragElement = 
-        target.classList.contains('cursor-grab') ||
-        target.closest('.cursor-grab');
-      
-      setIsDragging(!!isDragElement);
-    };
-
-    // Mouse down/up handlers
-    const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = () => setIsClicking(false);
-
-    // Mouse leave handler
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    // Add event listeners
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("mouseup", onUp);
+    document.addEventListener("mouseleave", onLeave);
+    document.addEventListener("mouseenter", onEnter);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("mouseup", onUp);
+      document.removeEventListener("mouseleave", onLeave);
+      document.removeEventListener("mouseenter", onEnter);
     };
-  }, [cursorX, cursorY]);
+  }, [x, y]);
 
-  if (!isVisible) return null;
+  if (!visible) return null;
 
-  // Determine cursor scale based on state
-  const scale = isClicking ? 0.8 : isHovering ? 1.5 : 1;
-  const innerScale = isClicking ? 0.5 : isHovering ? 1.3 : 1;
-  const ringSize = isHovering ? 50 : 40;
-  const dotSize = isHovering ? 10 : 8;
+  // Subtle scale changes
+  const scale = pressed ? 0.9 : hovering ? 1.1 : 1;
+  
+  // Brand color for stroke/outline
+  const brandStroke = pressed ? "#10367D" : hovering ? "#74B4D9" : "#74B4D9";
+  
+  // Brand-themed glow effects around the black cursor
+  const brandGlow = pressed 
+    ? "drop-shadow(0 0 6px rgba(16, 54, 125, 0.8)) drop-shadow(0 0 12px rgba(16, 54, 125, 0.4))" 
+    : hovering 
+    ? "drop-shadow(0 0 8px rgba(116, 180, 217, 0.9)) drop-shadow(0 0 16px rgba(116, 180, 217, 0.5))"
+    : "drop-shadow(0 0 4px rgba(116, 180, 217, 0.6)) drop-shadow(0 0 8px rgba(116, 180, 217, 0.3))";
 
   return (
-    <>
-      {/* Outer Ring */}
-      <motion.div
-        ref={cursorRef}
-        className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
+    <motion.div
+      className="pointer-events-none fixed top-0 left-0 z-[9999]"
+      style={{ 
+        x: sx, 
+        y: sy, 
+        translateX: "-50%", 
+        translateY: "-50%"
+      }}
+      animate={{ scale }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+    >
+      <motion.svg
+        width="20"
+        height="24"
+        viewBox="0 0 20 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        animate={{ rotate: angle }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
         style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
+          filter: brandGlow
         }}
       >
-        <motion.div
-          className="relative"
-          animate={{
-            scale,
-            rotate: rotation * 0.1,
-          }}
-          transition={{
-            scale: { duration: 0.2, ease: 'easeOut' },
-            rotate: { duration: 0.3, ease: 'easeOut' },
-          }}
-        >
-          {/* Outer ring with blur effect */}
-          <motion.div
-            className="absolute rounded-full border-2 transition-all duration-200"
-            style={{
-              width: `${ringSize}px`,
-              height: `${ringSize}px`,
-              borderColor: isDragging ? '#10367D' : isHovering ? '#74B4D9' : 'rgba(116, 180, 217, 0.6)',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              boxShadow: isHovering ? '0 0 20px rgba(116, 180, 217, 0.3)' : 'none',
-            }}
-            animate={{
-              width: `${ringSize}px`,
-              height: `${ringSize}px`,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: 'easeOut',
-            }}
-          />
-          
-          {/* Inner dot */}
-          <motion.div
-            className="absolute rounded-full transition-all duration-200"
-            style={{
-              width: `${dotSize}px`,
-              height: `${dotSize}px`,
-              backgroundColor: isDragging ? '#10367D' : isHovering ? '#74B4D9' : '#10367D',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              boxShadow: isHovering ? '0 0 10px rgba(116, 180, 217, 0.5)' : 'none',
-            }}
-            animate={{
-              scale: innerScale,
-              width: `${dotSize}px`,
-              height: `${dotSize}px`,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: 'easeOut',
-            }}
-          />
-
-          {/* Drag indicator */}
-          {isDragging && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              className="absolute text-lg font-bold"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                pointerEvents: 'none',
-                color: '#74B4D9',
-              }}
-            >
-              ⇄
-            </motion.div>
-          )}
-        </motion.div>
-      </motion.div>
-    </>
+        {/* Black cursor with brand color stroke/outline */}
+        <path 
+          d="M10 0 C10 0, 10.5 0.5, 11 1 L19 18 C19.5 19, 19 20, 18 20 L11 17 C10.5 16.8, 10 16.8, 9.5 17 L2 20 C1 20, 0.5 19, 1 18 L9 1 C9.5 0.5, 10 0, 10 0 Z" 
+          fill="black"
+          stroke={brandStroke}
+          strokeWidth="1"
+          strokeLinejoin="round"
+        />
+      </motion.svg>
+    </motion.div>
   );
 }
