@@ -143,14 +143,14 @@ export default function PricingSection() {
 			className='relative bg-white py-16 md:py-20 lg:py-24'
 		>
 			<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
-				<div className='flex flex-col lg:flex-row lg:items-start lg:gap-8'>
+				<div className='flex flex-col lg:flex-row lg:items-start lg:gap-12 xl:gap-16'>
 					{/* Left Side - Title */}
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
-						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[220px] flex-shrink-0'
+						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[200px] xl:w-[220px] flex-shrink-0'
 					>
 						<h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.05]'>
 							Compare <br />
@@ -160,7 +160,7 @@ export default function PricingSection() {
 					</motion.div>
 
 					{/* Right Side - Pricing Cards */}
-					<div className='flex-1'>
+					<div className='flex-1 min-w-0'>
 						{/* Desktop: Recommended Badge */}
 						<div className='hidden xl:block relative h-12 mb-0'>
 							{pricingPackages.map((pkg, index) => (
@@ -182,7 +182,7 @@ export default function PricingSection() {
 
 						{/* Mobile/Tablet: Carousel with stacking */}
 						<div 
-							className='xl:hidden relative h-[520px] overflow-visible select-none'
+							className='xl:hidden relative h-[520px] overflow-hidden select-none'
 							style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
 							onTouchStart={handleTouchStart}
 							onTouchMove={handleTouchMove}
