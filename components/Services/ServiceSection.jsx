@@ -72,7 +72,7 @@ const ServicesSection = () => {
             <div>
               <a
                 href="tel:+971545866866"
-                className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-emerald-600 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-[#10367D] transition-all duration-300"
               >
                 +971 545 866 866
               </a>
@@ -125,13 +125,13 @@ const ServicesSection = () => {
                   onMouseEnter={() => setHoveredCard(service.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <div className="relative h-full flex flex-col bg-black text-white p-8 md:p-10 rounded-sm shadow-2xl overflow-hidden transition-all duration-300 group-hover:bg-white group-hover:text-slate-900 group-hover:shadow-emerald-500/20 group-hover:shadow-2xl">
+                  <div className="relative h-full flex flex-col bg-black text-white p-8 md:p-10 rounded-sm shadow-2xl overflow-hidden transition-all duration-300 group-hover:bg-white group-hover:text-slate-900 group-hover:shadow-[#74B4D9]/20 group-hover:shadow-2xl">
                     {/* Animated white overlay that slides up on hover */}
                     <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                     
                     {/* Content */}
                     <div className="relative z-10 flex flex-col h-full">
-                      <div className="w-1 h-10 bg-emerald-500 shrink-0 mb-6 group-hover:bg-emerald-600 transition-colors duration-300" />
+                      <div className="w-1 h-10 bg-[#74B4D9] shrink-0 mb-6 group-hover:bg-[#10367D] transition-colors duration-300" />
                       <h3 className="text-lg md:text-xl font-bold tracking-wide mb-4 leading-tight uppercase">
                         {service.title}
                       </h3>
@@ -140,7 +140,7 @@ const ServicesSection = () => {
                       </p>
                       <a
                         href="#"
-                        className="inline-flex items-center text-emerald-500 text-sm font-semibold hover:text-emerald-600 transition-all duration-300 group-hover:text-emerald-600 group-hover:translate-x-1 mt-auto"
+                        className="inline-flex items-center text-[#74B4D9] text-sm font-semibold hover:text-[#10367D] transition-all duration-300 group-hover:text-[#10367D] group-hover:translate-x-1 mt-auto"
                       >
                         {service.link} <span className="ml-2">&gt;&gt;</span>
                       </a>
