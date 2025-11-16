@@ -79,7 +79,7 @@ export function HyperText({
       className={className}
       onMouseEnter={animateOnHover ? triggerAnimation : undefined}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {displayText.split("").map((char, i) => (
           <motion.span
             key={i}
