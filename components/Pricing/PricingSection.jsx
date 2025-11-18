@@ -179,7 +179,7 @@ export default function PricingSection() {
 			data-theme='light'
 			className='relative bg-white py-16 md:py-20 lg:py-24'
 		>
-			<div className='mx-auto max-w-7xl px-6 md:px-[96px]'>
+			<div className='mx-auto max-w-7xl'>
 				<div className='flex flex-col lg:flex-row lg:items-start lg:gap-12 xl:gap-16'>
 					{/* Left Side - Title */}
 					<motion.div
@@ -187,9 +187,9 @@ export default function PricingSection() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
-						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[200px] xl:w-[220px] flex-shrink-0'
+						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[200px] xl:w-[220px] '
 					>
-						<h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.05]'>
+						<h2 className='text-3xl md:text-4xl lg:text-3xl font-bold text-gray-900 leading-[1.05] px-3'>
 							Compare <br />
 							<span className='font-bold italic text-[#10367D]'>ProCraft</span>{' '}
 							<span className='font-normal'>plans</span>
@@ -323,7 +323,7 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 		return (
 			<div className={`h-full ${isFeatured ? 'bg-gray-50' : 'bg-white'}`}>
 				{/* Header */}
-				<div className='p-6 md:p-8 pb-4 md:pb-6 border-b border-gray-100'>
+				<div className='px-8 py-4 md:p-8 pb-4 md:pb-6 border-b border-gray-100'>
 					{/* Plan Name */}
 					<h3 className='text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4'>
 						{pkg.name}
@@ -423,13 +423,13 @@ function PricingCard({ package: pkg, index, totalCards, isMobileCarousel }) {
 			{/* Card */}
 			<div
 				className={`h-full border border-[#ddd] rounded-2xl ${
-					isFeatured 
+					isFeatured
 						? 'bg-gray-50' 
 						: 'bg-white'
 				}`}
 			>
 				{/* Header */}
-				<div className='p-4 md:p-8 pb-3 md:pb-6 border-b border-gray-100'>
+				<div className='p-8 w-[320px] border-b border-gray-100'>
 					{/* Plan Name */}
 					<h3 className='text-base md:text-2xl font-bold text-gray-900 mb-2 md:mb-4'>
 						{pkg.name}

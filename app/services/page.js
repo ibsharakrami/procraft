@@ -87,11 +87,11 @@ const Services = () => {
 
       {/* Services Section */}
       <div className="min-h-screen bg-black">
-        <section data-theme="dark" className="space-y-4 max-w-7xl mx-auto w-full py-12 md:py-16 lg:py-20 px-6 md:px-8">
+        <section data-theme="dark" className="space-y-4 ">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group relative min-h-48 bg-black rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:min-h-64"
+             className="group relative min-h-48 bg-black  shadow-lg overflow-hidden transition-all duration-500 hover:min-h-64"
             >
               {/* Background Image - Hidden by default, shown on hover */}
               <div 
@@ -103,7 +103,7 @@ const Services = () => {
               ></div>
               
               {/* Content Overlay */}
-              <div className="relative z-10 p-8 flex flex-col md:flex-row gap-8 h-full  transition-all duration-500  border-white border-b min-h-64 ">
+              <div className="relative z-10  md:px-24 md:py-28 px-8 py-8 flex flex-col md:flex-row gap-8 h-full  transition-all duration-500  border-white border-b min-h-64 ">
                 {/* Left Side - Service Number and Name */}
                 <div className="w-full md:w-1/3 flex flex-col  justify-center">
 

@@ -62,18 +62,19 @@ export default function ServicesHero() {
 					transition={{ duration: 0.8 }}
 				>
 					{/* TIER 1 - Label */}
-					<p className='text-gray-400 uppercase tracking-[0.4em] text-xs md:text-sm font-light mb-6 md:mb-8 font-urbanist'>
+					<p className='text-gray-400 uppercase tracking-[0.4em] text-xs md:text-sm font-light mb-6 mt-10 md:mb-8 font-urbanist'>
 						{servicesHeroContent.label}
 					</p>
 
 					{/* TIER 2 - Main Heading */}
 					<h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-6 md:mb-8 leading-tight font-blatant'>
-						{servicesHeroContent.heading}
+											{servicesHeroContent.heading}{' '}
+												<span className='text-[#10367D]'>{servicesHeroContent.headingHighlight}</span>
 					</h1>
 
 					{/* TIER 3 - Subheading */}
-					<h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-black mb-8 md:mb-10 leading-snug font-blatant'>
-						{servicesHeroContent.subheading}
+						<h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-black mb-8 md:mb-10 leading-snug font-blatant'>
+						Empowering Businesses Across  <span className='text-[#74B4D9]'>the UAE</span>
 					</h2>
 
 					{/* TIER 4 - Description */}
