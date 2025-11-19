@@ -5,7 +5,7 @@ import { MapPin, ExternalLink } from 'lucide-react';
 import { contactInfo } from '@/data/contactData';
 
 export default function ContactMap() {
-  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3756284529373!2d55.3017!3d25.2761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzM0LjAiTiA1NcKwMTgnMDYuMSJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae`;
+  const mapUrl = `https://maps.google.com/maps?q=25.2761,55.3017&hl=en&z=15&output=embed`;
 
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${contactInfo.coordinates.lat},${contactInfo.coordinates.lng}`;
 

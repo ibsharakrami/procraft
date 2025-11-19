@@ -29,31 +29,55 @@ export const aboutHeroContent = {
 export const coreValues = [
 	{
 		id: 1,
-		icon: 'Shield',
 		title: 'Integrity',
+		tagline: 'Building Trust Through Every Action',
 		description:
-			'We build trust through transparency, honesty, and ethical practices in every project. Your success is our priority, and we deliver on our promises.',
+			'We build trust through transparency, honesty, and ethical practices in every project. Your success is our priority, and we deliver on our promises. From the initial consultation to post-launch support, we maintain complete transparency about timelines, costs, and challenges.',
+		keyPoints: [
+			'Complete transparency in pricing, timelines, and project scope',
+			'Honest feedback and recommendations that prioritize your success',
+			'Ethical practices in every decision we make',
+			'Clear communication throughout every stage'
+		]
 	},
 	{
 		id: 2,
-		icon: 'Lightbulb',
 		title: 'Innovation',
+		tagline: 'Staying Ahead of Tomorrow\'s Trends',
 		description:
-			'We embrace cutting-edge technology and creative thinking to deliver exceptional results. Our solutions are designed to keep you ahead of the curve.',
+			'We embrace cutting-edge technology and creative thinking to deliver exceptional results. Our solutions are designed to keep you ahead of the curve. We don\'t just follow trends—we anticipate them, ensuring your digital presence remains cutting-edge for years to come.',
+		keyPoints: [
+			'Early adoption of emerging technologies',
+			'Creative problem-solving approaches',
+			'Continuous learning and upskilling',
+			'Future-proof architectures that scale'
+		]
 	},
 	{
 		id: 3,
-		icon: 'Users',
 		title: 'Collaboration',
+		tagline: 'Your Vision, Our Expertise, Together',
 		description:
-			'We work closely with clients as partners, ensuring their vision drives our solutions. Your insights and feedback shape everything we create.',
+			'We work closely with clients as partners, ensuring their vision drives our solutions. Your insights and feedback shape everything we create. We believe the best solutions emerge when client vision meets developer expertise.',
+		keyPoints: [
+			'Weekly check-ins and real-time updates',
+			'Collaborative workshops for alignment',
+			'Feedback incorporated at every milestone',
+			'Dedicated project manager for you'
+		]
 	},
 	{
 		id: 4,
-		icon: 'TrendingUp',
 		title: 'Results',
+		tagline: 'Measurable Impact, Tangible Growth',
 		description:
-			'We measure success by the tangible growth and impact we create for our clients. Every strategy is designed to deliver measurable outcomes.',
+			'We measure success by the tangible growth and impact we create for our clients. Every strategy is designed to deliver measurable outcomes. We set clear KPIs from day one and report on them throughout the project lifecycle.',
+		keyPoints: [
+			'Clear KPIs defined before kickoff',
+			'Monthly analytics and reports',
+			'A/B testing and optimization',
+			'ROI-focused strategies'
+		]
 	},
 ];
 
