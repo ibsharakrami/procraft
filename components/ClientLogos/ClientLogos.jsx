@@ -59,14 +59,13 @@ export default function ClientLogos() {
               ))}
             </ScrollVelocityRow>
 
-            {/* Second Row - Scroll down=left, up=right (OPPOSITE) (Hidden on Mobile) */}
-            <div className="hidden md:block">
-              <ScrollVelocityRow baseVelocity={0.7} direction={-1} className="py-4 md:py-6">
-                {clientLogos.map((logo) => (
-                  <div
-                    key={logo.id}
-                    className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
-                  >
+            {/* Second Row - Scroll down=left, up=right (OPPOSITE) */}
+            <ScrollVelocityRow baseVelocity={0.7} direction={-1} className="py-4 md:py-6">
+              {clientLogos.map((logo) => (
+                <div
+                  key={logo.id}
+                  className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
+                >
                     {logo.website ? (
                       <a
                         href={logo.website}
@@ -98,7 +97,6 @@ export default function ClientLogos() {
                   </div>
                 ))}
               </ScrollVelocityRow>
-            </div>
           </ScrollVelocityContainer>
         </div>
 
