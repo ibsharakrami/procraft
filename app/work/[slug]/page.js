@@ -59,6 +59,7 @@ export default async function CaseStudyPage({ params }) {
       <CaseStudyBrief
         briefText={project.briefText}
         client={project.client}
+        clientLogo={project.clientLogo}
         duration={project.duration}
         role={project.role}
       />

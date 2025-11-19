@@ -26,7 +26,7 @@ export const caseStudies = [
     briefText: "Sharma Space approached us with a clear vision: to establish themselves as Bangalore's premier interior design studio through a digital platform that would match the sophistication of their physical work. With over 150 completed projects and a growing client base across HSR Layout, Koramangala, and Whitefield, they needed a website that could effectively showcase their portfolio, enable seamless consultation bookings, and serve their diverse clientele through multi-language support. The challenge was to create a premium user experience while maintaining optimal performance and making their services accessible to clients across multiple Bangalore neighborhoods.",
 
     // Client logo
-    clientLogo: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=400&q=80",
+    clientLogo: "/images/client_logos/sharmaspace-client-logo.png",
 
     // Project duration
     duration: "3 months",
@@ -191,7 +191,7 @@ export const caseStudies = [
 
     briefText: "The Virtual Greens came to us with an ambitious goal: to establish Riyadh's premier indoor golf simulator entertainment venue through a digital platform that would attract both serious golf enthusiasts and social entertainment seekers. Operating in Saudi Arabia's rapidly growing entertainment sector, they needed a website that could showcase their state-of-the-art golf simulators, enable online booking, and create a strong social media presence. The challenge was to balance the technical sophistication of golf simulation technology with the fun, social atmosphere of an entertainment lounge, all while catering to the Middle Eastern market's specific preferences and expectations.",
 
-    clientLogo: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&q=80",
+    clientLogo: "/images/client_logos/tvg-client-logo.png",
 
     duration: "2.5 months",
 
@@ -337,7 +337,7 @@ export const caseStudies = [
 
     briefText: "Carpenters & Co., a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking, approached us with a critical business need: to expand their reach beyond their physical showroom while maintaining the premium, tactile experience that defines their brand. Their clientele expects nothing less than perfection—from CEOs furnishing executive offices to homeowners seeking bespoke pieces for luxury villas. The challenge was multifaceted: showcase intricate craftsmanship through digital imagery, enable custom order requests for bespoke furniture, integrate with their complex inventory system, and create a user experience that reflects the same attention to detail found in their physical products. This project required us to translate the sensory experience of touching premium wood and seeing masterful joinery into a digital format that would resonate with their sophisticated target audience.",
 
-    clientLogo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&q=80",
+    clientLogo: "/images/client_logos/carpenters&co-client-logo.png",
 
     duration: "4 months",
 
