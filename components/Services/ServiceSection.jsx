@@ -65,16 +65,21 @@ const ServicesSection = () => {
         <div className="max-w-7xl mx-auto py-16 px-6 md:px-[96px]">
           <div className="flex flex-col md:flex-row md:items-center items-center justify-between gap-8">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white">
-                How can we <span className="text-white font-bold">Help?</span>
+              {/* Label */}
+              <span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
+                Services
+              </span>
+              {/* Heading */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-blatant">
+                How Can We <span className="text-[#74B4D9]">Help?</span>
               </h2>
             </div>
             <div>
               <a
-                href="tel:+971545866866"
+                href="tel:+971555624052"
                 className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-[#10367D] transition-all duration-300"
               >
-                +971 545 866 866
+                +971 55 562 4052
               </a>
             </div>
           </div>
@@ -111,10 +116,10 @@ const ServicesSection = () => {
               ))}
             </div>
 
-            {/* EXPERTISE heading */}
-            <h3 className="relative z-10 text-2xl font-semibold uppercase tracking-[0.3em] text-gray-400 mb-4 px-8">
-              EXPERTISE
-            </h3>
+            {/* EXPERTISE label */}
+            <span className="relative z-10 inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4 ml-8">
+              Expertise
+            </span>
             
             {/* Services grid with animations */}
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-10">

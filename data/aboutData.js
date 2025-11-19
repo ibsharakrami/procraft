@@ -81,29 +81,6 @@ export const coreValues = [
 	},
 ];
 
-export const stats = [
-	{
-		value: 150,
-		suffix: '+',
-		label: 'Projects Delivered',
-	},
-	{
-		value: 100,
-		suffix: '+',
-		label: 'Happy Clients',
-	},
-	{
-		value: 8,
-		suffix: '+',
-		label: 'Countries Served',
-	},
-	{
-		value: 5,
-		suffix: '+',
-		label: 'Years of Excellence',
-	},
-];
-
 export const teamMembers = [
 	{
 		id: 1,

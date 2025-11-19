@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { contactInfo } from '@/data/contactData';
 
 export default function ContactHeroEdirect() {
   return (
@@ -20,21 +19,6 @@ export default function ContactHeroEdirect() {
           <rect x="0" y="0" width="100%" height="100%" fill="url(#dot-pattern)" />
         </svg>
       </div>
-
-      {/* Phone Number - Top Right */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="absolute top-8 md:top-10 lg:top-12 right-8 md:right-12 lg:right-16"
-      >
-        <a
-          href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-          className="text-sm md:text-base text-gray-700 hover:text-[#10367D] transition-colors font-semibold tracking-wide font-urbanist"
-        >
-          {contactInfo.phone}
-        </a>
-      </motion.div>
 
       {/* Center Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-[100px] lg:px-[110px] text-center">

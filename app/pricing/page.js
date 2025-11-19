@@ -177,10 +177,10 @@ export default function PricingPage() {
 							Schedule a Consultation
 						</Link>
 						<a
-							href='tel:+971545866866'
+							href='tel:+971555624052'
 							className='inline-block bg-[#74B4D9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#5a9bc4] transition-colors'
 						>
-							Call Us: +971 545 866 866
+							Call Us: +971 55 562 4052
 						</a>
 					</div>
 				</div>

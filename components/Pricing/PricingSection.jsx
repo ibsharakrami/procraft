@@ -187,12 +187,15 @@ export default function PricingSection() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
-						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[200px] xl:w-[220px] '
+						className='mb-8 lg:mb-0 lg:sticky lg:top-32 lg:w-[200px] xl:w-[220px] px-3'
 					>
-						<h2 className='text-3xl md:text-4xl lg:text-3xl font-bold text-gray-900 leading-[1.05] px-3'>
-							Compare <br />
-							<span className='font-bold italic text-[#10367D]'>ProCraft</span>{' '}
-							<span className='font-normal'>plans</span>
+						{/* Label */}
+						<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
+							Pricing
+						</span>
+						{/* Heading */}
+						<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 font-blatant leading-tight'>
+							Compare <span className='text-[#10367D]'>ProCraft</span> Plans
 						</h2>
 					</motion.div>
 

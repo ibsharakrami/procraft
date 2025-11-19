@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import Container from '@/components/ui/Container';
-import { faqs } from '@/data/contactData';
+import { contactFaqs as faqs } from '@/data/contactData';
 
 export default function ContactFAQ() {
   const [openIndex, setOpenIndex] = useState(null);

@@ -2,7 +2,7 @@ import AboutHero from '@/components/About/AboutHero';
 import WhoWeAre from '@/components/About/WhoWeAre';
 import OurPhilosophy from '@/components/About/OurPhilosophy';
 import ValuesGrid from '@/components/About/ValuesGridNew';
-import StatsSection from '@/components/About/StatsSection';
+import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import TeamGrid from '@/components/About/TeamGrid';
 import CTASection from '@/components/About/CTASection';
 
@@ -46,8 +46,8 @@ export default function AboutPage() {
 			{/* Core Values - 2x2 Grid */}
 			<ValuesGrid />
 
-			{/* Stats Section - 4 columns with count-up animation */}
-			<StatsSection />
+			{/* Client Logos - Scrolling marquee */}
+			<ClientLogos />
 
 			{/* Team Grid - 4 members */}
 			<TeamGrid />

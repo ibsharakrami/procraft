@@ -175,7 +175,7 @@ export default function RootLayout({ children }) {
     "url": "https://procraft.ae",
     "logo": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
     "image": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
-    "telephone": "+971-545-866-866",
+    "telephone": "+971-55-562-4052",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -214,7 +214,7 @@ export default function RootLayout({ children }) {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+971-545-866-866",
+      "telephone": "+971-55-562-4052",
       "contactType": "customer service",
       "areaServed": "AE",
       "availableLanguage": ["English", "Arabic"]

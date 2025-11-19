@@ -27,7 +27,7 @@ export default function Navigation() {
 
 	const contactInfo = {
 		address: 'Gold Souq Extension, Deira, Dubai, United Arab Emirates',
-		phone: '+971 545 866 866',
+		phone: '+971 55 562 4052',
 		email: 'info@procraft.ae',
 	};
 
@@ -80,7 +80,7 @@ export default function Navigation() {
 					className='text-white text-sm hover:text-[#74B4D9] transition-colors font-light'
 					aria-label='Contact us'
 				>
-					+971 545 866 866
+					+971 55 562 4052
 				</button>
 			</div>
 

@@ -20,11 +20,11 @@ export default function ValuesGrid() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block text-xs md:text-sm uppercase tracking-wider text-gray-400 font-medium mb-4">
+          <span className="inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4">
             Core Values
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-            What Drives Us Forward
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 font-blatant">
+            What <span className="text-[#10367D]">Drives</span> Us Forward
           </h2>
         </motion.div>
 
@@ -48,8 +48,8 @@ export default function ValuesGrid() {
                   whileTap={{ scale: 0.98 }}
                   className={`relative px-6 py-3 md:px-8 md:py-4 transition-all duration-300 ${
                     isActive
-                      ? 'text-black'
-                      : 'text-gray-500 hover:text-gray-700'
+                      ? 'text-[#10367D]'
+                      : 'text-gray-500 hover:text-[#74B4D9]'
                   }`}
                 >
                   {/* Title */}
@@ -61,7 +61,7 @@ export default function ValuesGrid() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#10367D]"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -88,7 +88,7 @@ export default function ValuesGrid() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-sm md:text-base text-gray-500 font-medium"
+                className="text-sm md:text-base text-[#74B4D9] font-medium"
               >
                 {activeValue.tagline}
               </motion.p>
@@ -116,9 +116,9 @@ export default function ValuesGrid() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-3 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                    className="flex items-start gap-3 p-4 rounded-lg bg-gray-50 hover:bg-[#74B4D9]/10 transition-colors border border-transparent hover:border-[#74B4D9]/20"
                   >
-                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-black mt-2" />
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#10367D] mt-2" />
                     <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                       {point}
                     </p>

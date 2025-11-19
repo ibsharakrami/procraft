@@ -86,59 +86,65 @@ const Services = () => {
       <ServicesHero />
 
       {/* Services Section */}
-      <div className="min-h-screen bg-black">
-        <section data-theme="dark" className="space-y-4 ">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-             className="group relative min-h-48 bg-black  shadow-lg overflow-hidden transition-all duration-500 hover:min-h-64"
-            >
-              {/* Background Image - Hidden by default, shown on hover */}
+      <div className="min-h-screen bg-black py-8 md:py-12">
+        <section data-theme="dark" className="max-w-[1920px] mx-auto">
+          <div className="space-y-0">
+            {services.map((service, index) => (
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 scale-100 opacity-0 group-hover:opacity-100"
-                style={{ 
-                  backgroundImage: `url(${service.image})`,
-                  zIndex: 0
-                }}
-              ></div>
-              
-              {/* Content Overlay */}
-              <div className="relative z-10  md:px-24 md:py-28 px-8 py-8 flex flex-col md:flex-row gap-8 h-full  transition-all duration-500  border-white border-b min-h-64 ">
-                {/* Left Side - Service Number and Name */}
-                <div className="w-full md:w-1/3 flex flex-col  justify-center">
-
-                  <h3 className="text-3xl font-bold text-white  transition-colors duration-300">
-                    {service.name}
-                  </h3>
-                </div>
-                
-                {/* Right Side - Title and Description */}
-                <div className="w-full md:w-2/3 flex flex-col justify-center">
-                  <h4 className="text-2xl font-semibold text-white mb-2">
-                    {service.title}
-                  </h4>
-                  <p className="text-white text-md">
-                    {service.description}
-                  </p>
-                  <div className="flex gap-8 mt-6">
-                    <button className="group flex items-center font-semibold text-white text-lg font-medium  transition-colors duration-300">
-                      read more
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 text-blue-900 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </button>
-                    <button className="group flex items-center font-semibold text-white text-lg font-medium  transition-colors duration-300">
-                      enquire online
-                      <svg className="w-4 h-4 ml-2 font-semibold group-hover:translate-x-1 transition-transform duration-300 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </button>
+                key={index}
+                className="group relative bg-black border-white border-b transition-all duration-500"
+              >
+                {/* Grid-Constrained Container */}
+                <div className="relative px-[83px] md:px-[100px] lg:px-[110px] py-12 md:py-20 lg:py-24 overflow-hidden">
+                  {/* Background Image - Hidden by default, shown on hover */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 scale-100 opacity-0 group-hover:opacity-100"
+                    style={{ 
+                      backgroundImage: `url(${service.image})`,
+                      zIndex: 0
+                    }}
+                  ></div>
+                  
+                  {/* Dark Overlay on Hover */}
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[1]"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    {/* Left Side - Service Name */}
+                    <div className="md:col-span-1 flex flex-col justify-center">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                    </div>
+                    
+                    {/* Right Side - Title and Description */}
+                    <div className="md:col-span-2 flex flex-col justify-center">
+                      <h4 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 md:mb-4">
+                        {service.title}
+                      </h4>
+                      <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+                      <div className="flex flex-wrap gap-4 md:gap-6">
+                        <button className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
+                          read more
+                          <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </button>
+                        <button className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
+                          enquire online
+                          <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   </div>
-
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
       </div>
     </>
