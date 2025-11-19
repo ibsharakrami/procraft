@@ -54,7 +54,7 @@ const nextConfig = {
               "img-src 'self' data: blob: https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com",
               "font-src 'self' data:",
               "media-src 'self' blob:",
-              "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://wa.me",
+              "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://wa.me https://api.emailjs.com",
               "frame-src 'self' https://www.google.com https://maps.google.com",
               "object-src 'none'",
               "base-uri 'self'",
