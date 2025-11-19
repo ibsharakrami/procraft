@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { caseStudies } from '@/data/caseStudies';
 
@@ -28,15 +28,28 @@ function classNames(...args) {
 // Cursor-tilt wrapper (card parallax)
 function TiltWrapper({ children, href }) {
 	const ref = useRef(null);
+	const rectRef = useRef(null); // Cache bounds for performance
 	const x = useMotionValue(0.5);
 	const y = useMotionValue(0.5);
 	const rx = useSpring(useTransform(y, [0, 1], [10, -10]), { stiffness: 220, damping: 18 });
 	const ry = useSpring(useTransform(x, [0, 1], [-10, 10]), { stiffness: 220, damping: 18 });
 
+	// Cache element bounds on mount and resize (performance optimization)
+	useEffect(() => {
+		const updateRect = () => {
+			if (ref.current) {
+				rectRef.current = ref.current.getBoundingClientRect();
+			}
+		};
+
+		updateRect();
+		window.addEventListener('resize', updateRect);
+		return () => window.removeEventListener('resize', updateRect);
+	}, []);
+
 	function onMove(e) {
-		const el = ref.current;
-		if (!el) return;
-		const r = el.getBoundingClientRect();
+		const r = rectRef.current;
+		if (!r) return;
 		x.set((e.clientX - r.left) / r.width);
 		y.set((e.clientY - r.top) / r.height);
 	}

@@ -12,6 +12,8 @@ export function SmoothCursor() {
   const sy = useSpring(y, { damping: 25, stiffness: 300, mass: 0.4 });
 
   const last = useRef({ x: 0, y: 0 });
+  const lastHoveredRef = useRef(null); // Cache last hovered element
+  const cachedRectRef = useRef(null); // Cache its bounds
   const [angle, setAngle] = useState(0);
   const [visible, setVisible] = useState(true);
   const [hovering, setHovering] = useState(false);
@@ -57,16 +59,25 @@ export function SmoothCursor() {
       const finalInteractive = isExcluded ? null : interactive;
       
       setHovering(!!finalInteractive);
-      
+
       // Get element bounds for oval/circle cursor with proper scroll offset
       if (finalInteractive) {
-        const rect = finalInteractive.getBoundingClientRect();
+        // Only recalculate rect if element changed (performance optimization)
+        let rect;
+        if (lastHoveredRef.current === finalInteractive && cachedRectRef.current) {
+          rect = cachedRectRef.current;
+        } else {
+          rect = finalInteractive.getBoundingClientRect();
+          lastHoveredRef.current = finalInteractive;
+          cachedRectRef.current = rect;
+        }
+
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         const padding = 15;
         const radiusX = rect.width / 2 + padding; // Horizontal radius
         const radiusY = rect.height / 2 + padding; // Vertical radius
-        
+
         setHoveredElement(finalInteractive);
         setElementBounds({
           centerX,
@@ -79,6 +90,8 @@ export function SmoothCursor() {
       } else {
         setHoveredElement(null);
         setElementBounds(null);
+        lastHoveredRef.current = null;
+        cachedRectRef.current = null;
       }
     }
 
@@ -98,6 +111,9 @@ export function SmoothCursor() {
       setHoveredElement(null);
       setElementBounds(null);
       setHovering(false);
+      // Clear cached bounds on scroll
+      lastHoveredRef.current = null;
+      cachedRectRef.current = null;
     }
 
     document.addEventListener("mousemove", onMove);

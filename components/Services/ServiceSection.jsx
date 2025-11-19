@@ -100,19 +100,18 @@ const ServicesSection = () => {
           <div className="relative bg-black text-white pt-16 pb-20 md:pt-20 md:pb-24 px-4 md:px-[100px] lg:px-[83px] lg:pr-[83px] overflow-hidden lg:[clip-path:polygon(0_0,95%_0,100%_8%,100%_100%,0_100%)]">
             
             {/* Background image container - shows hovered card's image */}
-            <div className="absolute inset-0 transition-all duration-500">
+            <div className="absolute inset-0">
               {services.map((service) => (
-                hoveredCard === service.id && (
-                  <div
-                    key={service.id}
-                    className="absolute inset-0 bg-cover bg-center opacity-40"
-                    style={{
-                      backgroundImage: `url(${service.bgImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  />
-                )
+                <div
+                  key={service.id}
+                  className="absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-in-out"
+                  style={{
+                    backgroundImage: `url(${service.bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: hoveredCard === service.id ? 0.4 : 0
+                  }}
+                />
               ))}
             </div>
 

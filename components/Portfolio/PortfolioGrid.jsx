@@ -1,28 +1,41 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 function PortfolioCard({ project, index }) {
 	const [rotateX, setRotateX] = useState(0);
 	const [rotateY, setRotateY] = useState(0);
 	const cardRef = useRef(null);
+	const rectRef = useRef(null); // Cache card bounds
+
+	// Cache card bounds on mount and resize (performance optimization)
+	useEffect(() => {
+		const updateRect = () => {
+			if (cardRef.current) {
+				rectRef.current = cardRef.current.getBoundingClientRect();
+			}
+		};
+
+		updateRect();
+		window.addEventListener('resize', updateRect);
+		return () => window.removeEventListener('resize', updateRect);
+	}, []);
 
 	const handleMouseMove = (e) => {
-		if (!cardRef.current) return;
-		
-		const card = cardRef.current;
-		const rect = card.getBoundingClientRect();
+		if (!rectRef.current) return;
+
+		const rect = rectRef.current;
 		const x = e.clientX - rect.left;
 		const y = e.clientY - rect.top;
-		
+
 		const centerX = rect.width / 2;
 		const centerY = rect.height / 2;
-		
+
 		const rotateXValue = ((y - centerY) / centerY) * -10;
 		const rotateYValue = ((x - centerX) / centerX) * 10;
-		
+
 		setRotateX(rotateXValue);
 		setRotateY(rotateYValue);
 	};
