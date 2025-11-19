@@ -55,6 +55,12 @@ export const clientLogos = [
     name: "TVG",
     logo: "/images/client_logos/tvg-client-logo.png",
     website: null
+  },
+  {
+    id: 10,
+    name: "Hair & Skin Care",
+    logo: "/images/client_logos/beautyshopIndia-client-logo.png",
+    website: null
   }
 ];
 
