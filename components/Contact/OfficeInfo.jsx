@@ -6,8 +6,8 @@ import { contactInfo } from '@/data/contactData';
 
 export default function OfficeInfo() {
   const officeDetails = [
-    { label: 'Office', value: 'Business Bay', icon: Building2 },
-    { label: 'Area', value: 'Business Bay, Dubai', icon: MapPin },
+    { label: 'Office', value: 'Gold Souq Extension', icon: Building2 },
+    { label: 'Area', value: 'Deira, Dubai', icon: MapPin },
     { label: 'City', value: 'Dubai', icon: null },
     { label: 'Country', value: 'United Arab Emirates', icon: null },
   ];

@@ -5,7 +5,7 @@ import { MapPin, ExternalLink } from 'lucide-react';
 import { contactInfo } from '@/data/contactData';
 
 export default function ContactMap() {
-  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.2847374477673!2d55.2567!3d25.1872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzE0LjAiTiA1NcKwMTYnMjcuOCJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae`;
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3756284529373!2d55.3017!3d25.2761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzM0LjAiTiA1NcKwMTgnMDYuMSJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae`;
 
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${contactInfo.coordinates.lat},${contactInfo.coordinates.lng}`;
 
@@ -27,7 +27,7 @@ export default function ContactMap() {
             Visit Our Office in Dubai
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto font-urbanist">
-            Located in the heart of Business Bay, we're easily accessible from all parts of Dubai.
+            Located in Deira's Gold Souq Extension, we're easily accessible from all parts of Dubai.
           </p>
         </motion.div>
 
@@ -49,7 +49,7 @@ export default function ContactMap() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="ProCraft Office Location - Business Bay, Dubai"
+              title="ProCraft Office Location - Gold Souq Extension, Deira, Dubai"
               className="grayscale-[30%] hover:grayscale-0 transition-all duration-500"
             />
           </div>
@@ -98,7 +98,7 @@ export default function ContactMap() {
           <p className="text-gray-600 font-urbanist">
             <span className="font-semibold">Parking:</span> Visitor parking available{' '}
             <span className="mx-2">•</span>
-            <span className="font-semibold">Metro:</span> Business Bay Station (5 min walk)
+            <span className="font-semibold">Metro:</span> Gold Souq Station (2 min walk)
           </p>
         </motion.div>
       </div>

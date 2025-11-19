@@ -60,7 +60,7 @@ export default function ContactHeroEdirect() {
 
           {/* Description */}
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-urbanist leading-relaxed">
-            Our office is nestled in the heart of Business Bay, Dubai - a perfect environment to let creativity flow.
+            Our office is located in Dubai's vibrant Deira district at Gold Souq Extension - a perfect environment to let creativity flow.
           </p>
         </motion.div>
       </div>

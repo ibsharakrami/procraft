@@ -32,7 +32,7 @@ export default function MapWithSidebar() {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="ProCraft Office Location - Business Bay, Dubai"
+            title="ProCraft Office Location - Gold Souq Extension, Deira, Dubai"
             className="w-full h-full"
           />
         </motion.div>

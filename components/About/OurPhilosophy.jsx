@@ -35,7 +35,7 @@ export default function OurPhilosophy() {
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					viewport={{ once: true, margin: '-100px' }}
+					viewport={{ once: true, margin: '0px' }}
 					className='text-center mb-16 md:mb-20'
 				>
 					<span className='inline-block text-xs md:text-sm uppercase tracking-[0.2em] text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
@@ -50,7 +50,7 @@ export default function OurPhilosophy() {
 					variants={containerVariants}
 					initial='hidden'
 					whileInView='show'
-					viewport={{ once: true, margin: '-100px', amount: 0.1 }}
+					viewport={{ once: true, margin: '0px', amount: 0 }}
 					className='space-y-16 md:space-y-24 lg:space-y-32'
 				>
 					{philosophyChapters.map((chapter, index) => {
@@ -140,7 +140,7 @@ export default function OurPhilosophy() {
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.2 }}
-					viewport={{ once: true, margin: '-100px' }}
+					viewport={{ once: true, margin: '0px' }}
 					className='text-center mt-20 md:mt-24 lg:mt-32'
 				>
 					<p className='text-xl md:text-2xl lg:text-3xl text-gray-700 font-light max-w-3xl mx-auto'>

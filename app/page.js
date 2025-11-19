@@ -253,7 +253,7 @@ export default function Home() {
               "telephone": "+971-545-866-866",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Business Bay",
+                "streetAddress": "Gold Souq Extension, Deira",
                 "addressLocality": "Dubai",
                 "addressRegion": "Dubai",
                 "addressCountry": "AE"

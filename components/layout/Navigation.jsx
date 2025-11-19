@@ -20,13 +20,13 @@ export default function Navigation() {
 	const locations = [
 		{
 			city: 'Dubai',
-			address: 'Business Bay, Dubai',
+			address: 'Gold Souq Extension, Deira, Dubai',
 			details: 'United Arab Emirates',
 		},
 	];
 
 	const contactInfo = {
-		address: 'Business Bay, Dubai, United Arab Emirates',
+		address: 'Gold Souq Extension, Deira, Dubai, United Arab Emirates',
 		phone: '+971 545 866 866',
 		email: 'info@procraft.ae',
 	};

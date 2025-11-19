@@ -2,10 +2,10 @@
 export const contactInfo = {
   phone: '+971 545 866 866',
   email: 'info@procraft.ae',
-  address: 'Business Bay, Dubai, United Arab Emirates',
+  address: 'Gold Souq Extension, Deira, Dubai, United Arab Emirates',
   coordinates: {
-    lat: 25.1872,
-    lng: 55.2744
+    lat: 25.2761,
+    lng: 55.3017
   },
   officeHours: {
     weekdays: {

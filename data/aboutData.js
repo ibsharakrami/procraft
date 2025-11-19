@@ -10,7 +10,7 @@ export const companyInfo = {
 	whoWeAre:
 		'ProCraft is a Dubai-based creative digital growth agency dedicated to transforming businesses through strategic consulting, cutting-edge technology, and compelling design. We partner with forward-thinking companies to craft digital experiences that drive measurable results and sustainable growth.',
 	established: '2020',
-	location: 'Business Bay, Dubai, UAE',
+	location: 'Gold Souq Extension, Deira, Dubai, UAE',
 };
 
 export const aboutHeroContent = {
@@ -19,7 +19,7 @@ export const aboutHeroContent = {
 	headingHighlight: 'Creativity',
 	subheading: 'Your Partner in Digital Transformation',
 	description:
-		'Based in Dubai\'s Business Bay, we empower businesses across the Middle East with strategic consulting, innovative design, and technology that drives measurable impact.',
+		'Based in Dubai\'s Deira district at Gold Souq Extension, we empower businesses across the Middle East with strategic consulting, innovative design, and technology that drives measurable impact.',
 	contextual: {
 		type: 'stat',
 		value: 'Since 2020',

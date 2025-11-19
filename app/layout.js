@@ -69,7 +69,7 @@ export const metadata = {
     default: 'ProCraft - Creative Digital Growth Agency in Dubai',
     template: '%s | ProCraft Dubai'
   },
-  description: 'Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions in Business Bay, UAE.',
+  description: 'Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions in Deira, Dubai, UAE.',
   keywords: [
     'digital agency Dubai',
     'creative agency UAE',
@@ -80,7 +80,8 @@ export const metadata = {
     'branding agency Dubai',
     'SEO services Dubai',
     'social media marketing Dubai',
-    'Business Bay agency',
+    'Deira digital agency',
+    'Gold Souq Extension agency',
     'Dubai web development',
     'graphic design Dubai'
   ],
@@ -178,15 +179,15 @@ export default function RootLayout({ children }) {
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Business Bay",
+      "streetAddress": "Gold Souq Extension, Deira",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "addressCountry": "AE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "25.1872",
-      "longitude": "55.2744"
+      "latitude": "25.2761",
+      "longitude": "55.3017"
     },
     "areaServed": [
       {
@@ -206,8 +207,8 @@ export default function RootLayout({ children }) {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "25.1872",
-        "longitude": "55.2744"
+        "latitude": "25.2761",
+        "longitude": "55.3017"
       },
       "geoRadius": "100000"
     },

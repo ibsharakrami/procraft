@@ -16,7 +16,8 @@ export const metadata = {
 		'ProCraft team',
 		'about ProCraft',
 		'Dubai agency team',
-		'Business Bay creative agency',
+		'Deira creative agency',
+		'Gold Souq Extension agency',
 		'digital marketing team Dubai'
 	],
 	openGraph: {
