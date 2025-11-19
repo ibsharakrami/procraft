@@ -93,7 +93,7 @@ export default function ContactFormEdirect() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-white rounded-lg p-8 md:p-10"
+      className="bg-white rounded-lg p-6 md:p-8"
       id="contact-form"
     >
       {/* Form Header */}

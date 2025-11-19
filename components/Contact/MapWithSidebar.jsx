@@ -8,9 +8,9 @@ export default function MapWithSidebar() {
   const mapUrl = `https://maps.google.com/maps?q=25.2761,55.3017&hl=en&z=15&output=embed`;
 
   return (
-    <section data-theme="light" className="relative py-8 md:py-0">
+    <section data-theme="light" className="relative py-8 md:py-0 bg-white">
       {/* Container with grid constraints */}
-      <div className="max-w-[1920px] mx-auto px-[83px] md:px-[100px] lg:px-[110px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-[100px] lg:px-[110px]">
         {/* Grid Layout: 40/60 split */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
           {/* Left Sidebar - Office Info (40%) */}

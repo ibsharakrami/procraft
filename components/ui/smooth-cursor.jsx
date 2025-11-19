@@ -94,12 +94,18 @@ export function SmoothCursor() {
     function onEnter() {
       setVisible(true);
     }
+    function onScroll() {
+      setHoveredElement(null);
+      setElementBounds(null);
+      setHovering(false);
+    }
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mousedown", onDown);
     document.addEventListener("mouseup", onUp);
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       document.removeEventListener("mousemove", onMove);
@@ -107,6 +113,7 @@ export function SmoothCursor() {
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [x, y]);
 
@@ -131,7 +138,7 @@ export function SmoothCursor() {
       <AnimatePresence>
         {!hoveredElement && (
           <motion.div
-            className="pointer-events-none fixed top-0 left-0 z-[9999]"
+            className="pointer-events-none fixed top-0 left-0 z-50"
             style={{ 
               x: sx, 
               y: sy, 
@@ -175,7 +182,7 @@ export function SmoothCursor() {
       <AnimatePresence>
         {hoveredElement && elementBounds && (
           <motion.div
-            className="pointer-events-none fixed z-[9999]"
+            className="pointer-events-none fixed z-50"
             style={{
               left: elementBounds.centerX - elementBounds.radiusX,
               top: elementBounds.centerY - elementBounds.radiusY,

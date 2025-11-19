@@ -6,7 +6,7 @@ import { servicesHeroContent } from '@/data/servicesData';
 export default function ServicesHero() {
 	return (
 		<section
-			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden py-20 md:py-24 lg:py-28'
+			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-20 pb-20 md:py-24 lg:py-28'
 			data-theme='light'
 		>
 			{/* Dotted Pattern Background */}

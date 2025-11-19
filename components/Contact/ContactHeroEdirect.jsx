@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function ContactHeroEdirect() {
   return (
     <section
-      className="relative min-h-[40vh] md:min-h-[45vh] lg:min-h-[50vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden"
+      className="relative min-h-[40vh] md:min-h-[45vh] lg:min-h-[50vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-20 md:pt-0"
       data-theme="light"
     >
       {/* Dotted World Map Pattern Background */}

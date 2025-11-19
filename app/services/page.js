@@ -95,7 +95,7 @@ const Services = () => {
                 className="group relative bg-black border-white border-b transition-all duration-500"
               >
                 {/* Grid-Constrained Container */}
-                <div className="relative px-[83px] md:px-[100px] lg:px-[110px] py-12 md:py-20 lg:py-24 overflow-hidden">
+                <div className="relative px-6 md:px-[100px] lg:px-[110px] py-12 md:py-20 lg:py-24 overflow-hidden">
                   {/* Background Image - Hidden by default, shown on hover */}
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-all duration-500 scale-100 opacity-0 group-hover:opacity-100"

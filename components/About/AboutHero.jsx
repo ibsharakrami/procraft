@@ -6,7 +6,7 @@ import { aboutHeroContent } from '@/data/aboutData';
 export default function AboutHero() {
 	return (
 		<section
-			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-32 md:pt-36 lg:pt-40 pb-20 md:pb-24 lg:pb-28'
+			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-20 md:pt-36 lg:pt-40 pb-20 md:pb-24 lg:pb-28'
 			data-theme='light'
 		>
 			{/* Dotted World Map Pattern Background */}
