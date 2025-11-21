@@ -12,6 +12,8 @@ export function SmoothCursor() {
   const sy = useSpring(y, { damping: 25, stiffness: 300, mass: 0.4 });
 
   const last = useRef({ x: 0, y: 0 });
+  const lastHoveredRef = useRef(null); // Cache last hovered element
+  const cachedRectRef = useRef(null); // Cache its bounds
   const [angle, setAngle] = useState(0);
   const [visible, setVisible] = useState(true);
   const [hovering, setHovering] = useState(false);
@@ -57,16 +59,25 @@ export function SmoothCursor() {
       const finalInteractive = isExcluded ? null : interactive;
       
       setHovering(!!finalInteractive);
-      
+
       // Get element bounds for oval/circle cursor with proper scroll offset
       if (finalInteractive) {
-        const rect = finalInteractive.getBoundingClientRect();
+        // Only recalculate rect if element changed (performance optimization)
+        let rect;
+        if (lastHoveredRef.current === finalInteractive && cachedRectRef.current) {
+          rect = cachedRectRef.current;
+        } else {
+          rect = finalInteractive.getBoundingClientRect();
+          lastHoveredRef.current = finalInteractive;
+          cachedRectRef.current = rect;
+        }
+
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         const padding = 15;
         const radiusX = rect.width / 2 + padding; // Horizontal radius
         const radiusY = rect.height / 2 + padding; // Vertical radius
-        
+
         setHoveredElement(finalInteractive);
         setElementBounds({
           centerX,
@@ -79,6 +90,8 @@ export function SmoothCursor() {
       } else {
         setHoveredElement(null);
         setElementBounds(null);
+        lastHoveredRef.current = null;
+        cachedRectRef.current = null;
       }
     }
 
@@ -94,12 +107,21 @@ export function SmoothCursor() {
     function onEnter() {
       setVisible(true);
     }
+    function onScroll() {
+      setHoveredElement(null);
+      setElementBounds(null);
+      setHovering(false);
+      // Clear cached bounds on scroll
+      lastHoveredRef.current = null;
+      cachedRectRef.current = null;
+    }
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mousedown", onDown);
     document.addEventListener("mouseup", onUp);
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       document.removeEventListener("mousemove", onMove);
@@ -107,6 +129,7 @@ export function SmoothCursor() {
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [x, y]);
 
@@ -131,7 +154,7 @@ export function SmoothCursor() {
       <AnimatePresence>
         {!hoveredElement && (
           <motion.div
-            className="pointer-events-none fixed top-0 left-0 z-[9999]"
+            className="pointer-events-none fixed top-0 left-0 z-50"
             style={{ 
               x: sx, 
               y: sy, 
@@ -175,7 +198,7 @@ export function SmoothCursor() {
       <AnimatePresence>
         {hoveredElement && elementBounds && (
           <motion.div
-            className="pointer-events-none fixed z-[9999]"
+            className="pointer-events-none fixed z-50"
             style={{
               left: elementBounds.centerX - elementBounds.radiusX,
               top: elementBounds.centerY - elementBounds.radiusY,

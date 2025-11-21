@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
+import Image from 'next/image';
 
-export default function CaseStudyBrief({ briefText, client, duration, role }) {
+export default function CaseStudyBrief({ briefText, client, clientLogo, duration, role }) {
 	return (
 		<section data-theme='light' className='bg-white py-16 md:py-24 lg:py-32'>
 			<Container size='default'>
@@ -21,7 +22,26 @@ export default function CaseStudyBrief({ briefText, client, duration, role }) {
 						</h2>
 
 						{/* Project Metadata */}
-						<div className='space-y-4 text-sm md:text-base'>
+						<div className='space-y-6 text-sm md:text-base'>
+							{/* Client Logo */}
+							{clientLogo && (
+								<div>
+									<div className='relative w-32 h-16 md:w-40 md:h-20 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300'>
+										<Image
+											src={clientLogo}
+											alt={`${client} logo`}
+											fill
+											className='object-contain object-left'
+										/>
+									</div>
+								</div>
+							)}
+
+							{/* Divider */}
+							{clientLogo && <div className='border-t border-gray-200'></div>}
+						</div>
+
+						<div className='space-y-4 text-sm md:text-base mt-6'>
 							{client && (
 								<div>
 									<p className='text-gray-400 uppercase tracking-wider text-xs mb-1'>

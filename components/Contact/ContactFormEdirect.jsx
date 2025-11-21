@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { sendEmail, isEmailJSConfigured } from '@/lib/emailjs';
+import { sendContactFormEmails, isEmailJSConfigured } from '@/lib/emailjs';
 import { serviceOptions } from '@/data/contactData';
 
 // Zod validation schema
@@ -51,37 +51,49 @@ export default function ContactFormEdirect() {
     }
 
     try {
-      const templateParams = {
-        from_name: data.name,
-        from_email: data.email,
-        phone: data.phone,
-        company: data.company || 'Not provided',
-        service: data.service,
-        message: data.message,
-        to_email: 'info@procraft.ae'
-      };
+      // Send both emails (contact notification + auto-reply)
+      const result = await sendContactFormEmails(data);
 
-      const result = await sendEmail(templateParams);
-
-      if (result.success) {
+      // Check if primary notification was sent successfully
+      if (result.notification.success) {
         setIsSuccess(true);
-        toast.success('Thank you for reaching out! We\'ll get back to you within 24 hours.', {
-          duration: 5000,
-          icon: '🎉'
-        });
+
+        // Show different messages based on auto-reply status
+        if (result.autoReply.success) {
+          toast.success(
+            'Thank you for reaching out! Check your email for confirmation. We\'ll get back to you within 24 hours.',
+            {
+              duration: 6000,
+              icon: '🎉'
+            }
+          );
+        } else {
+          // Auto-reply failed, but notification succeeded
+          console.warn('Auto-reply failed:', result.autoReply.error);
+          toast.success(
+            'Thank you for reaching out! We\'ll get back to you within 24 hours.',
+            {
+              duration: 5000,
+              icon: '✅'
+            }
+          );
+        }
 
         setTimeout(() => {
           reset();
           setIsSuccess(false);
         }, 3000);
       } else {
-        throw new Error('Failed to send email');
+        throw new Error('Failed to send contact notification');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      toast.error('Oops! Something went wrong. Please try again or contact us at info@procraft.ae', {
-        duration: 6000
-      });
+      toast.error(
+        'Oops! Something went wrong. Please try again or contact us at info@procraft.ae',
+        {
+          duration: 6000
+        }
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -93,7 +105,7 @@ export default function ContactFormEdirect() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-white rounded-lg shadow-lg p-8 md:p-10"
+      className="bg-white rounded-lg p-6 md:p-8"
       id="contact-form"
     >
       {/* Form Header */}

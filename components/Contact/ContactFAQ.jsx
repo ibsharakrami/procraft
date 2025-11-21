@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import Container from '@/components/ui/Container';
-import { faqs } from '@/data/contactData';
+import { contactFaqs as faqs } from '@/data/contactData';
 
 export default function ContactFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -53,26 +53,28 @@ export default function ContactFAQ() {
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   className="border-2 border-gray-200 rounded-xl overflow-hidden hover:border-[#10367D]/30 transition-colors"
                 >
-                  {/* Question Button */}
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="w-full flex items-center justify-between p-6 md:p-8 text-left bg-white hover:bg-gray-50 transition-colors"
-                  >
+                  {/* Question Header */}
+                  <div className="w-full flex items-center justify-between p-6 md:p-8 bg-white">
                     <span className="text-lg md:text-xl font-bold text-gray-900 pr-8 font-blatant">
                       {faq.question}
                     </span>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex-shrink-0"
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="flex-shrink-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                      aria-label={isOpen ? 'Close answer' : 'Open answer'}
                     >
-                      <ChevronDown
-                        className={`w-6 h-6 transition-colors ${
-                          isOpen ? 'text-[#10367D]' : 'text-gray-400'
-                        }`}
-                      />
-                    </motion.div>
-                  </button>
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown
+                          className={`w-6 h-6 transition-colors ${
+                            isOpen ? 'text-[#10367D]' : 'text-gray-400'
+                          }`}
+                        />
+                      </motion.div>
+                    </button>
+                  </div>
 
                   {/* Answer Content */}
                   <AnimatePresence initial={false}>

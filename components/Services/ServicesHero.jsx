@@ -6,7 +6,7 @@ import { servicesHeroContent } from '@/data/servicesData';
 export default function ServicesHero() {
 	return (
 		<section
-			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden py-20 md:py-24 lg:py-28'
+			className='relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-20 pb-20 md:py-24 lg:py-28'
 			data-theme='light'
 		>
 			{/* Dotted Pattern Background */}
@@ -33,26 +33,6 @@ export default function ServicesHero() {
 					/>
 				</svg>
 			</div>
-
-			{/* Contextual Element - Top Right */}
-			{servicesHeroContent.contextual && (
-				<motion.div
-					initial={{ opacity: 0, y: -10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					className='absolute top-8 md:top-10 lg:top-12 right-8 md:right-12 lg:right-16'
-				>
-					<div className='text-right'>
-						<p className='text-xs text-gray-500 mb-1 font-urbanist'>{servicesHeroContent.contextual.label}</p>
-						<a 
-							href={`tel:${servicesHeroContent.contextual.value.replace(/\s/g, '')}`}
-							className='text-sm md:text-base text-gray-700 hover:text-[#10367D] transition-colors font-semibold tracking-wide font-urbanist'
-						>
-							{servicesHeroContent.contextual.value}
-						</a>
-					</div>
-				</motion.div>
-			)}
 
 			{/* Center Content */}
 			<div className='relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center'>

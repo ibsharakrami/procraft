@@ -1,11 +1,11 @@
 // Contact Page Static Data
 export const contactInfo = {
-  phone: '+971 545 866 866',
+  phone: '+971 55 562 4052',
   email: 'info@procraft.ae',
-  address: 'Business Bay, Dubai, United Arab Emirates',
+  address: 'Gold Souq Extension, Deira, Dubai, United Arab Emirates',
   coordinates: {
-    lat: 25.1872,
-    lng: 55.2744
+    lat: 25.2761,
+    lng: 55.3017
   },
   officeHours: {
     weekdays: {
@@ -57,7 +57,7 @@ export const ctaCards = [
     icon: 'Calendar',
     title: 'Schedule a Call',
     description: 'Book a free 30-minute consultation with our team',
-    action: 'tel:+971545866866',
+    action: 'tel:+971555624052',
     buttonText: 'Call Now'
   },
   {
@@ -65,7 +65,7 @@ export const ctaCards = [
     icon: 'MessageCircle',
     title: 'WhatsApp Us',
     description: 'Get instant responses to your questions',
-    action: 'https://wa.me/971545866866?text=Hi%20ProCraft%2C%20I%27d%20like%20to%20discuss%20a%20project',
+    action: 'https://wa.me/971555624052?text=Hi%20ProCraft%2C%20I%27d%20like%20to%20discuss%20a%20project',
     buttonText: 'Chat Now'
   },
   {
@@ -78,6 +78,7 @@ export const ctaCards = [
   }
 ];
 
+// All FAQ questions (8 total)
 export const faqs = [
   {
     id: 1,
@@ -120,6 +121,9 @@ export const faqs = [
     answer: 'Definitely! We specialize in rebranding projects, from visual identity redesign to complete digital transformation. We analyze your current brand positioning, identify opportunities for improvement, and create a cohesive strategy that resonates with your target audience while preserving your core values.'
   }
 ];
+
+// Contact page FAQ subset (first 5 questions)
+export const contactFaqs = faqs.slice(0, 5);
 
 export const heroContent = {
   label: 'Get in Touch',

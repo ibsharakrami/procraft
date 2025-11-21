@@ -6,8 +6,8 @@ import { contactInfo } from '@/data/contactData';
 
 export default function OfficeInfo() {
   const officeDetails = [
-    { label: 'Office', value: 'Business Bay', icon: Building2 },
-    { label: 'Area', value: 'Business Bay, Dubai', icon: MapPin },
+    { label: 'Office', value: 'Gold Souq Extension', icon: Building2 },
+    { label: 'Area', value: 'Deira, Dubai', icon: MapPin },
     { label: 'City', value: 'Dubai', icon: null },
     { label: 'Country', value: 'United Arab Emirates', icon: null },
   ];
@@ -29,20 +29,27 @@ export default function OfficeInfo() {
     },
     {
       icon: Smartphone,
-      label: 'Mobile',
+      label: 'Mobile 1',
       value: contactInfo.phone,
       href: `tel:${contactInfo.phone.replace(/\s/g, '')}`,
+      color: '#74B4D9'
+    },
+    {
+      icon: Smartphone,
+      label: 'Mobile 2',
+      value: '+971 56 239 6568',
+      href: 'tel:+971562396568',
       color: '#74B4D9'
     },
   ];
 
   return (
     <div className="relative h-full bg-white">
-      {/* Blue Accent Line */}
-      <div className="absolute left-[83px] top-0 bottom-0 w-1 bg-[#10367D] hidden md:block"></div>
+      {/* Blue Accent Line - positioned at left edge within grid */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#10367D]"></div>
 
       {/* Content */}
-      <div className="p-8 md:p-12 lg:p-16 pl-6 md:pl-[116px] lg:pl-[130px]">
+      <div className="p-6 md:p-8 lg:p-12 pl-8 md:pl-12 lg:pl-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

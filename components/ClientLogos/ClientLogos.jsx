@@ -13,8 +13,15 @@ export default function ClientLogos() {
         <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
           {/* Section Heading */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h2 className="text-xs md:text-sm text-gray-400 uppercase tracking-[0.3em] font-urbanist">
-              We're grateful to work with incredible clients
+            {/* Label */}
+            <div className="flex justify-center mb-4">
+              <span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light border-l-4 border-[#74B4D9] pl-4'>
+                Our Clients
+              </span>
+            </div>
+            {/* Heading */}
+            <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 font-blatant'>
+              Trusted by <span className='text-[#10367D]'>Amazing</span> Brands
             </h2>
           </div>
 
@@ -59,14 +66,13 @@ export default function ClientLogos() {
               ))}
             </ScrollVelocityRow>
 
-            {/* Second Row - Scroll down=left, up=right (OPPOSITE) (Hidden on Mobile) */}
-            <div className="hidden md:block">
-              <ScrollVelocityRow baseVelocity={0.7} direction={-1} className="py-4 md:py-6">
-                {clientLogos.map((logo) => (
-                  <div
-                    key={logo.id}
-                    className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
-                  >
+            {/* Second Row - Scroll down=left, up=right (OPPOSITE) */}
+            <ScrollVelocityRow baseVelocity={0.7} direction={-1} className="py-4 md:py-6">
+              {clientLogos.map((logo) => (
+                <div
+                  key={logo.id}
+                  className="flex-shrink-0 mx-6 md:mx-8 lg:mx-12"
+                >
                     {logo.website ? (
                       <a
                         href={logo.website}
@@ -98,7 +104,6 @@ export default function ClientLogos() {
                   </div>
                 ))}
               </ScrollVelocityRow>
-            </div>
           </ScrollVelocityContainer>
         </div>
 

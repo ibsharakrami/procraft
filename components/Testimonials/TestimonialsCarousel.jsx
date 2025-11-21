@@ -91,18 +91,13 @@ export default function TestimonialsCarousel() {
 					{/* Left Column - Sticky Header */}
 					<div className='lg:sticky lg:top-0 lg:self-start'>
 						{/* Label */}
-						<div className='flex items-center gap-2'>
-							<Sparkles className='w-3 h-3 text-[#74B4D9]' />
-							<span className='text-xs uppercase tracking-wider text-[#74B4D9] font-medium'>
-								Testimonials
-							</span>
-						</div>
+						<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
+							Testimonials
+						</span>
 
 						{/* Heading */}
-						<h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4 leading-tight'>
-							What others
-							<br />
-							say
+						<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-blatant leading-tight'>
+							What <span className='text-[#74B4D9]'>Others</span> Say
 						</h2>
 
 						{/* Description */}

@@ -1,7 +1,7 @@
 'use client';
 
 export default function WhatsAppButton() {
-  const whatsappNumber = '971545866866'; // ProCraft Dubai number
+  const whatsappNumber = '971555624052'; // ProCraft Dubai number
   const message = 'Hi! I would like to learn more about Procraft services.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 

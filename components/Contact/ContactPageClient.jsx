@@ -5,6 +5,7 @@ import ContactHeroEdirect from './ContactHeroEdirect';
 import LocationTabs from './LocationTabs';
 import MapWithSidebar from './MapWithSidebar';
 import WelcomeFormSection from './WelcomeFormSection';
+import ContactFAQ from './ContactFAQ';
 
 export default function ContactPageClient() {
   return (
@@ -44,6 +45,7 @@ export default function ContactPageClient() {
       <LocationTabs />
       <MapWithSidebar />
       <WelcomeFormSection />
+      <ContactFAQ />
     </main>
   );
 }

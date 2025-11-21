@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { caseStudies } from '@/data/caseStudies';
 
@@ -28,15 +28,28 @@ function classNames(...args) {
 // Cursor-tilt wrapper (card parallax)
 function TiltWrapper({ children, href }) {
 	const ref = useRef(null);
+	const rectRef = useRef(null); // Cache bounds for performance
 	const x = useMotionValue(0.5);
 	const y = useMotionValue(0.5);
 	const rx = useSpring(useTransform(y, [0, 1], [10, -10]), { stiffness: 220, damping: 18 });
 	const ry = useSpring(useTransform(x, [0, 1], [-10, 10]), { stiffness: 220, damping: 18 });
 
+	// Cache element bounds on mount and resize (performance optimization)
+	useEffect(() => {
+		const updateRect = () => {
+			if (ref.current) {
+				rectRef.current = ref.current.getBoundingClientRect();
+			}
+		};
+
+		updateRect();
+		window.addEventListener('resize', updateRect);
+		return () => window.removeEventListener('resize', updateRect);
+	}, []);
+
 	function onMove(e) {
-		const el = ref.current;
-		if (!el) return;
-		const r = el.getBoundingClientRect();
+		const r = rectRef.current;
+		if (!r) return;
 		x.set((e.clientX - r.left) / r.width);
 		y.set((e.clientY - r.top) / r.height);
 	}
@@ -219,15 +232,14 @@ export default function Portfolio() {
 				<div className='flex flex-col gap-8'>
 					{/* Copy block (Row 1) */}
 					<motion.div variants={container}>
-						<p className='text-lg md:text-2xl font-semibold uppercase tracking-[0.2em] text-gray-400'>
-							Working together
-						</p>
-						<h2 className=' text-lg md:text-2xl font-semibold uppercase tracking-[0.2em] text-gray-400'>
-							with our clients
+						{/* Label */}
+						<span className='inline-block text-xs md:text-sm uppercase tracking-wider text-[#74B4D9] font-light mb-4 border-l-4 border-[#74B4D9] pl-4'>
+							Portfolio
+						</span>
+						{/* Heading */}
+						<h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 font-blatant'>
+							Our <span className='text-[#10367D]'>Featured</span> Work
 						</h2>
-						<h3 className='mt-7 text-2xl  font-medium tracking-tight text-gray-900 sm:text-4xl'>
-							To Achieve Their Business&apos; Vision
-						</h3>
 						<p className='mt-5 max-w-md text-base leading-6 text-gray-400'>
 							Whether we&apos;re building a new website, creating new branding, composing
 							compelling copy or increasing a business&apos; social media presence; you can

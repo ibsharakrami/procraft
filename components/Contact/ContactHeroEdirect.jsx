@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { contactInfo } from '@/data/contactData';
 
 export default function ContactHeroEdirect() {
   return (
     <section
-      className="relative min-h-[40vh] md:min-h-[45vh] lg:min-h-[50vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden"
+      className="relative min-h-[40vh] md:min-h-[45vh] lg:min-h-[50vh] flex items-center justify-center bg-[#F5F5F5] overflow-hidden pt-20 md:pt-0"
       data-theme="light"
     >
       {/* Dotted World Map Pattern Background */}
@@ -20,21 +19,6 @@ export default function ContactHeroEdirect() {
           <rect x="0" y="0" width="100%" height="100%" fill="url(#dot-pattern)" />
         </svg>
       </div>
-
-      {/* Phone Number - Top Right */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="absolute top-8 md:top-10 lg:top-12 right-8 md:right-12 lg:right-16"
-      >
-        <a
-          href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-          className="text-sm md:text-base text-gray-700 hover:text-[#10367D] transition-colors font-semibold tracking-wide font-urbanist"
-        >
-          {contactInfo.phone}
-        </a>
-      </motion.div>
 
       {/* Center Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-[100px] lg:px-[110px] text-center">
@@ -60,7 +44,7 @@ export default function ContactHeroEdirect() {
 
           {/* Description */}
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-urbanist leading-relaxed">
-            Our office is nestled in the heart of Business Bay, Dubai - a perfect environment to let creativity flow.
+            Our office is located in Dubai's vibrant Deira district at Gold Souq Extension - a perfect environment to let creativity flow.
           </p>
         </motion.div>
       </div>

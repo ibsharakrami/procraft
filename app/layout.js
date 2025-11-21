@@ -69,7 +69,7 @@ export const metadata = {
     default: 'ProCraft - Creative Digital Growth Agency in Dubai',
     template: '%s | ProCraft Dubai'
   },
-  description: 'Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions in Business Bay, UAE.',
+  description: 'Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions in Deira, Dubai, UAE.',
   keywords: [
     'digital agency Dubai',
     'creative agency UAE',
@@ -80,7 +80,8 @@ export const metadata = {
     'branding agency Dubai',
     'SEO services Dubai',
     'social media marketing Dubai',
-    'Business Bay agency',
+    'Deira digital agency',
+    'Gold Souq Extension agency',
     'Dubai web development',
     'graphic design Dubai'
   ],
@@ -174,19 +175,19 @@ export default function RootLayout({ children }) {
     "url": "https://procraft.ae",
     "logo": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
     "image": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
-    "telephone": "+971-545-866-866",
+    "telephone": "+971-55-562-4052",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Business Bay",
+      "streetAddress": "Gold Souq Extension, Deira",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "addressCountry": "AE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "25.1872",
-      "longitude": "55.2744"
+      "latitude": "25.2761",
+      "longitude": "55.3017"
     },
     "areaServed": [
       {
@@ -206,14 +207,14 @@ export default function RootLayout({ children }) {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": "25.1872",
-        "longitude": "55.2744"
+        "latitude": "25.2761",
+        "longitude": "55.3017"
       },
       "geoRadius": "100000"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+971-545-866-866",
+      "telephone": "+971-55-562-4052",
       "contactType": "customer service",
       "areaServed": "AE",
       "availableLanguage": ["English", "Arabic"]

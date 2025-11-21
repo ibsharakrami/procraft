@@ -97,10 +97,10 @@ export default function Home() {
         {/* Contact Info - Top Right - Fixed Position - Hidden on mobile (below 768px) and when scrolled on desktop */}
         <div className={`hidden md:fixed top-8 md:top-10 right-8 md:right-16 z-60 transition-opacity duration-300 ${isScrolled ? 'md:opacity-0 md:pointer-events-none' : 'md:opacity-100'}`}>
           <a
-            href="tel:+971545866866"
+            href="tel:+971555624052"
             className={`text-[11px] md:text-xs hover:text-white transition-colors duration-300 font-light tracking-wider ${topTheme === 'dark' ? 'text-white/80' : 'text-[#10367D]/80'}`}
           >
-            +971 545 866 866
+            +971 55 562 4052
           </a>
         </div>
 
@@ -250,10 +250,10 @@ export default function Home() {
               "@type": "ProfessionalService",
               "@id": "https://procraft.ae/#organization",
               "name": "ProCraft",
-              "telephone": "+971-545-866-866",
+              "telephone": "+971-55-562-4052",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Business Bay",
+                "streetAddress": "Gold Souq Extension, Deira",
                 "addressLocality": "Dubai",
                 "addressRegion": "Dubai",
                 "addressCountry": "AE"

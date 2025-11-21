@@ -31,6 +31,8 @@ export const caseStudies = [
 		// Client logo
 		clientLogo:
 			'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=400&q=80',
+		// Client logo
+		clientLogo: '/images/client_logos/sharmaspace-client-logo.png',
 
 		// Project duration
 		duration: '3 months',
@@ -219,6 +221,7 @@ export const caseStudies = [
 
 		clientLogo:
 			'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&q=80',
+		clientLogo: '/images/client_logos/tvg-client-logo.png',
 
 		duration: '2.5 months',
 
@@ -389,6 +392,7 @@ export const caseStudies = [
 
 		clientLogo:
 			'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&q=80',
+		clientLogo: '/images/client_logos/carpenters&co-client-logo.png',
 
 		duration: '4 months',
 
