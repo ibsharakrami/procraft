@@ -534,9 +534,211 @@ export const caseStudies = [
 
 		liveUrl: 'https://carpentersco.com',
 
-		featured: true,
+		featured: false,
 
 		themeColor: '#8B4513',
+
+		size: 'large',
+	},
+
+	{
+		id: 'aitm-university',
+		slug: 'aitm-university',
+		title: 'AITM University',
+		client: 'Anjuman Institute of Technology and Management',
+		category: ['Web Design', 'Education'],
+		year: '2024',
+
+		tagline: 'Your Gateway to Excellence in Technology and Management',
+
+		heroImage: '/images/portfolio/aitmthumbnail.jpg',
+		thumbnailImage: '/images/portfolio/aitmthumbnail.jpg',
+
+		description:
+			'A comprehensive website for AITM, a premier engineering institution in Karnataka with 40+ years of excellence, featuring virtual campus tours, admissions system, and placement tracking.',
+
+		challenge:
+			'Create a modern digital presence for a 40-year-old institution that showcases academic excellence, enables seamless admissions, and appeals to prospective students and parents.',
+
+		briefText:
+			'Anjuman Institute of Technology and Management (AITM), a premier engineering college in Bhatkal, Karnataka, needed a complete digital transformation. With four decades of academic excellence, 95% placement record, and affiliations with VTU and AICTE, they required a website that reflects their legacy while appealing to the modern student. The challenge was to present comprehensive course information, enable virtual campus exploration, streamline admissions, and showcase their achievements—all while maintaining accessibility across diverse demographics.',
+
+		clientLogo: '/images/client_logos/atim-client-logo.png',
+
+		duration: '3 months',
+
+		role: 'Full Website Design & Development',
+
+		solution: [
+			'Modern, responsive design reflecting academic excellence',
+			'Virtual campus tour with interactive facility showcase',
+			'Integrated admissions tracking system',
+			'Multi-language support (English and Kannada)',
+			'Placement statistics and student testimonials',
+			'WhatsApp chatbot for instant support',
+		],
+
+		processSteps: [
+			{
+				title: 'Discovery & Research',
+				description:
+					'We analyzed the education sector landscape and competitor institutions to understand student expectations. Stakeholder interviews revealed the need to balance tradition with modernity.',
+				image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80',
+			},
+			{
+				title: 'Design & Prototyping',
+				description:
+					'Created a visual identity that honors AITM\'s 40-year legacy while presenting a fresh, modern interface. Prototyped virtual tour and admissions flow.',
+				image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80',
+			},
+			{
+				title: 'Development',
+				description:
+					'Built a performant platform with virtual campus tours, admissions system integration, and multi-language support for broader accessibility.',
+				image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80',
+			},
+			{
+				title: 'Launch & Training',
+				description:
+					'Executed phased launch with staff training on content management. Implemented analytics to track admissions funnel performance.',
+				image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+			},
+		],
+
+		galleryImages: [
+			{
+				url: 'https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80',
+				caption: 'Homepage showcasing campus and academic programs',
+			},
+			{
+				url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80',
+				caption: 'Virtual campus tour featuring state-of-the-art facilities',
+			},
+			{
+				url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=80',
+				caption: 'Course catalog with detailed program information',
+			},
+		],
+
+		outcomes: [
+			{
+				title: 'Increased Admissions',
+				description:
+					'The streamlined admissions system and virtual tours contributed to increased student applications from across Karnataka and neighboring states.',
+			},
+			{
+				title: 'Enhanced Accessibility',
+				description:
+					'Multi-language support in English and Kannada made information accessible to a broader demographic, improving engagement with local communities.',
+			},
+			{
+				title: 'Digital Transformation',
+				description:
+					'The modern platform elevated AITM\'s digital presence, positioning them competitively among premier engineering institutions in South India.',
+			},
+		],
+
+		testimonial: {
+			quote:
+				'ProCraft delivered a website that truly represents our institution\'s legacy and vision. The virtual tour and admissions system have transformed how we connect with prospective students.',
+			author: 'Administration',
+			role: 'AITM University',
+			avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80',
+		},
+
+		relatedProjects: ['sharma-space', 'virtual-greens'],
+
+		services: [
+			'Website Design',
+			'Web Development',
+			'Virtual Tour Integration',
+			'Admissions System',
+			'Multi-language Support',
+		],
+
+		results: {
+			programs: '8+ Courses',
+			legacy: '40+ Years',
+			placement: '95% Rate',
+			reach: 'Pan-India',
+		},
+
+		technologies: [
+			'Django',
+			'Tailwind CSS',
+			'SQLite',
+			'VPS Deployment',
+			'cPanel',
+		],
+
+		liveUrl: 'https://aitm.edu.in',
+
+		featured: true,
+
+		themeColor: '#1E3A8A',
+
+		size: 'large',
+	},
+
+	{
+		id: 'alitqan-academy',
+		slug: 'alitqan-academy',
+		title: 'Al Itqan Academy',
+		client: 'Al Itqan Academy',
+		category: ['Web Design', 'Education'],
+		year: '2024',
+
+		tagline: 'Fostering Deep Understanding and Spiritual Growth',
+
+		heroImage: '/images/portfolio/alitqanthumbnail.jpg',
+		thumbnailImage: '/images/portfolio/alitqanthumbnail.jpg',
+
+		description:
+			'A modern Islamic education platform offering Noorani Qaida, Quranic studies, and Islamic courses designed to foster deep understanding and spiritual growth.',
+
+		challenge:
+			'Create an accessible, modern digital platform for Islamic education that appeals to students of all ages while maintaining reverence and authenticity.',
+
+		briefText:
+			'Al Itqan Academy needed a digital presence to expand their reach and provide accessible Islamic education online. The platform required intuitive course navigation, student registration, and a design that reflects the spiritual nature of their offerings while remaining modern and user-friendly.',
+
+		clientLogo: '/images/client_logos/alitqan-client-logo.png',
+
+		duration: '2 months',
+
+		role: 'Full Website Design & Development',
+
+		solution: [
+			'Clean, modern design with Islamic aesthetic',
+			'Course catalog with easy navigation',
+			'Student registration system',
+			'Mobile-responsive design',
+			'SEO optimization for educational keywords',
+		],
+
+		services: [
+			'Website Design',
+			'Web Development',
+			'UI/UX Design',
+		],
+
+		results: {
+			courses: 'Multiple Programs',
+			focus: 'Islamic Education',
+			reach: 'Global Students',
+		},
+
+		technologies: [
+			'Next.js',
+			'React',
+			'Tailwind CSS',
+		],
+
+		liveUrl: 'https://alitqanacademy.com',
+
+		featured: true,
+
+		themeColor: '#065F46',
 
 		size: 'large',
 	},

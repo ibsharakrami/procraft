@@ -208,8 +208,8 @@ function ProjectCard({ project, className }) {
 }
 
 export default function Portfolio() {
-	// Display only 3 featured projects
-	const projects = caseStudies.filter(study => study.featured).slice(0, 3);
+	// Display only 4 featured projects
+	const projects = caseStudies.filter(study => study.featured).slice(0, 4);
 
 	return (
 		<section data-theme="light" className='relative bg-white py-16 md:py-20 '>
@@ -258,6 +258,7 @@ export default function Portfolio() {
 
 					{/* First project card */}
 					{projects[0] && <ProjectCard project={projects[0]} />}
+					{projects[3] && <ProjectCard project={projects[3]} />}
 				</div>
 
 				{/* Column 2: 2 project cards stacked */}
