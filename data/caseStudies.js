@@ -206,9 +206,9 @@ export const caseStudies = [
 
 		tagline: 'Indoor Golf Simulator Entertainment Venue',
 
-		heroImage: '/images/portfolio/tvg_hero_section.jpg',
+		heroImage: '/images/portfolio/tvg_hero_section.png',
 
-		thumbnailImage: '/images/portfolio/tvg_hero_section.jpg',
+		thumbnailImage: '/images/portfolio/tvg_hero_section.png',
 
 		description:
 			"A modern website for Riyadh's premier indoor golf simulator lounge, combining entertainment booking with venue information and social engagement.",

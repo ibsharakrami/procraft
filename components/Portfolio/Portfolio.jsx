@@ -118,7 +118,7 @@ function ProjectCard({ project, className }) {
 					<motion.img
 						src={project.thumbnailImage}
 						alt={`${project.title} - ${project.tagline} | ${project.category.join(', ')} project by ProCraft Dubai`}
-						className='w-full h-[300px] md:h-[400px] object-cover'
+						className='w-full h-[300px] md:h-[400px] object-cover object-top'
 						loading='lazy'
 						variants={{
 							initial: { filter: 'brightness(1)' },
