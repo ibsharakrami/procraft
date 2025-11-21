@@ -378,8 +378,7 @@ export const caseStudies = [
 		heroImage:
 			'https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1920&q=80',
 
-		thumbnailImage:
-			'https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1200&q=80',
+		thumbnailImage: '/images/portfolio/carpenter_co_thumbnail.png',
 
 		description:
 			'A sophisticated e-commerce platform for a premium furniture manufacturing brand specializing in handcrafted woodwork and bespoke design solutions.',
