@@ -15,7 +15,7 @@ export default function CaseStudyBrief({
 	return (
 		<section data-theme='light' className='relative bg-white py-16 md:py-24 lg:py-32'>
 			{/* Top Border Line - Dashed */}
-			<div className='absolute top-0 left-0 right-0 h-[1px] border-t border-dashed border-gray-300' />
+			<div className='absolute top-0 left-0 right-0 lg:left-[100px] lg:right-[110px] h-[1px] border-t border-dashed border-gray-300' />
 
 			<Container size='default'>
 				{/* Client Logo */}
@@ -80,17 +80,17 @@ export default function CaseStudyBrief({
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.6, delay: 0.2 }}
-						className='space-y-12'
+						className='space-y-16'
 					>
 						{/* Scope of Project */}
 						{services && services.length > 0 && (
 							<div>
-								<h3 className='text-lg font-normal text-black mb-3 font-urbanist lowercase'>
+								<h3 className='text-2xl md:text-3xl font-normal text-black mb-6 md:mb-8 font-urbanist lowercase'>
 									scope of project
 								</h3>
-								<div className='space-y-2'>
+								<div className='space-y-3 md:space-y-4'>
 									{services.map((service, index) => (
-										<p key={index} className='text-base font-bold text-black font-urbanist'>
+										<p key={index} className='text-lg md:text-xl font-semibold text-black font-urbanist'>
 											{service}
 										</p>
 									))}
@@ -105,9 +105,17 @@ export default function CaseStudyBrief({
 									href={liveUrl}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='inline-block text-base font-normal text-black hover:text-primary-blue transition-colors duration-300 font-urbanist lowercase underline'
+									className='group inline-flex items-center gap-3 text-lg md:text-xl font-normal text-black hover:text-primary-blue transition-colors duration-300 font-urbanist lowercase underline underline-offset-4 decoration-1'
 								>
 									see the website
+									<svg
+										className='w-6 h-6 md:w-7 md:h-7 text-primary-blue transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1'
+										fill='none'
+										stroke='currentColor'
+										viewBox='0 0 24 24'
+									>
+										<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M7 17L17 7M17 7H7M17 7V17' />
+									</svg>
 								</a>
 							</div>
 						)}

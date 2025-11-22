@@ -9,7 +9,13 @@ export default function CaseStudyBeforeAfter({ beforeAfter }) {
 	const { before, after, description } = beforeAfter;
 
 	return (
-		<section data-theme='light' className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme='light' className='relative bg-white py-16 md:py-24 lg:py-32'>
+			{/* Top Border Line - Dashed */}
+			<div className='absolute top-0 left-0 right-0 md:left-[100px] md:right-[110px] h-[1px] border-t border-dashed border-gray-300' />
+
+			{/* Bottom Border Line - Dashed */}
+			<div className='absolute bottom-0 left-0 right-0 md:left-[100px] md:right-[110px] h-[1px] border-b border-dashed border-gray-300' />
+
 			<Container size='wide'>
 				{/* Section Header */}
 				<motion.div

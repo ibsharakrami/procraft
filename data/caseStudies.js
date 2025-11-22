@@ -24,6 +24,10 @@ export const caseStudies = [
 		challenge:
 			"Create a premium digital presence that matches Sharma Space's high-end interior design services with easy content management and showcasing 150+ completed projects.",
 
+		// Highlight statement (appears after overview section)
+		highlightStatement:
+			'lightning-fast performance, admin-powered content management, and multilingual reach!',
+
 		// Detailed brief text
 		briefText:
 			"Sharma Space approached us with a clear vision: to establish themselves as Bangalore's premier interior design studio through a digital platform that would match the sophistication of their physical work. With over 150 completed projects and a growing client base across HSR Layout, Koramangala, and Whitefield, they needed a website that could effectively showcase their portfolio with an admin CMS for easy content upload and editing, and serve their diverse clientele through multi-language support. The challenge was to create a premium user experience while maintaining optimal performance and making their services accessible to clients across multiple Bangalore neighborhoods.",
@@ -198,6 +202,12 @@ export const caseStudies = [
 
 		// Grid size variant for layout
 		size: 'featured',
+
+		// Metric highlights for card display
+		metricHighlights: [
+			{ value: '150+', label: 'PROJECTS' },
+			{ value: '4.8/5', label: 'RATING' },
+		],
 	},
 
 	{
@@ -219,6 +229,10 @@ export const caseStudies = [
 
 		challenge:
 			'Design a vibrant digital presence for a golf entertainment venue that appeals to both serious golfers and social entertainment seekers in the Riyadh market.',
+
+		// Highlight statement (appears after overview section)
+		highlightStatement:
+			'enterprise-grade infrastructure, viral social integration, and premium entertainment experience!',
 
 		briefText:
 			"The Virtual Greens came to us with an ambitious goal: to establish Riyadh's premier indoor golf simulator entertainment venue through a digital platform that would attract both serious golf enthusiasts and social entertainment seekers. Operating in Saudi Arabia's rapidly growing entertainment sector, they needed a website that could showcase their state-of-the-art golf simulators, enable online booking, and create a strong social media presence. The challenge was to balance the technical sophistication of golf simulation technology with the fun, social atmosphere of an entertainment lounge, all while catering to the Middle Eastern market's specific preferences and expectations.",
@@ -371,6 +385,12 @@ export const caseStudies = [
 		themeColor: '#10367D',
 
 		size: 'large',
+
+		// Metric highlights for card display
+		metricHighlights: [
+			{ value: '80%', label: 'CAPACITY' },
+			{ value: '200%', label: 'SOCIAL REACH' },
+		],
 	},
 
 	{
@@ -393,6 +413,10 @@ export const caseStudies = [
 
 		challenge:
 			'Create a digital presence that conveys luxury craftsmanship while enabling seamless product browsing and custom order management for a discerning clientele.',
+
+		// Highlight statement (appears after overview section)
+		highlightStatement:
+			'digital craftsmanship meets bespoke e-commerce with seamless custom ordering!',
 
 		briefText:
 			'Carpenters & Co., a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking, approached us with a critical business need: to expand their reach beyond their physical showroom while maintaining the premium, tactile experience that defines their brand. Their clientele expects nothing less than perfection—from CEOs furnishing executive offices to homeowners seeking bespoke pieces for luxury villas. The challenge was multifaceted: showcase intricate craftsmanship through digital imagery, enable custom order requests for bespoke furniture, integrate with their complex inventory system, and create a user experience that reflects the same attention to detail found in their physical products. This project required us to translate the sensory experience of touching premium wood and seeing masterful joinery into a digital format that would resonate with their sophisticated target audience.',
@@ -551,6 +575,12 @@ export const caseStudies = [
 		themeColor: '#8B4513',
 
 		size: 'large',
+
+		// Metric highlights for card display
+		metricHighlights: [
+			{ value: '500+', label: 'PRODUCTS' },
+			{ value: '35%', label: 'ONLINE SALES' },
+		],
 	},
 
 	{
@@ -571,6 +601,10 @@ export const caseStudies = [
 
 		challenge:
 			'Create a modern digital presence for a 40-year-old institution that showcases academic excellence, enables seamless admissions, and appeals to prospective students and parents.',
+
+		// Highlight statement (appears after overview section)
+		highlightStatement:
+			'40 years of legacy meets modern digital transformation with seamless admissions!',
 
 		briefText:
 			'Anjuman Institute of Technology and Management (AITM), a premier engineering college in Bhatkal, Karnataka, needed a complete digital transformation. With four decades of academic excellence, 95% placement record, and affiliations with VTU and AICTE, they required a website that reflects their legacy while appealing to the modern student. The challenge was to present comprehensive course information, enable virtual campus exploration, streamline admissions, and showcase their achievements—all while maintaining accessibility across diverse demographics.',
@@ -694,6 +728,12 @@ export const caseStudies = [
 		themeColor: '#1E3A8A',
 
 		size: 'large',
+
+		// Metric highlights for card display
+		metricHighlights: [
+			{ value: '95%', label: 'PLACEMENT' },
+			{ value: '40+', label: 'YEARS LEGACY' },
+		],
 	},
 
 	{
@@ -714,6 +754,10 @@ export const caseStudies = [
 
 		challenge:
 			'Create an accessible, modern digital platform for Islamic education that appeals to students of all ages while maintaining reverence and authenticity.',
+
+		// Highlight statement (appears after overview section)
+		highlightStatement:
+			'spiritual growth meets modern technology with accessible islamic education!',
 
 		briefText:
 			'Al Itqan Academy needed a digital presence to expand their reach and provide accessible Islamic education online. The platform required intuitive course navigation, student registration, and a design that reflects the spiritual nature of their offerings while remaining modern and user-friendly.',
@@ -761,6 +805,12 @@ export const caseStudies = [
 		themeColor: '#065F46',
 
 		size: 'large',
+
+		// Metric highlights for card display
+		metricHighlights: [
+			{ value: '100+', label: 'STUDENTS' },
+			{ value: 'Global', label: 'REACH' },
+		],
 	},
 ];
 

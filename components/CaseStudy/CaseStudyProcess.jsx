@@ -9,8 +9,11 @@ export default function CaseStudyProcess({ processSteps }) {
 
 	return (
 		<section data-theme='light' className='relative bg-white py-20 md:py-28 lg:py-36'>
-			{/* Top Border Line */}
-			<div className='absolute top-0 left-0 right-0 h-[1px] bg-gray-200' />
+			{/* Top Border Line - Dashed */}
+			<div className='absolute top-0 left-0 right-0 md:left-[100px] md:right-[110px] h-[1px] border-t border-dashed border-gray-300' />
+
+			{/* Bottom Border Line - Dashed */}
+			<div className='absolute bottom-0 left-0 right-0 md:left-[100px] md:right-[110px] h-[1px] border-b border-dashed border-gray-300' />
 
 			<Container size='default'>
 				{/* Section Header */}
