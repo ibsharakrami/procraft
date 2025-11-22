@@ -60,8 +60,11 @@ export default async function CaseStudyPage({ params }) {
         briefText={project.briefText}
         client={project.client}
         clientLogo={project.clientLogo}
+        clientDescription={project.clientDescription}
         duration={project.duration}
         role={project.role}
+        services={project.services}
+        liveUrl={project.liveUrl}
       />
 
       {/* 3. Overview & Challenge Section - Existing */}

@@ -2,31 +2,36 @@
 
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
+import Image from 'next/image';
 
 export default function CaseStudyProcess({ processSteps }) {
 	if (!processSteps || processSteps.length === 0) return null;
 
 	return (
-		<section data-theme='light' className='bg-[#F5F5F5] py-16 md:py-24 lg:py-32'>
-			<Container size='wide'>
+		<section data-theme='light' className='relative bg-white py-20 md:py-28 lg:py-36'>
+			{/* Top Border Line */}
+			<div className='absolute top-0 left-0 right-0 h-[1px] bg-gray-200' />
+
+			<Container size='default'>
 				{/* Section Header */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className='mb-12 md:mb-16 lg:mb-20 text-center'
+					className='mb-16 md:mb-24 lg:mb-32'
 				>
-					<h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 font-blatant'>
+					<h2 className='text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-6 font-blatant lowercase'>
 						the process
 					</h2>
-					<p className='text-base md:text-lg text-gray-600 max-w-3xl mx-auto font-urbanist'>
+					<div className='w-20 h-[2px] bg-primary-blue mb-6' />
+					<p className='text-lg md:text-xl text-gray-600 max-w-3xl font-urbanist'>
 						Our step-by-step approach to bringing this project to life
 					</p>
 				</motion.div>
 
 				{/* Process Steps */}
-				<div className='space-y-16 md:space-y-24 lg:space-y-32'>
+				<div className='space-y-24 md:space-y-32 lg:space-y-40'>
 					{processSteps.map((step, index) => {
 						const isEven = index % 2 === 0;
 
@@ -35,45 +40,49 @@ export default function CaseStudyProcess({ processSteps }) {
 								key={index}
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: '-100px' }}
-								transition={{ duration: 0.7, delay: index * 0.1 }}
-								className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center ${
+								viewport={{ once: true }}
+								transition={{ duration: 0.6 }}
+								className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
 									isEven ? '' : 'lg:grid-flow-dense'
 								}`}
 							>
 								{/* Image */}
 								<div
-									className={`relative overflow-hidden ${
+									className={`relative overflow-hidden group ${
 										isEven ? 'lg:col-start-1' : 'lg:col-start-2'
 									}`}
 								>
-									<img
-										src={step.image}
-										alt={step.title}
-										className='w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover'
-									/>
+									<div className='relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden'>
+										<Image
+											src={step.image}
+											alt={step.title}
+											fill
+											className='object-cover transition-all duration-[0.3s] ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.05] group-hover:rotate-1'
+										/>
+									</div>
 								</div>
 
 								{/* Content */}
 								<div
-									className={`space-y-4 ${
+									className={`space-y-6 ${
 										isEven ? 'lg:col-start-2' : 'lg:col-start-1'
 									}`}
 								>
 									{/* Step Number */}
-									<div className='inline-block'>
-										<span className='text-[#10367D] text-sm md:text-base font-bold uppercase tracking-wider bg-white px-4 py-2'>
-											Step {index + 1}
+									<div className='space-y-4'>
+										<span className='text-sm font-bold uppercase tracking-widest text-primary-blue font-urbanist'>
+											Step {index + 1} of {processSteps.length}
 										</span>
+										<div className='w-12 h-[2px] bg-primary-blue' />
 									</div>
 
 									{/* Title */}
-									<h3 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black font-blatant'>
+									<h3 className='text-3xl md:text-4xl lg:text-5xl font-bold text-black font-blatant'>
 										{step.title}
 									</h3>
 
 									{/* Description */}
-									<p className='text-base md:text-lg leading-relaxed text-gray-700 font-urbanist'>
+									<p className='text-lg md:text-xl leading-relaxed text-gray-700 font-urbanist'>
 										{step.description}
 									</p>
 								</div>

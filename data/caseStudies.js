@@ -18,15 +18,19 @@ export const caseStudies = [
 
 		// Overview
 		description:
-			"A sophisticated Next.js website for Bangalore's premier interior design studio, featuring consultation booking, multi-language support, and seamless service presentation.",
+			"A sophisticated Next.js website for Bangalore's premier interior design studio, featuring admin content management, multi-language support, and seamless service presentation. The platform showcases over 150 completed projects with advanced search capabilities, integrates an admin CMS that allows content upload and editing, and delivers exceptional performance across all devices. Built with SEO optimization and schema markup to capture organic search traffic, while providing an immersive gallery experience that highlights the craftsmanship and attention to detail that defines Sharma Space's work.",
 
 		// Challenge
 		challenge:
-			"Create a premium digital presence that matches Sharma Space's high-end interior design services while enabling direct client bookings and showcasing 150+ completed projects.",
+			"Create a premium digital presence that matches Sharma Space's high-end interior design services with easy content management and showcasing 150+ completed projects.",
 
 		// Detailed brief text
 		briefText:
-			"Sharma Space approached us with a clear vision: to establish themselves as Bangalore's premier interior design studio through a digital platform that would match the sophistication of their physical work. With over 150 completed projects and a growing client base across HSR Layout, Koramangala, and Whitefield, they needed a website that could effectively showcase their portfolio, enable seamless consultation bookings, and serve their diverse clientele through multi-language support. The challenge was to create a premium user experience while maintaining optimal performance and making their services accessible to clients across multiple Bangalore neighborhoods.",
+			"Sharma Space approached us with a clear vision: to establish themselves as Bangalore's premier interior design studio through a digital platform that would match the sophistication of their physical work. With over 150 completed projects and a growing client base across HSR Layout, Koramangala, and Whitefield, they needed a website that could effectively showcase their portfolio with an admin CMS for easy content upload and editing, and serve their diverse clientele through multi-language support. The challenge was to create a premium user experience while maintaining optimal performance and making their services accessible to clients across multiple Bangalore neighborhoods.",
+
+		// Client description (appears below logo)
+		clientDescription:
+			"Sharma Space is Bangalore's leading interior design studio, specializing in residential and commercial spaces across HSR Layout, Koramangala, and Whitefield. With over 150 completed projects and a commitment to excellence, they transform spaces into personalized havens that reflect their clients' unique style and vision.",
 
 		// Client logo
 		clientLogo:
@@ -43,7 +47,7 @@ export const caseStudies = [
 		// Solution highlights
 		solution: [
 			'Next.js implementation with SSR for optimal performance',
-			'Integrated consultation booking system',
+			'Admin CMS for content upload and editing',
 			'Multi-language support (English, Hindi, Kannada)',
 			'SEO-optimized with structured data markup',
 			'Responsive design with custom animations',
@@ -118,7 +122,7 @@ export const caseStudies = [
 			{
 				title: 'Enhanced User Engagement',
 				description:
-					'The new website achieved a 90+ PageSpeed score, resulting in faster load times and improved user engagement. The consultation booking system streamlined client acquisition, with 150+ successful bookings in the first three months post-launch.',
+					'The new website achieved a 90+ PageSpeed score, resulting in faster load times and improved user engagement. The admin CMS empowered the team to easily upload and edit content, enabling quick updates to their portfolio of 150+ projects.',
 			},
 			{
 				title: 'Multi-Language Accessibility',
@@ -135,7 +139,7 @@ export const caseStudies = [
 		// Client testimonial
 		testimonial: {
 			quote:
-				"ProCraft transformed our digital presence beyond our expectations. The website perfectly captures the sophistication of our interior design work, and the booking system has streamlined our client acquisition process. We've seen a significant increase in high-quality leads since launch.",
+				"ProCraft transformed our digital presence beyond our expectations. The website perfectly captures the sophistication of our interior design work, and the admin CMS has made it incredibly easy for us to manage and update our content. We've seen a significant increase in high-quality leads since launch.",
 			author: 'Rajesh Sharma',
 			role: 'Founder, Sharma Space',
 			avatar:
@@ -159,7 +163,7 @@ export const caseStudies = [
 		services: [
 			'Website Design',
 			'Next.js Development',
-			'Booking System Integration',
+			'Admin Content Management',
 			'SEO Optimization',
 			'Multi-language Implementation',
 			'Performance Optimization',
@@ -211,13 +215,17 @@ export const caseStudies = [
 		thumbnailImage: '/images/portfolio/tvg_hero_section.png',
 
 		description:
-			"A modern website for Riyadh's premier indoor golf simulator lounge, combining entertainment booking with venue information and social engagement.",
+			"A modern website for Riyadh's premier indoor golf simulator lounge, combining entertainment booking with venue information and social engagement. Built on enterprise-grade infrastructure with Singapore-based hosting for optimal Middle East performance, the platform features real-time bay availability, seamless booking integration, and deep social media connectivity. The design balances the technical sophistication of golf simulation technology with the vibrant, social atmosphere of an entertainment venue, complete with virtual tours, event management systems, and community engagement features that have established The Virtual Greens as Riyadh's leading golf entertainment destination.",
 
 		challenge:
 			'Design a vibrant digital presence for a golf entertainment venue that appeals to both serious golfers and social entertainment seekers in the Riyadh market.',
 
 		briefText:
 			"The Virtual Greens came to us with an ambitious goal: to establish Riyadh's premier indoor golf simulator entertainment venue through a digital platform that would attract both serious golf enthusiasts and social entertainment seekers. Operating in Saudi Arabia's rapidly growing entertainment sector, they needed a website that could showcase their state-of-the-art golf simulators, enable online booking, and create a strong social media presence. The challenge was to balance the technical sophistication of golf simulation technology with the fun, social atmosphere of an entertainment lounge, all while catering to the Middle Eastern market's specific preferences and expectations.",
+
+		// Client description (appears below logo)
+		clientDescription:
+			"The Virtual Greens is Riyadh's premier indoor golf simulator entertainment lounge, combining cutting-edge golf technology with a vibrant social atmosphere. Catering to both serious golfers and entertainment seekers, they offer a unique experience where skill meets social connection in the heart of Saudi Arabia's growing entertainment sector.",
 
 		clientLogo:
 			'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&q=80',
@@ -381,13 +389,17 @@ export const caseStudies = [
 		thumbnailImage: '/images/portfolio/carpenter_co_thumbnail.png',
 
 		description:
-			'A sophisticated e-commerce platform for a premium furniture manufacturing brand specializing in handcrafted woodwork and bespoke design solutions.',
+			'A sophisticated e-commerce platform for a premium furniture manufacturing brand specializing in handcrafted woodwork and bespoke design solutions. The platform seamlessly integrates with existing inventory management systems, features advanced product filtering by wood type and style period, and showcases intricate craftsmanship through high-resolution optimized imagery. With a custom order management system for bespoke furniture requests, automated quote generation, and secure payment processing for high-value transactions, the platform has enabled Carpenters & Co. to expand beyond their Dubai showroom and reach discerning clients across the UAE and GCC region while maintaining the premium tactile experience that defines their brand.',
 
 		challenge:
 			'Create a digital presence that conveys luxury craftsmanship while enabling seamless product browsing and custom order management for a discerning clientele.',
 
 		briefText:
 			'Carpenters & Co., a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking, approached us with a critical business need: to expand their reach beyond their physical showroom while maintaining the premium, tactile experience that defines their brand. Their clientele expects nothing less than perfection—from CEOs furnishing executive offices to homeowners seeking bespoke pieces for luxury villas. The challenge was multifaceted: showcase intricate craftsmanship through digital imagery, enable custom order requests for bespoke furniture, integrate with their complex inventory system, and create a user experience that reflects the same attention to detail found in their physical products. This project required us to translate the sensory experience of touching premium wood and seeing masterful joinery into a digital format that would resonate with their sophisticated target audience.',
+
+		// Client description (appears below logo)
+		clientDescription:
+			"Carpenters & Co. is a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking. Specializing in bespoke furniture for luxury homes and executive offices, they serve a discerning clientele across the UAE and GCC region with masterful craftsmanship and uncompromising attention to detail.",
 
 		clientLogo:
 			'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&q=80',
@@ -555,13 +567,17 @@ export const caseStudies = [
 		thumbnailImage: '/images/portfolio/aitmthumbnail.jpg',
 
 		description:
-			'A comprehensive website for AITM, a premier engineering institution in Karnataka with 40+ years of excellence, featuring virtual campus tours, admissions system, and placement tracking.',
+			'A comprehensive website for AITM, a premier engineering institution in Karnataka with 40+ years of excellence, featuring virtual campus tours, admissions system, and placement tracking. Built with Django and deployed on VPS infrastructure with cPanel management, the platform showcases 8+ undergraduate and postgraduate programs including Computer Science, Electronics, Mechanical, Civil Engineering, MBA, MCA, and Robotics & AI. The modern responsive design reflects academic excellence while featuring multi-language support in English and Kannada, WhatsApp chatbot integration for instant support, and a streamlined admissions tracking system. With a 95% placement record and affiliations with VTU and AICTE, the digital transformation has positioned AITM competitively among premier engineering institutions across South India.',
 
 		challenge:
 			'Create a modern digital presence for a 40-year-old institution that showcases academic excellence, enables seamless admissions, and appeals to prospective students and parents.',
 
 		briefText:
 			'Anjuman Institute of Technology and Management (AITM), a premier engineering college in Bhatkal, Karnataka, needed a complete digital transformation. With four decades of academic excellence, 95% placement record, and affiliations with VTU and AICTE, they required a website that reflects their legacy while appealing to the modern student. The challenge was to present comprehensive course information, enable virtual campus exploration, streamline admissions, and showcase their achievements—all while maintaining accessibility across diverse demographics.',
+
+		// Client description (appears below logo)
+		clientDescription:
+			"Anjuman Institute of Technology and Management (AITM) is a premier engineering institution in Bhatkal, Karnataka, with over 40 years of academic excellence. Affiliated with VTU and approved by AICTE, AITM offers 8+ undergraduate and postgraduate programs with a 95% placement record, nurturing future engineers and management professionals across South India.",
 
 		clientLogo: '/images/client_logos/atim-client-logo.png',
 
@@ -694,13 +710,17 @@ export const caseStudies = [
 		thumbnailImage: '/images/portfolio/alitqanthumbnail.jpg',
 
 		description:
-			'A modern Islamic education platform offering Noorani Qaida, Quranic studies, and Islamic courses designed to foster deep understanding and spiritual growth.',
+			'A modern Islamic education platform offering Noorani Qaida, Quranic studies, and Islamic courses designed to foster deep understanding and spiritual growth. Built with Next.js and Tailwind CSS for optimal performance and beautiful aesthetics, the platform provides accessible Islamic education to students worldwide. The clean, modern design maintains reverence and authenticity while featuring intuitive course navigation, student registration systems, and mobile-responsive layouts that work seamlessly across all devices. SEO-optimized for educational keywords, the platform combines traditional Islamic learning values with contemporary web technologies, making quality religious education accessible to students of all ages seeking to deepen their understanding of the Quran and Islamic principles.',
 
 		challenge:
 			'Create an accessible, modern digital platform for Islamic education that appeals to students of all ages while maintaining reverence and authenticity.',
 
 		briefText:
 			'Al Itqan Academy needed a digital presence to expand their reach and provide accessible Islamic education online. The platform required intuitive course navigation, student registration, and a design that reflects the spiritual nature of their offerings while remaining modern and user-friendly.',
+
+		// Client description (appears below logo)
+		clientDescription:
+			"Al Itqan Academy is a dedicated Islamic education platform offering Noorani Qaida, Quranic studies, and comprehensive Islamic courses to students worldwide. With a focus on deep understanding and spiritual growth, they provide accessible, quality religious education that combines traditional values with contemporary teaching methods.",
 
 		clientLogo: '/images/client_logos/alitqan-client-logo.png',
 

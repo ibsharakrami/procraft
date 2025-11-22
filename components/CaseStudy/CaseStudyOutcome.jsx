@@ -7,7 +7,10 @@ export default function CaseStudyOutcome({ outcomes }) {
 	if (!outcomes || outcomes.length === 0) return null;
 
 	return (
-		<section data-theme='light' className='bg-white py-16 md:py-24 lg:py-32'>
+		<section data-theme='light' className='relative bg-white py-20 md:py-28 lg:py-36'>
+			{/* Top Border Line */}
+			<div className='absolute top-0 left-0 right-0 h-[1px] bg-gray-200' />
+
 			<Container size='default'>
 				{/* Section Header */}
 				<motion.div
@@ -15,28 +18,29 @@ export default function CaseStudyOutcome({ outcomes }) {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className='mb-12 md:mb-16'
+					className='mb-16 md:mb-24'
 				>
-					<h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 font-blatant'>
+					<h2 className='text-5xl md:text-6xl lg:text-7xl font-bold text-black font-blatant lowercase'>
 						the outcome
 					</h2>
+					<div className='w-20 h-[2px] bg-primary-blue mt-6' />
 				</motion.div>
 
-				{/* Outcomes List */}
-				<div className='space-y-12 md:space-y-16'>
+				{/* Outcomes Grid */}
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20'>
 					{outcomes.map((outcome, index) => (
 						<motion.div
 							key={index}
 							initial={{ opacity: 0, y: 30 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: '-50px' }}
+							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: index * 0.1 }}
-							className='border-l-4 border-[#10367D] pl-6 md:pl-8'
+							className='space-y-4'
 						>
-							<h3 className='text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4 font-blatant'>
+							<h3 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black font-blatant'>
 								{outcome.title}
 							</h3>
-							<p className='text-base md:text-lg leading-relaxed text-gray-700 font-urbanist'>
+							<p className='text-lg md:text-xl leading-relaxed text-gray-700 font-urbanist'>
 								{outcome.description}
 							</p>
 						</motion.div>
