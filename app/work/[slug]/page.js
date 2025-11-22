@@ -4,14 +4,10 @@ import CaseStudyHero from '@/components/CaseStudy/CaseStudyHero';
 import CaseStudyBrief from '@/components/CaseStudy/CaseStudyBrief';
 import CaseStudyOverview from '@/components/CaseStudy/CaseStudyOverview';
 import CaseStudyHighlight from '@/components/CaseStudy/CaseStudyHighlight';
-import CaseStudyProcess from '@/components/CaseStudy/CaseStudyProcess';
 import CaseStudySolution from '@/components/CaseStudy/CaseStudySolution';
 import CaseStudyResults from '@/components/CaseStudy/CaseStudyResults';
-import CaseStudyOutcome from '@/components/CaseStudy/CaseStudyOutcome';
-import CaseStudyTestimonial from '@/components/CaseStudy/CaseStudyTestimonial';
 import CaseStudyTechnologies from '@/components/CaseStudy/CaseStudyTechnologies';
 import CaseStudyCTA from '@/components/CaseStudy/CaseStudyCTA';
-import CaseStudyRelated from '@/components/CaseStudy/CaseStudyRelated';
 import NextProjectNav from '@/components/CaseStudy/NextProjectNav';
 
 // Generate metadata for SEO
@@ -57,7 +53,7 @@ export default async function CaseStudyPage({ params }) {
 			{/* 1. Hero Section */}
 			<CaseStudyHero project={project} />
 
-			{/* 2. The Brief Section - New comprehensive brief with metadata */}
+			{/* 2. The Brief Section - Comprehensive brief with metadata */}
 			<CaseStudyBrief
 				briefText={project.briefText}
 				client={project.client}
@@ -69,37 +65,25 @@ export default async function CaseStudyPage({ params }) {
 				liveUrl={project.liveUrl}
 			/>
 
-			{/* 3. Ove\rview & Challenge Section - Existing */}
+			{/* 3. Overview & Challenge Section */}
 			<CaseStudyOverview project={project} />
 
 			{/* 4. Highlight Statement - Key achievement or characteristic */}
 			<CaseStudyHighlight statement={project.highlightStatement} />
 
-			{/* 5. The Process Section - New step-by-step methodology */}
-			<CaseStudyProcess processSteps={project.processSteps} />
-
-			{/* 6. Solution Highlights Section - Existing */}
+			{/* 5. Solution Highlights Section */}
 			<CaseStudySolution project={project} />
 
-			{/* 7. The Results Section - Key metrics & live website link */}
+			{/* 6. The Results Section - Key metrics & live website link */}
 			<CaseStudyResults project={project} />
 
-			{/* 8. The Outcome Section - New detailed outcomes */}
-			<CaseStudyOutcome outcomes={project.outcomes} />
-
-			{/* 9. Client Testimonial Section - New testimonial */}
-			<CaseStudyTestimonial testimonial={project.testimonial} />
-
-			{/* 10. Technologies Section - Existing tech stack */}
+			{/* 7. Technologies Section - Tech stack */}
 			<CaseStudyTechnologies project={project} />
 
-			{/* 11. Call to Action - HOW CAN WE HELP? */}
+			{/* 8. Call to Action - HOW CAN WE HELP? */}
 			<CaseStudyCTA />
 
-			{/* 12. Related Projects Section - New recommendations */}
-			<CaseStudyRelated currentSlug={slug} />
-
-			{/* 13. Next Project Navigation - Existing carousel */}
+			{/* 9. Next Project Navigation - Carousel */}
 			<NextProjectNav currentSlug={slug} />
 		</>
 	);
