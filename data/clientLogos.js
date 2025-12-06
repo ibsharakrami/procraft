@@ -62,6 +62,31 @@ export const clientLogos = [
     logo: "/images/client_logos/beautyshopIndia-client-logo.png",
     website: null
   }
+  ,
+  {
+    id: 11,
+    name: "7cars",
+    logo: "/images/client_logos/7cars-client-logo.png",
+    website: null
+  },
+  {
+    id: 12,
+    name: "DP World",
+    logo: "/images/client_logos/dp-world-client-logo.png",
+    website: null
+  },
+  {
+    id: 13,
+    name: "Faceworld",
+    logo: "/images/client_logos/faceworld-client-logo.png",
+    website: null
+  },
+  {
+    id: 14,
+    name: "Keyworth",
+    logo: "/images/client_logos/keyworth-client-logo.png",
+    website: null
+  }
 ];
 
 // Helper function to get all logos (can be used for filtering later)

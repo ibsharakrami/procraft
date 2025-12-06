@@ -46,10 +46,11 @@ export function ScrollVelocityRow({
   direction = 1,
   children,
   className = "",
+  isHovered = false,
 }) {
   const baseX = useRef(0)
   const lastScrollDirection = useRef(1) // Track persistent scroll direction
-  const [isHovered, setIsHovered] = useState(false) // Track hover state for pause
+  // Accept isHovered as prop for shared hover state
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -72,7 +73,7 @@ export function ScrollVelocityRow({
    */
   useAnimationFrame((t, delta) => {
     // Pause animation when hovered
-    if (isHovered) return
+  if (isHovered) return
 
     // Get current scroll velocity (with sign)
     const currentVelocity = smoothVelocity.get()
@@ -111,11 +112,7 @@ export function ScrollVelocityRow({
   })
 
   return (
-    <div
-      className={`flex flex-nowrap ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className={`flex flex-nowrap ${className}`}>
       <motion.div
         className="flex flex-nowrap whitespace-nowrap"
         style={{ x }}
