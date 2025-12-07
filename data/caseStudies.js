@@ -220,7 +220,7 @@ export const caseStudies = [
 
 		// Client description (appears below logo)
 		clientDescription:
-			"Carpenters & Co. is a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking. Specializing in bespoke furniture for luxury homes and executive offices, they serve a discerning clientele across the UAE and GCC region with masterful craftsmanship and uncompromising attention to detail.",
+			'Carpenters & Co. is a Dubai-based premium furniture manufacturer with over 20 years of heritage in handcrafted woodworking. Specializing in bespoke furniture for luxury homes and executive offices, they serve a discerning clientele across the UAE and GCC region with masterful craftsmanship and uncompromising attention to detail.',
 
 		clientLogo:
 			'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&q=80',
@@ -307,7 +307,7 @@ export const caseStudies = [
 
 		// Client description (appears below logo)
 		clientDescription:
-			"Anjuman Institute of Technology and Management (AITM) is a premier engineering institution in Bhatkal, Karnataka, with over 40 years of academic excellence. Affiliated with VTU and approved by AICTE, AITM offers 8+ undergraduate and postgraduate programs with a 95% placement record, nurturing future engineers and management professionals across South India.",
+			'Anjuman Institute of Technology and Management (AITM) is a premier engineering institution in Bhatkal, Karnataka, with over 40 years of academic excellence. Affiliated with VTU and approved by AICTE, AITM offers 8+ undergraduate and postgraduate programs with a 95% placement record, nurturing future engineers and management professionals across South India.',
 
 		clientLogo: '/images/client_logos/atim-client-logo.png',
 
@@ -390,7 +390,7 @@ export const caseStudies = [
 
 		// Client description (appears below logo)
 		clientDescription:
-			"Al Itqan Academy is a dedicated Islamic education platform offering Noorani Qaida, Quranic studies, and comprehensive Islamic courses to students worldwide. With a focus on deep understanding and spiritual growth, they provide accessible, quality religious education that combines traditional values with contemporary teaching methods.",
+			'Al Itqan Academy is a dedicated Islamic education platform offering Noorani Qaida, Quranic studies, and comprehensive Islamic courses to students worldwide. With a focus on deep understanding and spiritual growth, they provide accessible, quality religious education that combines traditional values with contemporary teaching methods.',
 
 		clientLogo: '/images/client_logos/alitqan-client-logo.png',
 
@@ -406,11 +406,7 @@ export const caseStudies = [
 			'SEO optimization for educational keywords',
 		],
 
-		services: [
-			'Website Design',
-			'Web Development',
-			'UI/UX Design',
-		],
+		services: ['Website Design', 'Web Development', 'UI/UX Design'],
 
 		results: {
 			courses: 'Multiple Programs',
@@ -418,11 +414,7 @@ export const caseStudies = [
 			reach: 'Global Students',
 		},
 
-		technologies: [
-			'Next.js',
-			'React',
-			'Tailwind CSS',
-		],
+		technologies: ['Next.js', 'React', 'Tailwind CSS'],
 
 		liveUrl: 'https://alitqanacademy.com',
 
@@ -436,6 +428,260 @@ export const caseStudies = [
 		metricHighlights: [
 			{ value: '100+', label: 'STUDENTS' },
 			{ value: 'Global', label: 'REACH' },
+		],
+	},
+
+	{
+		id: '88total',
+		slug: '88total',
+		title: '88 Total',
+		client: '88 Total',
+		category: ['Web Design', 'E-commerce'],
+		year: '2024',
+
+		tagline: 'Premium Construction Materials & Building Solutions',
+
+		heroImage: '/images/portfolio/88.svg',
+		thumbnailImage: '/images/portfolio/88.svg',
+
+		description:
+			'A comprehensive e-commerce platform for 88 Total, a leading supplier of construction materials and building solutions. The website features an extensive product catalog, streamlined procurement processes, and intuitive navigation designed specifically for contractors, builders, and construction professionals. Built with modern web technologies to ensure fast performance and seamless user experience across all devices, the platform includes advanced search and filtering capabilities, detailed product specifications, and secure checkout processes. The design emphasizes professionalism and reliability while making it easy for customers to find exactly what they need for their construction projects.',
+
+		challenge:
+			'Create a professional e-commerce platform that simplifies the complex process of sourcing construction materials while maintaining a premium brand image.',
+
+		highlightStatement:
+			'enterprise-grade e-commerce, streamlined procurement, and comprehensive building solutions!',
+
+		briefText:
+			'88 Total approached us with the goal of establishing a strong online presence in the construction materials sector. They needed a robust e-commerce platform that could handle their extensive product catalog while providing an intuitive experience for professional buyers. The challenge was to create a system that balanced technical product information with ease of use, enabling quick procurement decisions for busy construction professionals.',
+
+		clientDescription:
+			'88 Total is a trusted supplier of construction materials and building solutions, serving contractors, builders, and construction professionals with a comprehensive range of products. Committed to quality and reliability, they provide everything needed to bring construction projects to life.',
+
+		clientLogo: '/images/client_logos/88total-client-logo.svg',
+
+		duration: '3 months',
+
+		role: 'E-commerce Development & Design',
+
+		solution: [
+			'Modern e-commerce platform with advanced filtering',
+			'Comprehensive product catalog system',
+			'Mobile-responsive design for on-site access',
+			'Secure payment integration',
+			'SEO optimization for construction industry keywords',
+			'Fast-loading product pages with optimized images',
+		],
+
+		services: [
+			'E-commerce Development',
+			'UI/UX Design',
+			'SEO Optimization',
+			'Performance Optimization',
+		],
+
+		results: {
+			products: '1000+ Products',
+			performance: '95+ PageSpeed Score',
+			mobile: 'Fully Responsive',
+		},
+
+		technologies: [
+			'WordPress',
+			'WooCommerce',
+			'React',
+			'Redux',
+			'Elementor',
+			'PHP',
+			'MySQL',
+			'GSAP',
+			'ZURB Foundation',
+		],
+
+		liveUrl: 'https://www.88total.com/',
+
+		featured: true,
+
+		themeColor: '#FF6B35',
+
+		size: 'large',
+
+		metricHighlights: [
+			{ value: '1000+', label: 'PRODUCTS' },
+			{ value: '95+', label: 'PERFORMANCE' },
+		],
+	},
+
+	{
+		id: 'thaisuq',
+		slug: 'thaisuq',
+		title: 'ThaiSuq',
+		client: 'ThaiSuq',
+		category: ['E-commerce', 'Web Design'],
+		year: '2024',
+
+		tagline: 'Premium Thai Products E-commerce Platform',
+
+		heroImage: '/images/portfolio/thaisuq.svg',
+		thumbnailImage: '/images/portfolio/thaisuq.svg',
+
+		description:
+			'A modern e-commerce platform showcasing premium Thai products and authentic cultural offerings. Built on Shopify with custom Redux integration for enhanced state management and GSAP animations for engaging user interactions. The platform features advanced product filtering, optimized image loading with LazySizes for superior performance, and comprehensive analytics integration through Google Analytics and Facebook Pixel. With Cloudflare CDN ensuring fast global delivery and HTTP/3 protocol for cutting-edge performance, ThaiSuq provides customers worldwide with seamless access to authentic Thai products. The design celebrates Thai culture while maintaining modern e-commerce best practices, complete with mobile-responsive layouts and secure HSTS implementation.',
+
+		challenge:
+			'Create an engaging e-commerce platform that authentically represents Thai culture while providing a seamless shopping experience for international customers.',
+
+		highlightStatement:
+			'cultural authenticity meets modern e-commerce with global reach and premium performance!',
+
+		briefText:
+			'ThaiSuq needed a sophisticated online store that could showcase their premium Thai products to a global audience. The challenge was to create a platform that honored Thai cultural aesthetics while providing the technical sophistication required for international e-commerce, including multi-currency support, efficient product discovery, and optimized performance for customers around the world.',
+
+		clientDescription:
+			"ThaiSuq is a premium e-commerce platform dedicated to bringing authentic Thai products to customers worldwide. With a carefully curated selection of cultural items and traditional products, they bridge the gap between Thai craftsmanship and global markets, celebrating Thailand's rich heritage through quality commerce.",
+
+		clientLogo: '/images/client_logos/thaisuq-client-logo.svg',
+
+		duration: '2.5 months',
+
+		role: 'Shopify Development & Custom Integration',
+
+		solution: [
+			'Shopify platform with custom Redux integration',
+			'GSAP animations for engaging user experience',
+			'LazySizes implementation for optimized image loading',
+			'Google Analytics & Facebook Pixel integration',
+			'Cloudflare CDN for global performance',
+			'HTTP/3 protocol for cutting-edge speed',
+			'HSTS security implementation',
+			'Mobile-responsive design with Masonry layout',
+		],
+
+		services: [
+			'E-commerce Development',
+			'Shopify Customization',
+			'UI/UX Design',
+			'Performance Optimization',
+			'Analytics Integration',
+		],
+
+		results: {
+			platform: 'Shopify',
+			security: 'HSTS Enabled',
+			performance: 'Cloudflare CDN',
+			reach: 'Global Shipping',
+		},
+
+		technologies: [
+			'Shopify',
+			'Redux',
+			'GSAP',
+			'jQuery',
+			'Masonry',
+			'LazySizes',
+			'Google Analytics',
+			'Facebook Pixel',
+			'Cloudflare',
+		],
+
+		liveUrl: 'https://thaisuq.com/',
+
+		featured: true,
+
+		themeColor: '#D4AF37',
+
+		size: 'large',
+
+		metricHighlights: [
+			{ value: 'Global', label: 'REACH' },
+			{ value: 'HTTP/3', label: 'PROTOCOL' },
+		],
+	},
+
+	{
+		id: 'keyworth-properties',
+		slug: 'keyworth-properties',
+		title: 'Keyworth Properties',
+		client: 'Keyworth Properties',
+		category: ['Web Design', 'Real Estate'],
+		year: '2024',
+
+		tagline: 'Modern Real Estate Platform with Interactive Maps',
+
+		heroImage: '/images/portfolio/keyworthproperties.svg',
+		thumbnailImage: '/images/portfolio/keyworthproperties.svg',
+
+		description:
+			'A comprehensive real estate platform for Keyworth Properties featuring interactive property maps, advanced search capabilities, and seamless communication tools. Built on WordPress with Redux state management and powered by LiteSpeed server for exceptional performance. The platform integrates Leaflet maps for interactive property location visualization, WhatsApp Business Chat for instant client communication, and Bootstrap framework for responsive design. With advanced filtering options using Select2, beautiful property galleries with Lightbox and Swiper carousels, and real-time notifications via toastr, the website provides an immersive property browsing experience. The platform streamlines property discovery for potential buyers while enabling the team to manage listings efficiently.',
+
+		challenge:
+			'Create a modern real estate platform that combines interactive property mapping, seamless client communication, and intuitive property search in one cohesive experience.',
+
+		highlightStatement:
+			'interactive maps, instant communication, and premium property showcase!',
+
+		briefText:
+			'Keyworth Properties needed a sophisticated digital platform to showcase their real estate portfolio while providing tools that would streamline the property discovery process for potential buyers. The challenge was to integrate interactive mapping technology with traditional property listings, implement real-time communication channels, and create an intuitive interface that would appeal to both tech-savvy millennials and traditional property buyers.',
+
+		clientDescription:
+			'Keyworth Properties is a dynamic real estate agency dedicated to connecting clients with their ideal properties. With a focus on transparency, technology, and personalized service, they leverage modern digital tools to provide an exceptional property search experience that makes finding the perfect home or investment property effortless.',
+
+		clientLogo: '/images/client_logos/keyworth-client-logo.png',
+
+		duration: '3 months',
+
+		role: 'Full-Stack Development & UX Design',
+
+		solution: [
+			'WordPress platform with Redux state management',
+			'Leaflet maps integration for interactive property locations',
+			'WhatsApp Business Chat for instant client communication',
+			'Bootstrap responsive framework for all devices',
+			'Advanced property filtering with Select2',
+			'LiteSpeed server for optimal performance',
+			'Beautiful galleries with Lightbox and Swiper',
+			'Real-time notifications with toastr',
+		],
+
+		services: [
+			'Website Development',
+			'Map Integration',
+			'UI/UX Design',
+			'Performance Optimization',
+			'Chat Integration',
+		],
+
+		results: {
+			platform: 'WordPress',
+			server: 'LiteSpeed',
+			features: 'Interactive Maps',
+			communication: 'WhatsApp Chat',
+		},
+
+		technologies: [
+			'WordPress',
+			'Redux',
+			'LiteSpeed',
+			'Bootstrap',
+			'Leaflet',
+			'PHP',
+			'MySQL',
+			'WhatsApp Business',
+			'jQuery',
+		],
+
+		liveUrl: 'https://keyworthproperties.com/',
+
+		featured: false,
+
+		themeColor: '#1A5490',
+
+		size: 'large',
+
+		metricHighlights: [
+			{ value: 'Live Maps', label: 'INTERACTIVE' },
+			{ value: 'Instant', label: 'CHAT' },
 		],
 	},
 ];
