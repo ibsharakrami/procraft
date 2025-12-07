@@ -1,6 +1,6 @@
 // Contact Page Static Data
 export const contactInfo = {
-  phone: '+971 55 562 4052',
+  phone: '+971 52 482 9295',
   email: 'info@procraft.ae',
   address: 'Gold Souq Extension, Deira, Dubai, United Arab Emirates',
   coordinates: {
@@ -57,7 +57,7 @@ export const ctaCards = [
     icon: 'Calendar',
     title: 'Schedule a Call',
     description: 'Book a free 30-minute consultation with our team',
-    action: 'tel:+971555624052',
+    action: 'tel:+971524829295',
     buttonText: 'Call Now'
   },
   {
@@ -65,7 +65,7 @@ export const ctaCards = [
     icon: 'MessageCircle',
     title: 'WhatsApp Us',
     description: 'Get instant responses to your questions',
-    action: 'https://wa.me/971555624052?text=Hi%20ProCraft%2C%20I%27d%20like%20to%20discuss%20a%20project',
+    action: 'https://wa.me/971524829295?text=Hi%20ProCraft%2C%20I%27d%20like%20to%20discuss%20a%20project',
     buttonText: 'Chat Now'
   },
   {

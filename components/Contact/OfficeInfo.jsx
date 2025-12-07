@@ -23,23 +23,9 @@ export default function OfficeInfo() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+971 4 564 8887',
-      href: 'tel:+97145648887',
-      color: '#10367D'
-    },
-    {
-      icon: Smartphone,
-      label: 'Mobile 1',
       value: contactInfo.phone,
       href: `tel:${contactInfo.phone.replace(/\s/g, '')}`,
-      color: '#74B4D9'
-    },
-    {
-      icon: Smartphone,
-      label: 'Mobile 2',
-      value: '+971 56 239 6568',
-      href: 'tel:+971562396568',
-      color: '#74B4D9'
+      color: '#10367D'
     },
   ];
 

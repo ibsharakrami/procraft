@@ -79,7 +79,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/procraftae"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"

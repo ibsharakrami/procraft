@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Code, Layout, Palette, Smartphone, Server, Database, Cpu } from "lucide-react";
 import ServicesHero from "@/components/Services/ServicesHero";
 
@@ -126,18 +127,18 @@ const Services = () => {
                         {service.description}
                       </p>
                       <div className="flex flex-wrap gap-4 md:gap-6">
-                        <button className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
+                        <Link href="/work" className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
                           read more
                           <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
-                        </button>
-                        <button className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
+                        </Link>
+                        <Link href="/contact" className="group/btn flex items-center font-semibold text-white text-sm md:text-base lg:text-lg transition-colors duration-300 hover:text-gray-300">
                           enquire online
                           <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

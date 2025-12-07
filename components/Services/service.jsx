@@ -71,10 +71,10 @@ const ServicesSection = () => {
             </div>
             <div>
               <a
-                href="tel:+971555624052"
+                href="tel:+971524829295"
                 className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white border-2 border-white rounded hover:bg-white hover:text-emerald-600 transition-all duration-300"
               >
-                +971 55 562 4052
+                +971 52 482 9295
               </a>
             </div>
           </div>

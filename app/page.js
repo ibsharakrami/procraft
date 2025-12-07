@@ -97,10 +97,10 @@ export default function Home() {
         {/* Contact Info - Top Right - Fixed Position - Hidden on mobile (below 768px) and when scrolled on desktop */}
         <div className={`hidden md:fixed top-8 md:top-10 right-8 md:right-16 z-60 transition-opacity duration-300 ${isScrolled ? 'md:opacity-0 md:pointer-events-none' : 'md:opacity-100'}`}>
           <a
-            href="tel:+971555624052"
+            href="tel:+971524829295"
             className={`text-[11px] md:text-xs hover:text-white transition-colors duration-300 font-light tracking-wider ${topTheme === 'dark' ? 'text-white/80' : 'text-[#10367D]/80'}`}
           >
-            +971 55 562 4052
+            +971 52 482 9295
           </a>
         </div>
 
@@ -230,8 +230,8 @@ export default function Home() {
               "url": "https://procraft.ae",
               "logo": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
               "sameAs": [
-                "https://www.linkedin.com/company/procraft",
-                "https://www.instagram.com/procraft",
+                "https://www.linkedin.com/company/procraft.in/",
+                "https://www.instagram.com/procraftae",
                 "https://www.facebook.com/procraft"
               ]
             },
@@ -250,7 +250,7 @@ export default function Home() {
               "@type": "ProfessionalService",
               "@id": "https://procraft.ae/#organization",
               "name": "ProCraft",
-              "telephone": "+971-55-562-4052",
+              "telephone": "+971-52-482-9295",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Gold Souq Extension, Deira",

@@ -24,10 +24,10 @@ export default function CaseStudyCTA() {
 					{/* Right - Phone Button */}
 					<div>
 						<a
-							href='tel:+971545866866'
+							href='tel:+971524829295'
 							className='inline-flex items-center justify-center px-6 md:px-8 py-2.5 md:py-3 border border-white text-white text-lg md:text-xl font-light tracking-wide hover:bg-white hover:text-black transition-all duration-300 font-urbanist'
 						>
-							+971 545 866 866
+							+971 52 482 9295
 						</a>
 					</div>
 				</motion.div>

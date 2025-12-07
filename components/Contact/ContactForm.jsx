@@ -165,7 +165,7 @@ export default function ContactForm() {
             className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#10367D]/20 transition-all font-urbanist ${
               errors.phone ? 'border-red-500' : 'border-gray-200 focus:border-[#10367D]'
             }`}
-            placeholder="+971 50 123 4567"
+            placeholder="+971 52 482 9295"
             disabled={isSubmitting || isSuccess}
           />
           {errors.phone && (

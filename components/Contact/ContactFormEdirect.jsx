@@ -172,7 +172,7 @@ export default function ContactFormEdirect() {
             className={`w-full px-4 py-3 bg-[#F0F0F0] border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-[#10367D] transition-all font-urbanist ${
               errors.phone ? 'ring-2 ring-red-500' : ''
             }`}
-            placeholder="+971 50 123 4567"
+            placeholder="+971 52 482 9295"
             disabled={isSubmitting || isSuccess}
           />
           {errors.phone && (
