@@ -58,33 +58,50 @@ export const clientLogos = [
   },
   {
     id: 10,
-    name: "Hair & Skin Care",
-    logo: "/images/client_logos/beautyshopIndia-client-logo.png",
-    website: null
-  }
-  ,
-  {
-    id: 11,
     name: "7cars",
     logo: "/images/client_logos/7cars-client-logo.png",
     website: null
   },
   {
-    id: 12,
+    id: 11,
     name: "DP World",
     logo: "/images/client_logos/dp-world-client-logo.png",
     website: null
   },
   {
-    id: 13,
+    id: 12,
     name: "Faceworld",
     logo: "/images/client_logos/faceworld-client-logo.png",
     website: null
   },
   {
-    id: 14,
+    id: 13,
     name: "Keyworth",
     logo: "/images/client_logos/keyworth-client-logo.png",
+    website: null
+  },
+  {
+    id: 14,
+    name: "i-Kola",
+    logo: "/images/client_logos/i-kola-client-logo.png",
+    website: null
+  },
+  {
+    id: 15,
+    name: "Mohidheen Faqui",
+    logo: "/images/client_logos/mohiddin-faqui-client-logo.png",
+    website: null
+  },
+  {
+    id: 16,
+    name: "Al Zain Auto",
+    logo: "/images/client_logos/al-zain-client-logo.png",
+    website: null
+  },
+  {
+    id: 17,
+    name: "Arabian Fragrance",
+    logo: "/images/client_logos/arabian-fragrance-client-logo.png",
     website: null
   }
 ];
