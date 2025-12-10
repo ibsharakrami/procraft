@@ -71,7 +71,7 @@ export default function Navigation() {
 					className='text-white text-base font-light tracking-[0.2em] hover:text-[#74B4D9] transition-colors'
 					onClick={() => setIsMenuOpen(false)}
 				>
-					procraft
+					ProCraft
 				</Link>
 
 				{/* Phone Number - Right */}
@@ -96,7 +96,7 @@ export default function Navigation() {
 				className='text-[18px] md:text-[19px] tracking-[0.35em] [writing-mode:vertical-rl] rotate-180 pointer-events-auto text-white hover:opacity-70 transition-all duration-300 font-light'
 				onClick={() => setIsMenuOpen(false)}
 			>
-				procraft
+				ProCraft
 			</Link>
 		</div>			{/* Scroll Indicator - Bottom Left - Desktop Only */}
 		<div
@@ -156,7 +156,7 @@ export default function Navigation() {
 						onClick={() => setIsMenuOpen(false)}
 						className='text-white text-base md:text-lg font-normal hover:text-[#74B4D9] transition-colors'
 					>
-						procraft
+						ProCraft
 					</Link>
 				</div>
 
