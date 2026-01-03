@@ -10,7 +10,10 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:www.google.com)",
       "Bash(npm run build:*)",
-      "WebFetch(domain:www.wowstudio.io)"
+      "WebFetch(domain:www.wowstudio.io)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []

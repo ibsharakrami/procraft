@@ -1,4 +1,18 @@
-# ✅ FINAL WORKING .HTACCESS FOR PROCRAFT
+# ✅ PRODUCTION-READY .HTACCESS FOR PROCRAFT
+
+> **✨ NEW: Complete production-ready .htaccess file now available in `/out/.htaccess`**
+>
+> This guide shows the simplified version. For the full production version with:
+> - Security headers (HSTS, CSP, X-Frame-Options)
+> - Gzip/Brotli compression
+> - Aggressive caching rules
+> - Video streaming optimization
+> - Font CORS headers
+> - And much more...
+>
+> **→ Use the file already created at `/out/.htaccess`** (included when you run `npm run build`)
+
+---
 
 ## 📁 Your File Structure:
 ```
@@ -226,3 +240,41 @@ Share these details:
 
 **Your `.htaccess` is now in the `out` folder!**
 Upload it to `public_html` and you're done! 🚀
+
+---
+
+## 🚀 PRODUCTION-READY VERSION
+
+**Want the fully optimized, production-ready .htaccess?**
+
+A comprehensive version is already created at `/out/.htaccess` with 200+ lines including:
+
+### Security Features:
+- ✅ HTTPS enforcement (auto-redirect HTTP → HTTPS)
+- ✅ Security headers (HSTS, CSP, X-Frame-Options, XSS Protection)
+- ✅ Block hidden files (.env, .git, etc.)
+- ✅ Disable PHP execution
+- ✅ Remove server signatures
+
+### Performance Features:
+- ✅ Gzip compression (70%+ file size reduction)
+- ✅ Brotli compression (better than Gzip)
+- ✅ Aggressive caching (1 year for static assets)
+- ✅ Video streaming optimization (byte-range requests)
+- ✅ Font CORS headers
+- ✅ Keep-Alive connections
+
+### SEO & Routing:
+- ✅ WWW to non-WWW redirect (configurable)
+- ✅ Clean URLs (hide .html extensions)
+- ✅ Custom 404 error page
+- ✅ Prevent duplicate content
+
+**The production .htaccess is ready to deploy** - just upload the entire `/out` folder to your `public_html` directory!
+
+To view the full file:
+```bash
+cat out/.htaccess
+```
+
+Or open it in your editor to customize options like WWW redirect direction.
