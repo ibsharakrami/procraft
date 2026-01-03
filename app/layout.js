@@ -135,13 +135,14 @@ export const metadata = {
 	icons: {
 		icon: [
 			{ url: '/favicon.ico', sizes: 'any' },
+			{ url: '/favicon_procraft.svg', type: 'image/svg+xml' },
 			{ url: '/icon.png', type: 'image/png', sizes: '512x512' },
 		],
 		apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],
 		other: [
 			{
 				rel: 'mask-icon',
-				url: '/images/NewLogo_procraft.png',
+				url: '/favicon_procraft.svg',
 				color: '#10367D',
 			},
 		],
@@ -289,6 +290,10 @@ export default function RootLayout({ children }) {
 
 	return (
 		<html lang='en'>
+			<head>
+				<link rel='icon' type='image/svg+xml' href='/favicon.svg?v=3' />
+				<link rel='icon' type='image/x-icon' href='/favicon.ico?v=3' />
+			</head>
 			<body className={`${blatant.variable} ${urbanist.variable} antialiased`}>
 				<SmoothScrollProvider>
 					<SmoothCursor />
