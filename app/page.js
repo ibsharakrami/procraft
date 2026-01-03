@@ -1,7 +1,7 @@
 'use client';
 
 import Script from 'next/script';
-import ServicesSection from "@/components/Services/ServiceSection";
+import ServicesSection from '@/components/Services/ServiceSection';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import PricingSection from '@/components/Pricing/PricingSection';
@@ -13,265 +13,274 @@ import { useNavigationTheme } from '@/hooks/useNavigationTheme';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const { topTheme } = useNavigationTheme();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [typedText, setTypedText] = useState('');
-  const fullText = 'procraft';
+	const { topTheme } = useNavigationTheme();
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [typedText, setTypedText] = useState('');
+	const fullText = 'procraft';
 
-  // Scroll detection to hide fixed phone number when navbar is visible
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+	// Scroll detection to hide fixed phone number when navbar is visible
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 100);
+		};
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
-  // Typing effect for "procraft" - continuous loop
-  useEffect(() => {
-    let currentIndex = 0;
-    let isDeleting = false;
-    let isPaused = false;
-    
-    const typingInterval = setInterval(() => {
-      if (isPaused) return;
-      
-      if (!isDeleting) {
-        // Typing forward
-        if (currentIndex < fullText.length) {
-          currentIndex++;
-          setTypedText(fullText.slice(0, currentIndex));
-        } else {
-          // Pause at the end before deleting
-          isPaused = true;
-          setTimeout(() => {
-            isPaused = false;
-            isDeleting = true;
-          }, 2000);
-        }
-      } else {
-        // Backspacing
-        if (currentIndex > 0) {
-          currentIndex--;
-          setTypedText(fullText.slice(0, currentIndex));
-        } else {
-          // Pause before typing again
-          isPaused = true;
-          setTimeout(() => {
-            isPaused = false;
-            isDeleting = false;
-          }, 500);
-        }
-      }
-    }, isDeleting ? 100 : 150); // Faster when deleting
+	// Typing effect for "procraft" - continuous loop
+	useEffect(() => {
+		let currentIndex = 0;
+		let isDeleting = false;
+		let isPaused = false;
 
-    return () => clearInterval(typingInterval);
-  }, [fullText]);
+		const typingInterval = setInterval(
+			() => {
+				if (isPaused) return;
 
-  return (
-    <>
-          <section
-            data-theme="dark"
-            className="relative hero-height flex items-center justify-center overflow-hidden "
-            aria-label="Hero section"
-          >
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-label="ProCraft creative digital agency showreel"
-          style={{ contentVisibility: 'auto' }}
-        >
-          <source src="/bg-video-herosection-homepage.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+				if (!isDeleting) {
+					// Typing forward
+					if (currentIndex < fullText.length) {
+						currentIndex++;
+						setTypedText(fullText.slice(0, currentIndex));
+					} else {
+						// Pause at the end before deleting
+						isPaused = true;
+						setTimeout(() => {
+							isPaused = false;
+							isDeleting = true;
+						}, 2000);
+					}
+				} else {
+					// Backspacing
+					if (currentIndex > 0) {
+						currentIndex--;
+						setTypedText(fullText.slice(0, currentIndex));
+					} else {
+						// Pause before typing again
+						isPaused = true;
+						setTimeout(() => {
+							isPaused = false;
+							isDeleting = false;
+						}, 500);
+					}
+				}
+			},
+			isDeleting ? 100 : 150
+		); // Faster when deleting
 
-        {/* Video Overlay - Primary Blue with opacity */}
-        <div className="absolute inset-0 bg-[#10367D]/70" />
+		return () => clearInterval(typingInterval);
+	}, [fullText]);
 
-        {/* Contact Info - Top Right - Fixed Position - Hidden on mobile (below 768px) and when scrolled on desktop */}
-        <div className={`hidden md:fixed top-8 md:top-10 right-8 md:right-16 z-60 transition-opacity duration-300 ${isScrolled ? 'md:opacity-0 md:pointer-events-none' : 'md:opacity-100'}`}>
-          <a
-            href="tel:+971524829295"
-            className={`text-[11px] md:text-xs hover:text-white transition-colors duration-300 font-light tracking-wider ${topTheme === 'dark' ? 'text-white/80' : 'text-[#10367D]/80'}`}
-          >
-            +971 52 482 9295
-          </a>
-        </div>
+	return (
+		<>
+			<section
+				data-theme='dark'
+				className='relative hero-height flex items-center justify-center overflow-hidden '
+				aria-label='Hero section'
+			>
+				{/* Background Video */}
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					preload='auto'
+					className='absolute inset-0 w-full h-full object-cover'
+					aria-label='ProCraft creative digital agency showreel'
+					style={{ contentVisibility: 'auto' }}
+				>
+					<source src='/bg-video-herosection-homepage.mp4' type='video/mp4' />
+					Your browser does not support the video tag.
+				</video>
+				{/* Video Overlay - Primary Blue with opacity */}
+				<div className='absolute inset-0 bg-[#10367D]/70' />
+				{/* Contact Info - Top Right - Fixed Position - Hidden on mobile (below 768px) and when scrolled on desktop */}
+				<div
+					className={`hidden md:fixed top-8 md:top-10 right-8 md:right-16 z-60 transition-opacity duration-300 ${
+						isScrolled
+							? 'md:opacity-0 md:pointer-events-none'
+							: 'md:opacity-100'
+					}`}
+				>
+					<a
+						href='tel:+971524829295'
+						className={`text-[11px] md:text-xs hover:text-white transition-colors duration-300 font-light tracking-wider ${
+							topTheme === 'dark' ? 'text-white/80' : 'text-[#10367D]/80'
+						}`}
+					>
+						+971 52 482 9295
+					</a>
+				</div>
+				{/* Main Content */}
+				<div className='relative z-10 flex items-center justify-center w-full'>
+					<div className='w-full max-w-7xl mx-auto px-6 md:px-[96px]'>
+						{/* Small intro text */}
+						<div className=''>
+							<p className='text-white text-3xl md:text-4xl tracking-wide font-normal mb-6'>
+								we are{' '}
+								<span className='text-[#74B4D9] text-4xl md:text-5xl font-extrabold italic'>
+									{typedText}
+									<span className='animate-pulse text-[#74B4D9]'>|</span>
+								</span>
+							</p>
+						</div>
 
-        {/* Main Content */}
-        <div className="relative z-10 flex items-center justify-center w-full">
-          <div className="w-full max-w-7xl mx-auto px-6 md:px-[96px]">
-            {/* Small intro text */}
-            <div className="">
-              <p className="text-white text-3xl md:text-4xl tracking-wide font-normal mb-6">
-                we are <span className="text-[#74B4D9] text-4xl md:text-5xl font-extrabold italic">
-                  {typedText}
-                  <span className="animate-pulse text-[#74B4D9]">|</span>
-                </span>
-              </p>
-            </div>
+						{/* Main Heading Line 1 */}
+						<div>
+							<h1 className='text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase'>
+								A CREATIVE DIGITAL
+							</h1>
+						</div>
 
-            {/* Main Heading Line 1 */}
-            <div>
-              <h1 className="text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase">
-                A CREATIVE DIGITAL
-              </h1>
-            </div>
+						{/* Main Heading Line 2 */}
+						<div className='mb-4'>
+							<h1 className='text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase'>
+								GROWTH AGENCY
+							</h1>
+						</div>
 
-            {/* Main Heading Line 2 */}
-            <div className="mb-4">
-              <h1 className="text-white text-[38px] sm:text-[46px] md:text-[60px] lg:text-[72px] xl:text-[84px] font-bold leading-none tracking-wide uppercase">
-                GROWTH AGENCY
-              </h1>
-            </div>
+						{/* Subheading */}
+						<div className=''>
+							<p className='text-white text-base md:text-base lg:text-lg font-semibold tracking-wide '>
+								transforming ideas into digital success stories
+							</p>
+						</div>
+					</div>
+				</div>
+				{/* Services Text - Positioned at bottom */}
+				<div className='absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full'>
+					<div className='max-w-7xl mx-auto px-6 md:px-[96px]'>
+						<div className='flex flex-col gap-2'>
+							<HyperText
+								className='text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer'
+								style={{ wordSpacing: '0.3em' }}
+								duration={600}
+							>
+								STRATEGIC&nbsp;CONSULTING
+							</HyperText>
+							<HyperText
+								className='text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer'
+								style={{ wordSpacing: '0.3em' }}
+								duration={600}
+							>
+								CREATIVE&nbsp;DESIGN
+							</HyperText>
+							<HyperText
+								className='text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer'
+								style={{ wordSpacing: '0.3em' }}
+								duration={600}
+							>
+								TECHNICAL&nbsp;EXCELLENCE
+							</HyperText>
+						</div>
+					</div>
+				</div>{' '}
+				{/* Scroll Indicator - Bottom Center (Mobile) */}
+				<div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce md:hidden'>
+					<svg
+						className='w-6 h-6 text-white/70'
+						fill='none'
+						stroke='currentColor'
+						viewBox='0 0 24 24'
+					>
+						<path
+							strokeLinecap='round'
+							strokeLinejoin='round'
+							strokeWidth={2}
+							d='M19 14l-7 7m0 0l-7-7m7 7V3'
+						/>
+					</svg>
+				</div>
+			</section>
 
-            {/* Subheading */}
-            <div className="">
-              <p className="text-white text-base md:text-base lg:text-lg font-semibold tracking-wide ">
-                transforming ideas into digital success stories
-              </p>
-            </div>
-          </div>
-        </div>
+			{/* Portfolio Section */}
+			<Portfolio />
 
-      {/* Services Text - Positioned at bottom */}
-      <div className="absolute bottom-20 md:bottom-8 left-0 right-0 z-10 w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-[96px]">
-          <div className="flex flex-col gap-2">
-            <HyperText
-              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-              style={{ wordSpacing: '0.3em' }}
-              duration={600}
-            >
-              STRATEGIC&nbsp;CONSULTING
-            </HyperText>
-            <HyperText
-              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-              style={{ wordSpacing: '0.3em' }}
-              duration={600}
-            >
-              CREATIVE&nbsp;DESIGN
-            </HyperText>
-            <HyperText
-              className="text-white text-sm md:text-md tracking-[0.15em] leading-relaxed font-semibold uppercase cursor-pointer"
-              style={{ wordSpacing: '0.3em' }}
-              duration={600}
-            >
-              TECHNICAL&nbsp;EXCELLENCE
-            </HyperText>
-          </div>
-        </div>
-      </div>        {/* Scroll Indicator - Bottom Center (Mobile) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce md:hidden">
-          <svg
-            className="w-6 h-6 text-white/70"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </div>
-      </section>
+			{/* Client Logos Section */}
+			<ClientLogos />
 
-      {/* Portfolio Section */}
-      <Portfolio />
+			{/* Services / How Can We Help Section */}
+			<ServicesSection />
 
-      {/* Client Logos Section */}
-      <ClientLogos />
+			{/* Pricing Section */}
+			<PricingSection />
 
-      {/* Services / How Can We Help Section */}
-      <ServicesSection />
+			{/* Testimonials Carousel */}
+			<TestimonialsCarousel />
 
-      {/* Pricing Section */}
-      <PricingSection />
-
-      {/* Testimonials Carousel */}
-      <TestimonialsCarousel />
-
-      {/* WebPage Schema Markup */}
-      <Script
-        id="webpage-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "@id": "https://procraft.ae/#webpage",
-            "url": "https://procraft.ae",
-            "name": "ProCraft - Creative Digital Growth Agency in Dubai",
-            "description": "Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions.",
-            "inLanguage": "en-AE",
-            "isPartOf": {
-              "@type": "WebSite",
-              "@id": "https://procraft.ae/#website",
-              "url": "https://procraft.ae",
-              "name": "ProCraft",
-              "description": "Creative Digital Growth Agency in Dubai",
-              "publisher": {
-                "@id": "https://procraft.ae/#organization"
-              }
-            },
-            "about": {
-              "@type": "Organization",
-              "@id": "https://procraft.ae/#organization",
-              "name": "ProCraft",
-              "url": "https://procraft.ae",
-              "logo": "https://procraft.ae/images/Pro-Create-icon@3x-8.png",
-              "sameAs": [
-                "https://www.linkedin.com/company/procraft.in/",
-                "https://www.instagram.com/procraftae",
-                "https://www.facebook.com/procraft"
-              ]
-            },
-            "breadcrumb": {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://procraft.ae"
-                }
-              ]
-            },
-            "mainEntity": {
-              "@type": "ProfessionalService",
-              "@id": "https://procraft.ae/#organization",
-              "name": "ProCraft",
-              "telephone": "+971-52-482-9295",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Gold Souq Extension, Deira",
-                "addressLocality": "Dubai",
-                "addressRegion": "Dubai",
-                "addressCountry": "AE"
-              }
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://procraft.ae/search?q={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
-          })
-        }}
-      />
-    </>
-
-  );
+			{/* WebPage Schema Markup */}
+			<Script
+				id='webpage-schema'
+				type='application/ld+json'
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'WebPage',
+						'@id': 'https://procraft.ae/#webpage',
+						url: 'https://procraft.ae',
+						name: 'ProCraft - Creative Digital Growth Agency in Dubai',
+						description:
+							'Award-winning creative digital agency in Dubai specializing in business consulting, web design, e-commerce, digital marketing, SEO, and branding. Transform your business with strategic growth solutions.',
+						inLanguage: 'en-AE',
+						isPartOf: {
+							'@type': 'WebSite',
+							'@id': 'https://procraft.ae/#website',
+							url: 'https://procraft.ae',
+							name: 'ProCraft',
+							description: 'Creative Digital Growth Agency in Dubai',
+							publisher: {
+								'@id': 'https://procraft.ae/#organization',
+							},
+						},
+						about: {
+							'@type': 'Organization',
+							'@id': 'https://procraft.ae/#organization',
+							name: 'ProCraft',
+							url: 'https://procraft.ae',
+							logo: 'https://procraft.ae/images/NewLogo_procraft.png',
+							sameAs: [
+								'https://www.linkedin.com/company/procraft.in/',
+								'https://www.instagram.com/procraftae',
+								'https://www.facebook.com/procraft',
+							],
+						},
+						breadcrumb: {
+							'@type': 'BreadcrumbList',
+							itemListElement: [
+								{
+									'@type': 'ListItem',
+									position: 1,
+									name: 'Home',
+									item: 'https://procraft.ae',
+								},
+							],
+						},
+						mainEntity: {
+							'@type': 'ProfessionalService',
+							'@id': 'https://procraft.ae/#organization',
+							name: 'ProCraft',
+							telephone: '+971-52-482-9295',
+							address: {
+								'@type': 'PostalAddress',
+								streetAddress: 'Gold Souq Extension, Deira',
+								addressLocality: 'Dubai',
+								addressRegion: 'Dubai',
+								addressCountry: 'AE',
+							},
+						},
+						potentialAction: {
+							'@type': 'SearchAction',
+							target: {
+								'@type': 'EntryPoint',
+								urlTemplate:
+									'https://procraft.ae/search?q={search_term_string}',
+							},
+							'query-input': 'required name=search_term_string',
+						},
+					}),
+				}}
+			/>
+		</>
+	);
 }
-
