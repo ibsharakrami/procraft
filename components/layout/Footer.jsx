@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Container from '../ui/Container';
+import { productLinks } from '@/data/productData';
 
 export default function Footer() {
 	const currentYear = new Date().getFullYear();
@@ -25,7 +26,7 @@ export default function Footer() {
 			<Container>
 				<div className='py-12 md:py-16'>
 					{/* Top Section */}
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12'>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-12'>
 						{/* Brand */}
 						<div className='lg:col-span-2'>
 							<Link href='/' className='flex items-center gap-2 mb-4'>
@@ -126,6 +127,28 @@ export default function Footer() {
 									</li>
 								))}
 							</ul>
+						</div>
+
+						{/* Product Links - ProCraft ERP (erp.procraft.ae) */}
+						<div>
+							<h3 className='text-lg font-semibold mb-4'>Product</h3>
+							<ul className='space-y-2'>
+								{productLinks.map((link) => (
+									<li key={link.href}>
+										<a
+											href={link.href}
+											target='_blank'
+											rel='noopener'
+											className='text-gray-400 hover:text-primary transition-colors'
+										>
+											{link.label}
+										</a>
+									</li>
+								))}
+							</ul>
+							<p className='text-gray-500 text-xs mt-4 leading-relaxed'>
+								Our own inventory &amp; accounting software for UAE and India.
+							</p>
 						</div>
 
 						{/* Company Links */}

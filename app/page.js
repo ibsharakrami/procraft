@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import ServicesSection from '@/components/Services/ServiceSection';
+import ProCraftERPSection from '@/components/Product/ProCraftERPSection';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import ClientLogos from '@/components/ClientLogos/ClientLogos';
 import PricingSection from '@/components/Pricing/PricingSection';
@@ -202,6 +203,9 @@ export default function Home() {
 
 			{/* Services / How Can We Help Section */}
 			<ServicesSection />
+
+			{/* ProCraft ERP — our own product (links out to erp.procraft.ae) */}
+			<ProCraftERPSection />
 
 			{/* Pricing Section */}
 			<PricingSection />

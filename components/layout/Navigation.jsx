@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useNavigationTheme } from '@/hooks/useNavigationTheme';
+import { procraftERP, ERP_URL } from '@/data/productData';
 
 export default function Navigation() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -204,6 +205,25 @@ export default function Navigation() {
 										</Link>
 										</div>
 									))}
+
+									{/* Our product — external link to the ERP subdomain */}
+									<div className='pt-8 mt-2 border-t border-white/20 max-w-md'>
+										<p className='text-[#74B4D9] text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3'>
+											Our Product
+										</p>
+										<a
+											href={ERP_URL}
+											target='_blank'
+											rel='noopener'
+											onClick={() => setIsMenuOpen(false)}
+											className='inline-flex items-start gap-2 text-white text-lg md:text-xl lg:text-2xl font-semibold hover:text-[#74B4D9] transition-colors leading-tight'
+										>
+											{procraftERP.name} — Inventory &amp; Accounting Software
+											<span aria-hidden='true' className='text-[#74B4D9]'>
+												&#8599;
+											</span>
+										</a>
+									</div>
 								</nav>
 							</div>
 
