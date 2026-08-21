@@ -132,20 +132,19 @@ export const metadata = {
 		// Add your Google Search Console verification code here after setting up GSC
 		// google: 'your-google-verification-code',
 	},
+	// One declaration per real file. This previously listed
+	// /favicon_procraft.svg twice — as an icon and as a mask-icon — and that file
+	// does not exist: it 404s to the HTML page, so a crawler asking for an SVG
+	// icon was handed a document. It also duplicated the tags Next emits for the
+	// app/ file conventions, which is how one page ended up advertising six
+	// icons. Declared here explicitly, with the conventions removed, so there is
+	// exactly one source of truth.
 	icons: {
 		icon: [
-			{ url: '/favicon.ico', sizes: 'any' },
-			{ url: '/favicon_procraft.svg', type: 'image/svg+xml' },
+			{ url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
 			{ url: '/icon.png', type: 'image/png', sizes: '512x512' },
 		],
 		apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],
-		other: [
-			{
-				rel: 'mask-icon',
-				url: '/favicon_procraft.svg',
-				color: '#10367D',
-			},
-		],
 	},
 	manifest: '/manifest.webmanifest',
 	appleWebApp: {
@@ -290,10 +289,6 @@ export default function RootLayout({ children }) {
 
 	return (
 		<html lang='en'>
-			<head>
-				<link rel='icon' type='image/svg+xml' href='/favicon.svg?v=3' />
-				<link rel='icon' type='image/x-icon' href='/favicon.ico?v=3' />
-			</head>
 			<body className={`${blatant.variable} ${urbanist.variable} antialiased`}>
 				<SmoothScrollProvider>
 					<SmoothCursor />
