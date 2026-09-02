@@ -22,7 +22,7 @@ export const procraftERP = {
 		'Full English and Arabic interface',
 	],
 	facts: [
-		{ value: 'AED 99', label: 'from, per month' },
+		{ value: 'AED 149', label: 'from, per month' },
 		{ value: '15 days', label: 'free — no card' },
 		{ value: '2', label: 'countries' },
 	],
@@ -33,6 +33,10 @@ export const procraftERP = {
 		inventory: `${ERP_URL}/inventory-management-software-uae`,
 		pos: `${ERP_URL}/pos-system-uae`,
 		vat: `${ERP_URL}/vat-accounting-software-uae`,
+		// The Arabic homepage. Its own domain gives it no external link at all, so
+		// this is the first one — and anchor TEXT is the signal, which is why every
+		// consumer below labels it in Arabic rather than with the word "Arabic".
+		ar: `${ERP_URL}/ar`,
 	},
 };
 
@@ -43,4 +47,9 @@ export const productLinks = [
 	{ href: procraftERP.links.pos, label: 'POS System UAE' },
 	{ href: procraftERP.links.vat, label: 'VAT Accounting Software' },
 	{ href: procraftERP.links.pricing, label: 'ERP Pricing' },
+	{
+		href: procraftERP.links.ar,
+		label: 'برنامج المخزون بالعربية',
+		hrefLang: 'ar',
+	},
 ];

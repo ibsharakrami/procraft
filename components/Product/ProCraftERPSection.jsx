@@ -33,7 +33,7 @@ export default function ProCraftERPSection() {
 		offers: {
 			'@type': 'Offer',
 			url: procraftERP.links.pricing,
-			price: '99',
+			price: '149',
 			priceCurrency: 'AED',
 			description: 'Starting price per month. Free for 15 days, no card required.',
 			availability: 'https://schema.org/InStock',
@@ -128,6 +128,19 @@ export default function ProCraftERPSection() {
 								className='text-sm md:text-base text-gray-600 hover:text-[#10367D] underline underline-offset-4 transition-colors duration-300'
 							>
 								See ERP pricing
+							</a>
+							{/* The only external link anywhere to the Arabic site. Anchor text is
+							    Arabic on purpose — it is the signal the target has none of. */}
+							<a
+								href={procraftERP.links.ar}
+								target='_blank'
+								rel='noopener'
+								hrefLang='ar'
+								lang='ar'
+								dir='rtl'
+								className='text-sm md:text-base text-gray-600 hover:text-[#10367D] underline underline-offset-4 transition-colors duration-300'
+							>
+								برنامج المخزون بالعربية
 							</a>
 						</div>
 					</motion.div>

@@ -139,6 +139,9 @@ export default function Footer() {
 											href={link.href}
 											target='_blank'
 											rel='noopener'
+											hrefLang={link.hrefLang}
+											lang={link.hrefLang}
+											dir={link.hrefLang === 'ar' ? 'rtl' : undefined}
 											className='text-gray-400 hover:text-primary transition-colors'
 										>
 											{link.label}
